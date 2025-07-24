@@ -113,6 +113,7 @@ body {
         width: 100%;
         background-color: rgba(246, 246, 246, 1);
         border-radius: 0 0 16px 16px;
+        padding-bottom: 16px;
         &-item {
           box-sizing: border-box;
           width: 100%;
@@ -120,8 +121,12 @@ body {
           display: flex;
           align-items: center;
           box-sizing: border-box;
-          padding: 14px 12px;
+          padding: 12px 12px;
           justify-content: space-between;
+          cursor: pointer;
+          &:hover {
+            background-color: rgba(240, 240, 240, 1);
+          }
           &.active {
             position: relative;
             div {
@@ -154,6 +159,7 @@ body {
         align-items: center;
         padding: 10px;
         gap: 4px;
+        cursor: pointer;
         &.active {
           span {
             color: rgba(2, 105, 135, 1);
