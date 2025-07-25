@@ -39,7 +39,7 @@ const Header: React.FC = () => {
               >
                 <SearchIcon
                   className="header__right-search-icon"
-                  fill="rgba(2, 105, 135, 1)"
+                  fill="myColor"
                 />
               </button>
             </div>
