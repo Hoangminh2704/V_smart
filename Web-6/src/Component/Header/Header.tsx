@@ -37,10 +37,7 @@ const Header: React.FC = () => {
                 title="Tìm kiếm"
                 aria-label="Tìm kiếm"
               >
-                <SearchIcon
-                  className="header__right-search-icon"
-                  fill="myColor"
-                />
+                <SearchIcon className="header__search-icon" />
               </button>
             </div>
             <div className="header__right-cart">

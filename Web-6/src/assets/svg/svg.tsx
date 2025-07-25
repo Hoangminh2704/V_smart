@@ -10,7 +10,7 @@ interface IconProps {
 export const SearchIcon: React.FC<IconProps> = ({
   width = 24,
   height = 24,
-  fill = "white",
+  fill = "currentColor",
   className = "",
 }) => (
   <svg
