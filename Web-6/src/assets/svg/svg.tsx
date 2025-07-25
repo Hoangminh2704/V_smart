@@ -1,22 +1,22 @@
 import React from "react";
 
 interface IconProps {
-  //   width?: number;
-  //   height?: number;
-  //   fill?: string;
+  width?: number;
+  height?: number;
+  fill?: string;
   className?: string;
 }
 
 export const SearchIcon: React.FC<IconProps> = ({
-  //   width = 25,
-  //   height = 24,
-  //   fill = "white",
+  width = 24,
+  height = 24,
+  fill = "white",
   className = "",
 }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width={24}
-    height={24}
+    width={width}
+    height={height}
     viewBox="0 0 25 24"
     fill="none"
     className={className}
@@ -25,13 +25,13 @@ export const SearchIcon: React.FC<IconProps> = ({
       fillRule="evenodd"
       clipRule="evenodd"
       d="M11.0524 3.75C7.0541 3.75 3.8128 6.99594 3.8128 11C3.8128 15.0041 7.0541 18.25 11.0524 18.25C15.0508 18.25 18.2921 15.0041 18.2921 11C18.2921 6.99594 15.0508 3.75 11.0524 3.75ZM2.31494 11C2.31494 6.16751 6.22685 2.25 11.0524 2.25C15.878 2.25 19.7899 6.16751 19.7899 11C19.7899 15.8325 15.878 19.75 11.0524 19.75C6.22685 19.75 2.31494 15.8325 2.31494 11Z"
-      fill="white"
+      fill={fill}
     />
     <path
       fillRule="evenodd"
       clipRule="evenodd"
       d="M16.0153 16.4277C16.3077 16.1348 16.7819 16.1348 17.0744 16.4277L22.0673 21.4277C22.3597 21.7206 22.3597 22.1955 22.0673 22.4884C21.7748 22.7813 21.3006 22.7813 21.0081 22.4884L16.0153 17.4883C15.7228 17.1954 15.7228 16.7206 16.0153 16.4277Z"
-      fill="white"
+      fill={fill}
     />
   </svg>
 );

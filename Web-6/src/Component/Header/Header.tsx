@@ -16,6 +16,13 @@ const Header: React.FC = () => {
       <div className="header">
         <div className="header__nav">
           <div className="header__logo">
+            <button
+              title="hamburger"
+              type="button"
+              className="header-hamberger-mobile header-hamberger-mobile--htx"
+            >
+              <span className="header-hamberger-mobile-line"></span>
+            </button>
             <img src={logo} alt="Logo" />
           </div>
           <div className="header__right">
@@ -30,7 +37,10 @@ const Header: React.FC = () => {
                 title="Tìm kiếm"
                 aria-label="Tìm kiếm"
               >
-                <SearchIcon className="header__right-search-icon" />
+                <SearchIcon
+                  className="header__right-search-icon"
+                  fill="rgba(2, 105, 135, 1)"
+                />
               </button>
             </div>
             <div className="header__right-cart">
