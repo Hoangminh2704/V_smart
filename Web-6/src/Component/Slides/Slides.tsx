@@ -30,6 +30,7 @@ const Slides: React.FC = () => {
         modules={[Navigation, Pagination, Autoplay]}
         spaceBetween={20}
         navigation={true}
+        slidesPerView={1}
         pagination={{
           clickable: true,
         }}
