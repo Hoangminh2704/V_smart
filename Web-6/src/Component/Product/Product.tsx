@@ -54,6 +54,12 @@ const Product: React.FC = () => {
               <div className="product__content-list-item-active">
                 <HeartIcon className="product__content-list-item-heart-icon" />
                 <CartIcon className="product__content-list-item-cart-icon" />
+                <div className="product__content-list-item-popup">
+                  <div className="product__content-list-item-popup-inner">
+                    Thêm vào giỏ hàng
+                  </div>
+                  <div className="product__content-list-item-popup-footer"></div>
+                </div>
               </div>
             </div>
           </div>
@@ -75,6 +81,12 @@ const Product: React.FC = () => {
               <div className="product__content-list-item-active">
                 <HeartIcon className="product__content-list-item-heart-icon" />
                 <CartIcon className="product__content-list-item-cart-icon" />
+                <div className="product__content-list-item-popup">
+                  <div className="product__content-list-item-popup-inner">
+                    Thêm vào giỏ hàng
+                  </div>
+                  <div className="product__content-list-item-popup-footer"></div>
+                </div>
               </div>
             </div>
           </div>
@@ -96,6 +108,12 @@ const Product: React.FC = () => {
               <div className="product__content-list-item-active">
                 <HeartIcon className="product__content-list-item-heart-icon" />
                 <CartIcon className="product__content-list-item-cart-icon" />
+                <div className="product__content-list-item-popup">
+                  <div className="product__content-list-item-popup-inner">
+                    Thêm vào giỏ hàng
+                  </div>
+                  <div className="product__content-list-item-popup-footer"></div>
+                </div>
               </div>
             </div>
           </div>
@@ -117,6 +135,12 @@ const Product: React.FC = () => {
               <div className="product__content-list-item-active">
                 <HeartIcon className="product__content-list-item-heart-icon" />
                 <CartIcon className="product__content-list-item-cart-icon" />
+                <div className="product__content-list-item-popup">
+                  <div className="product__content-list-item-popup-inner">
+                    Thêm vào giỏ hàng
+                  </div>
+                  <div className="product__content-list-item-popup-footer"></div>
+                </div>
               </div>
             </div>
           </div>
@@ -138,6 +162,12 @@ const Product: React.FC = () => {
               <div className="product__content-list-item-active">
                 <HeartIcon className="product__content-list-item-heart-icon" />
                 <CartIcon className="product__content-list-item-cart-icon" />
+                <div className="product__content-list-item-popup">
+                  <div className="product__content-list-item-popup-inner">
+                    Thêm vào giỏ hàng
+                  </div>
+                  <div className="product__content-list-item-popup-footer"></div>
+                </div>
               </div>
             </div>
           </div>
