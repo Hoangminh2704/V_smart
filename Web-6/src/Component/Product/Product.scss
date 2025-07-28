@@ -151,14 +151,15 @@ body {
             &:hover .product__content-list-item-popup {
               opacity: 1;
             }
+
             .product__content-list-item-popup {
               position: absolute;
               top: -45px;
               left: -5px;
 
-              //   max-width: 133px;
               opacity: 0;
               width: 133px;
+              z-index: 15;
               &-inner {
                 padding: 6px 14px 8px 12px;
                 font-weight: 400;
@@ -183,9 +184,13 @@ body {
             }
             .product__content-list-item-cart-icon {
               &:hover {
-                color: white;
+                color: black;
                 fill: black;
               }
+            }
+            .product__content-list-item-heart-icon {
+              color: red;
+              fill: black;
             }
           }
         }
