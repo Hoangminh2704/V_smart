@@ -1,6 +1,6 @@
-@import "swiper/css";
-@import "swiper/css/navigation";
-@import "swiper/css/pagination";
+@use "swiper/css";
+@use "swiper/css/navigation";
+@use "swiper/css/pagination";
 @mixin xs {
   @media (max-width: 767px) {
     @content;
@@ -193,8 +193,6 @@ body {
                 }
               }
             }
-
-            color: rgba(246, 246, 246, 1);
           }
         }
         &-button {

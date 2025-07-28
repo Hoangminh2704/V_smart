@@ -1,6 +1,4 @@
-// header
 import React from "react";
-// import { Link } from "react-router-dom";
 import "./Header.scss";
 import logo from "../../assets/image/logo.png";
 import {
