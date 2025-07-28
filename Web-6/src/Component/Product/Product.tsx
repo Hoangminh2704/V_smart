@@ -2,7 +2,7 @@ import React from "react";
 import "./Product.scss";
 import product1 from "../../assets/image/product1.png";
 import banner_product from "../../assets/image/banner_product.png";
-import { RightIcon } from "../../assets/svg/svg";
+import { RightIcon, HeartIcon, CartIcon } from "../../assets/svg/svg";
 const Product: React.FC = () => {
   return (
     <div className="product">
@@ -19,9 +19,15 @@ const Product: React.FC = () => {
             <div className="product__content-list-item-image">
               <img src={product1} alt="Product 1" />
             </div>
-            <div className="product__content-list-item-price">
-              <span className="product-price">4.500.000</span>
-              <span className="product-currency">đ</span>
+            <div className="product__content-list-item-footer">
+              <div className="product__content-list-item-price">
+                <span className="product-price">4.500.000</span>
+                <span className="product-currency">đ</span>
+              </div>
+              <div className="product__content-list-item-active">
+                <HeartIcon className="product__content-list-item-heart-icon" />
+                <CartIcon className="product__content-list-item-cart-icon" />
+              </div>
             </div>
           </div>
           <div className="product__content-list-item">
@@ -34,9 +40,15 @@ const Product: React.FC = () => {
             <div className="product__content-list-item-image">
               <img src={product1} alt="Product 1" />
             </div>
-            <div className="product__content-list-item-price">
-              <span className="product-price">4.500.000</span>
-              <span className="product-currency">đ</span>
+            <div className="product__content-list-item-footer">
+              <div className="product__content-list-item-price">
+                <span className="product-price">4.500.000</span>
+                <span className="product-currency">đ</span>
+              </div>
+              <div className="product__content-list-item-active">
+                <HeartIcon className="product__content-list-item-heart-icon" />
+                <CartIcon className="product__content-list-item-cart-icon" />
+              </div>
             </div>
           </div>
           <div className="product__content-list-item">
@@ -49,9 +61,15 @@ const Product: React.FC = () => {
             <div className="product__content-list-item-image">
               <img src={product1} alt="Product 1" />
             </div>
-            <div className="product__content-list-item-price">
-              <span className="product-price">4.500.000</span>
-              <span className="product-currency">đ</span>
+            <div className="product__content-list-item-footer">
+              <div className="product__content-list-item-price">
+                <span className="product-price">4.500.000</span>
+                <span className="product-currency">đ</span>
+              </div>
+              <div className="product__content-list-item-active">
+                <HeartIcon className="product__content-list-item-heart-icon" />
+                <CartIcon className="product__content-list-item-cart-icon" />
+              </div>
             </div>
           </div>
           <div className="product__content-list-item">
@@ -64,9 +82,15 @@ const Product: React.FC = () => {
             <div className="product__content-list-item-image">
               <img src={product1} alt="Product 1" />
             </div>
-            <div className="product__content-list-item-price">
-              <span className="product-price">4.500.000</span>
-              <span className="product-currency">đ</span>
+            <div className="product__content-list-item-footer">
+              <div className="product__content-list-item-price">
+                <span className="product-price">4.500.000</span>
+                <span className="product-currency">đ</span>
+              </div>
+              <div className="product__content-list-item-active">
+                <HeartIcon className="product__content-list-item-heart-icon" />
+                <CartIcon className="product__content-list-item-cart-icon" />
+              </div>
             </div>
           </div>
           <div className="product__content-list-item">
@@ -79,9 +103,15 @@ const Product: React.FC = () => {
             <div className="product__content-list-item-image">
               <img src={product1} alt="Product 1" />
             </div>
-            <div className="product__content-list-item-price">
-              <span className="product-price">4.500.000</span>
-              <span className="product-currency">đ</span>
+            <div className="product__content-list-item-footer">
+              <div className="product__content-list-item-price">
+                <span className="product-price">4.500.000</span>
+                <span className="product-currency">đ</span>
+              </div>
+              <div className="product__content-list-item-active">
+                <HeartIcon className="product__content-list-item-heart-icon" />
+                <CartIcon className="product__content-list-item-cart-icon" />
+              </div>
             </div>
           </div>
           <div className="product__content-list-item">
@@ -94,9 +124,15 @@ const Product: React.FC = () => {
             <div className="product__content-list-item-image">
               <img src={product1} alt="Product 1" />
             </div>
-            <div className="product__content-list-item-price">
-              <span className="product-price">4.500.000</span>
-              <span className="product-currency">đ</span>
+            <div className="product__content-list-item-footer">
+              <div className="product__content-list-item-price">
+                <span className="product-price">4.500.000</span>
+                <span className="product-currency">đ</span>
+              </div>
+              <div className="product__content-list-item-active">
+                <HeartIcon className="product__content-list-item-heart-icon" />
+                <CartIcon className="product__content-list-item-cart-icon" />
+              </div>
             </div>
           </div>
         </div>
