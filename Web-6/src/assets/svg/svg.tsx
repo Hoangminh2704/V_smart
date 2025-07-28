@@ -84,7 +84,10 @@ export const DownIcon: React.FC<IconProps> = ({ className = "" }) => (
     />
   </svg>
 );
-export const RightIcon: React.FC<IconProps> = ({ className = "" }) => (
+export const RightIcon: React.FC<IconProps> = ({
+  className = "",
+  fill = "currentColor",
+}) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="16"
@@ -95,6 +98,40 @@ export const RightIcon: React.FC<IconProps> = ({ className = "" }) => (
   >
     <path
       d="M10.6663 8.16526L6.16176 12.8291L5.33301 11.9705L9.00884 8.16526L5.33301 4.35575L6.16176 3.49577L10.6663 8.16526Z"
+      fill={fill}
+    />
+  </svg>
+);
+export const LeftArrow: React.FC<IconProps> = ({ className = "" }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="28"
+    height="28"
+    viewBox="0 0 28 28"
+    fill="none"
+    className={className}
+  >
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M9.95204 8.71527C10.2937 9.05697 10.2937 9.61099 9.95204 9.9527L6.77908 13.1257L22.1667 13.1257C22.6499 13.1257 23.0417 13.5174 23.0417 14.0007C23.0417 14.4839 22.6499 14.8757 22.1667 14.8757L6.7791 14.8757L9.95204 18.0486C10.2937 18.3903 10.2937 18.9443 9.95204 19.286C9.61033 19.6277 9.05631 19.6277 8.7146 19.286L4.87289 15.4443C4.07557 14.647 4.07557 13.3543 4.87289 12.557L8.7146 8.71527C9.05631 8.37356 9.61033 8.37356 9.95204 8.71527Z"
+      fill="#475765"
+    />
+  </svg>
+);
+export const RightArrow: React.FC<IconProps> = ({ className = "" }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="28"
+    height="28"
+    viewBox="0 0 28 28"
+    fill="none"
+    className={className}
+  >
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M18.0481 8.71429C18.3898 8.37258 18.9438 8.37258 19.2856 8.71429L23.1273 12.556C23.9246 13.3533 23.9246 14.646 23.1273 15.4433L19.2856 19.2851C18.9438 19.6268 18.3898 19.6268 18.0481 19.2851C17.7064 18.9433 17.7064 18.3893 18.0481 18.0476L21.2211 14.8747L5.8335 14.8747C5.35025 14.8747 4.9585 14.4829 4.9585 13.9997C4.9585 13.5164 5.35025 13.1247 5.8335 13.1247L21.2211 13.1247L18.0481 9.95173C17.7064 9.61002 17.7064 9.056 18.0481 8.71429Z"
       fill="#475765"
     />
   </svg>

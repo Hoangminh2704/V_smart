@@ -1,11 +1,12 @@
 import React from "react";
 import "./Banner.scss";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
+import { Autoplay, Navigation } from "swiper/modules";
 import banner1 from "../../assets/image/banner.png";
 import banner2 from "../../assets/image/banner2.png";
 import banner3 from "../../assets/image/banner3.png";
 import banner4 from "../../assets/image/banner4.png";
+import { LeftArrow, RightArrow } from "../../assets/svg/svg";
 const Banner: React.FC = () => {
   const banners = [
     {
@@ -54,14 +55,25 @@ const Banner: React.FC = () => {
 
   return (
     <div className="banner">
+      <div className="banner__arrow-left">
+        <LeftArrow className="banner__arrow-left-icon" />
+      </div>
       <Swiper
-        modules={[Navigation]}
+        modules={[Navigation, Autoplay]}
         spaceBetween={16}
-        navigation={true}
         slidesPerView={4}
+        slidesPerGroup={1}
         loop={true}
-        // slidesPerView={"auto"}
+        watchOverflow={true}
         className="BannerSwiper"
+        navigation={{
+          prevEl: ".banner__arrow-left",
+          nextEl: ".banner__arrow-right",
+        }}
+        autoplay={{
+          delay: 3000,
+          disableOnInteraction: false,
+        }}
       >
         {banners.map((banner) => (
           <SwiperSlide key={banner.id}>
@@ -81,6 +93,9 @@ const Banner: React.FC = () => {
           </SwiperSlide>
         ))}
       </Swiper>
+      <div className="banner__arrow-right">
+        <RightArrow className="banner__arrow-right-icon" />
+      </div>
     </div>
   );
 };
