@@ -36,7 +36,10 @@ export const SearchIcon: React.FC<IconProps> = ({
   </svg>
 );
 
-export const CartIcon: React.FC<IconProps> = ({ className = "" }) => (
+export const CartIcon: React.FC<IconProps> = ({
+  className = "",
+  fill = "currentColor",
+}) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="24"
@@ -55,7 +58,7 @@ export const CartIcon: React.FC<IconProps> = ({ className = "" }) => (
       fillRule="evenodd"
       clipRule="evenodd"
       d="M8.25 13.5C8.25 13.0858 8.58579 12.75 9 12.75H13C13.4142 12.75 13.75 13.0858 13.75 13.5C13.75 13.9142 13.4142 14.25 13 14.25H9C8.58579 14.25 8.25 13.9142 8.25 13.5Z"
-      fill="#1E2B36"
+      fill={fill}
     />
     <path
       d="M10 20C10 20.8284 9.32843 21.5 8.5 21.5C7.67157 21.5 7 20.8284 7 20C7 19.1716 7.67157 18.5 8.5 18.5C9.32843 18.5 10 19.1716 10 20Z"
