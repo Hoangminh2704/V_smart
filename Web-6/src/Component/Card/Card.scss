@@ -24,6 +24,7 @@
   box-sizing: border-box;
   transition: all 0.3s ease;
   transition: opacity 0.3s ease;
+  position: relative;
   &:hover {
     box-shadow: 0 0 10px 0 rgba(61, 80, 86, 0.15);
   }
@@ -46,6 +47,7 @@
       line-height: 28px;
       letter-spacing: 0%;
       color: rgba(71, 87, 101, 1);
+      min-height: 56px;
     }
   }
   &-image {
@@ -74,6 +76,10 @@
         line-height: 28px;
         letter-spacing: 0%;
         color: rgba(71, 87, 101, 1);
+
+        &.sold {
+          color: #d53f3f; // Màu đỏ cho trạng thái "Hết hàng"
+        }
       }
       .product-currency {
         font-weight: 500;
@@ -139,5 +145,22 @@
   }
   &:hover .product__content-list-item-active {
     opacity: 1;
+  }
+  &-discount {
+    padding: 6px 6px 4px 6px;
+    background-color: rgba(0, 142, 57, 1);
+    border-radius: 12px 12px 12px 0;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: rgba(246, 246, 246, 1);
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    vertical-align: middle;
+    position: absolute;
+    left: 73%;
+    top: 26%;
   }
 }

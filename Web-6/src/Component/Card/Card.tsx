@@ -13,6 +13,8 @@ interface ProductData {
   productName: string;
   imageUrl: string;
   price: string;
+  discount: string;
+  state: string;
 }
 
 const Card: React.FC<CardProps> = ({ id }) => {
@@ -35,6 +37,29 @@ const Card: React.FC<CardProps> = ({ id }) => {
     return "";
   };
 
+  const renderPrice = () => {
+    if (product?.state === "sold") {
+      return (
+        <div className="product__content-list-item-price">
+          <span className="product-price sold">Hết hàng</span>
+        </div>
+      );
+    }
+    if (product?.state === "contact") {
+      return (
+        <div className="product__content-list-item-price">
+          <span className="product-price">Liên hệ</span>
+        </div>
+      );
+    }
+    return (
+      <div className="product__content-list-item-price">
+        <span className="product-price">{product?.price}</span>
+        <span className="product-currency">đ</span>
+      </div>
+    );
+  };
+
   if (!product) {
     return null;
   }
@@ -49,10 +74,7 @@ const Card: React.FC<CardProps> = ({ id }) => {
         <img src={getImageUrl(product.imageUrl)} alt={product.productName} />
       </div>
       <div className="product__content-list-item-footer">
-        <div className="product__content-list-item-price">
-          <span className="product-price">{product.price}</span>
-          <span className="product-currency">đ</span>
-        </div>
+        {renderPrice()}
         <div className="product__content-list-item-active">
           <HeartIcon className="product__content-list-item-heart-icon" />
           <CartIcon className="product__content-list-item-cart-icon" />
@@ -64,6 +86,11 @@ const Card: React.FC<CardProps> = ({ id }) => {
           </div>
         </div>
       </div>
+      {product.discount && (
+        <div className="product__content-list-item-discount">
+          {product.discount}
+        </div>
+      )}
     </div>
   );
 };
