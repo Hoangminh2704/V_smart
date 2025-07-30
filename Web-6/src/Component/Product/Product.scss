@@ -32,9 +32,11 @@ body {
   gap: 28px;
   @include m {
     align-items: center;
+    width: 96.56%;
   }
   @include xs {
     align-items: center;
+    width: 92.27%;
   }
   &__header {
     font-weight: 500;
@@ -65,138 +67,11 @@ body {
       width: 74.5%;
       @include m {
         grid-template-columns: repeat(2, 1fr);
-        width: 96.56%;
+        width: 100%;
       }
       @include xs {
         grid-template-columns: repeat(1, 1fr);
-        width: 92.27%;
-      }
-      &-item {
-        // width: 302px;
-        display: flex;
-        flex-direction: column;
-        border: 1px solid rgba(188, 196, 204, 1);
-        border-radius: 8px;
-        padding: 16px 0;
-        box-sizing: border-box;
-        transition: all 0.3s ease;
-        transition: opacity 0.3s ease;
-        &:hover {
-          box-shadow: 0 0 10px 0 rgba(61, 80, 86, 0.15);
-        }
-
-        &-title {
-          display: flex;
-          flex-direction: column;
-          gap: 2px;
-          padding: 0 16px;
-          .product-type {
-            font-weight: 400;
-            font-size: 12px;
-            line-height: 18px;
-            letter-spacing: 0%;
-            color: rgba(142, 155, 166, 1);
-          }
-          .product-name {
-            font-weight: 500;
-            font-size: 16px;
-            line-height: 28px;
-            letter-spacing: 0%;
-            color: rgba(71, 87, 101, 1);
-          }
-        }
-        &-image {
-          padding: 0 16px;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          img {
-            width: 100%;
-            object-fit: contain;
-            padding: 11px 20px;
-          }
-        }
-        .product__content-list-item-footer {
-          display: flex;
-          padding: 8px 16px;
-          justify-content: space-between;
-          gap: 20px;
-          .product__content-list-item-price {
-            display: flex;
-
-            gap: 4px;
-            .product-price {
-              font-weight: 500;
-              font-size: 20px;
-              line-height: 28px;
-              letter-spacing: 0%;
-              color: rgba(71, 87, 101, 1);
-            }
-            .product-currency {
-              font-weight: 500;
-              font-size: 14px;
-              line-height: 24px;
-              letter-spacing: 0%;
-              color: rgba(71, 87, 101, 1);
-            }
-          }
-          .product__content-list-item-active {
-            display: flex;
-            gap: 24px;
-            align-items: center;
-            text-align: center;
-            max-height: 24px;
-            opacity: 0;
-            position: relative;
-            &:hover .product__content-list-item-popup {
-              opacity: 1;
-            }
-
-            .product__content-list-item-popup {
-              position: absolute;
-              top: -45px;
-              left: -5px;
-
-              opacity: 0;
-              width: 133px;
-              z-index: 15;
-              &-inner {
-                padding: 6px 14px 8px 12px;
-                font-weight: 400;
-                font-size: 12px;
-                line-height: 18px;
-                letter-spacing: 0%;
-                color: rgba(246, 246, 246, 1);
-                border-radius: 8px;
-                background-color: rgba(30, 43, 54, 1);
-                z-index: 10;
-              }
-              &-footer {
-                width: 12px;
-                height: 12px;
-                position: absolute;
-                background-color: rgba(30, 43, 54, 1);
-                rotate: 45deg;
-                left: 60px;
-                top: 26px;
-                z-index: 5;
-              }
-            }
-            .product__content-list-item-cart-icon {
-              &:hover {
-                color: black;
-                fill: black;
-              }
-            }
-            .product__content-list-item-heart-icon {
-              color: red;
-              fill: black;
-            }
-          }
-        }
-        &:hover .product__content-list-item-active {
-          opacity: 1;
-        }
+        width: 100%;
       }
     }
     &-banner {
@@ -271,7 +146,8 @@ body {
         }
       }
       &-image {
-        width: 605px;
+        // width: 605px;
+        width: 100%;
         height: 302px;
         display: flex;
         justify-content: flex-start;

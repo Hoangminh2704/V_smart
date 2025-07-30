@@ -3,57 +3,65 @@
     "id": 1,
     "productType": "Camera",
     "productName": "Đèn cảm ứng thông minh Đèn cảm ứng thông minh...",
-    "imageUrl": "product1.png",
+    "imageUrl": "../../src/assets/image/product1.png",
     "price": "4.900.000",
-    "state": "new"
+    "state": "new",
+    "order": 150
   },
   {
     "id": 2,
     "productType": "Camera",
     "productName": "Đèn cảm ứng thông minh Đèn cảm ứng thông minh...",
-    "imageUrl": "product1.png",
+    "imageUrl": "../../src/assets/image/product2.png",
     "price": "4.500.000",
-    "state": "sold"
+    "state": "sold",
+    "order": 89
   },
   {
     "id": 3,
     "productType": "Camera",
-    "productName": "Đèn cảm ứng thông minh",
-    "imageUrl": "product1.png",
+    "productName": "Camera C430 4k Waterproof",
+    "imageUrl": "../../src/assets/image/Best.png",
     "price": "4.500.000",
-    "state": "contact"
+    "state": "new",
+    "discount": "30%",
+    "order": 245
   },
   {
     "id": 4,
     "productType": "Camera",
     "productName": "Đèn cảm ứng thông minh",
-    "imageUrl": "product1.png",
+    "imageUrl": "../../src/assets/image/product3.png",
     "price": "4.500.000",
     "state": "new",
-    "discount": "30%"
+    "discount": "30%",
+    "order": 120
   },
   {
     "id": 5,
     "productType": "Camera",
     "productName": "Đèn cảm ứng thông minh",
-    "imageUrl": "product1.png",
+    "imageUrl": "../../src/assets/image/product4.png",
     "price": "4.500.000",
-    "state": "new"
+    "state": "new",
+    "order": 95
   },
   {
     "id": 6,
     "productType": "Camera",
     "productName": "Đèn cảm ứng thông minh Đèn cảm ứng thông minh...",
-    "imageUrl": "product1.png",
+    "imageUrl": "../../src/assets/image/product5.png",
     "price": "4.500.000",
-    "state": "new"
+    "state": "new",
+    "order": 78
   },
   {
     "id": 7,
     "productType": "Camera",
     "productName": "Đèn cảm ứng thông minh Đèn cảm ứng thông minh...",
-    "imageUrl": "product1.png",
+    "imageUrl": "../../src/assets/image/product2.png",
     "price": "4.500.000",
-    "state": "new"
+    "state": "new",
+    "order": 65
   }
 ]

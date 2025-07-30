@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./Card.scss";
 import { HeartIcon, CartIcon } from "../../assets/svg/svg";
-import product1 from "../../assets/image/product1.png"; // Placeholder
 
 interface CardProps {
   id: number;
@@ -13,8 +12,9 @@ interface ProductData {
   productName: string;
   imageUrl: string;
   price: string;
-  discount: string;
+  discount?: string;
   state: string;
+  order: number;
 }
 
 const Card: React.FC<CardProps> = ({ id }) => {
@@ -29,13 +29,6 @@ const Card: React.FC<CardProps> = ({ id }) => {
       })
       .catch((error) => console.error(error));
   }, [id]);
-
-  const getImageUrl = (imageName: string) => {
-    if (imageName === "product1.png") {
-      return product1;
-    }
-    return "";
-  };
 
   const renderPrice = () => {
     if (product?.state === "sold") {
@@ -71,7 +64,7 @@ const Card: React.FC<CardProps> = ({ id }) => {
         <span className="product-name">{product.productName}</span>
       </div>
       <div className="product__content-list-item-image">
-        <img src={getImageUrl(product.imageUrl)} alt={product.productName} />
+        <img src={product.imageUrl} alt={product.productName} />
       </div>
       <div className="product__content-list-item-footer">
         {renderPrice()}
