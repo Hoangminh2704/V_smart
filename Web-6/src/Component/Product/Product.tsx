@@ -1,176 +1,33 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Product.scss";
-import product1 from "../../assets/image/product1.png";
+import Card from "../Card/Card";
 import banner_product from "../../assets/image/banner_product.png";
-import { RightIcon, HeartIcon, CartIcon } from "../../assets/svg/svg";
+import { RightIcon } from "../../assets/svg/svg";
+
+interface ProductInfo {
+  id: number;
+}
+
 const Product: React.FC = () => {
+  const [productId, setProductId] = useState<number[]>([]);
+
+  useEffect(() => {
+    fetch("/src/data/products.json")
+      .then((response) => response.json())
+      .then((data: ProductInfo[]) => {
+        setProductId(data.map((p) => p.id));
+      })
+      .catch((error) => console.error(error));
+  }, []);
+  const getProduct = productId.slice(0, 6);
   return (
     <div className="product">
       <div className="product__header">Sản phẩm mới nhất</div>
       <div className="product__content">
         <div className="product__content-list">
-          <div className="product__content-list-item">
-            <div className="product__content-list-item-title">
-              <span className="product-type">Camera</span>
-              <span className="product-name">
-                Đèn cảm ứng thông minh Đèn cảm ứng thông minh...
-              </span>
-            </div>
-            <div className="product__content-list-item-image">
-              <img src={product1} alt="Product 1" />
-            </div>
-            <div className="product__content-list-item-footer">
-              <div className="product__content-list-item-price">
-                <span className="product-price">4.500.000</span>
-                <span className="product-currency">đ</span>
-              </div>
-              <div className="product__content-list-item-active">
-                <HeartIcon className="product__content-list-item-heart-icon" />
-                <CartIcon className="product__content-list-item-cart-icon" />
-                <div className="product__content-list-item-popup">
-                  <div className="product__content-list-item-popup-inner">
-                    Thêm vào giỏ hàng
-                  </div>
-                  <div className="product__content-list-item-popup-footer"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="product__content-list-item">
-            <div className="product__content-list-item-title">
-              <span className="product-type">Camera</span>
-              <span className="product-name">
-                Đèn cảm ứng thông minh Đèn cảm ứng thông minh...
-              </span>
-            </div>
-            <div className="product__content-list-item-image">
-              <img src={product1} alt="Product 1" />
-            </div>
-            <div className="product__content-list-item-footer">
-              <div className="product__content-list-item-price">
-                <span className="product-price">4.500.000</span>
-                <span className="product-currency">đ</span>
-              </div>
-              <div className="product__content-list-item-active">
-                <HeartIcon className="product__content-list-item-heart-icon" />
-                <CartIcon className="product__content-list-item-cart-icon" />
-                <div className="product__content-list-item-popup">
-                  <div className="product__content-list-item-popup-inner">
-                    Thêm vào giỏ hàng
-                  </div>
-                  <div className="product__content-list-item-popup-footer"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="product__content-list-item">
-            <div className="product__content-list-item-title">
-              <span className="product-type">Camera</span>
-              <span className="product-name">
-                Đèn cảm ứng thông minh Đèn cảm ứng thông minh...
-              </span>
-            </div>
-            <div className="product__content-list-item-image">
-              <img src={product1} alt="Product 1" />
-            </div>
-            <div className="product__content-list-item-footer">
-              <div className="product__content-list-item-price">
-                <span className="product-price">4.500.000</span>
-                <span className="product-currency">đ</span>
-              </div>
-              <div className="product__content-list-item-active">
-                <HeartIcon className="product__content-list-item-heart-icon" />
-                <CartIcon className="product__content-list-item-cart-icon" />
-                <div className="product__content-list-item-popup">
-                  <div className="product__content-list-item-popup-inner">
-                    Thêm vào giỏ hàng
-                  </div>
-                  <div className="product__content-list-item-popup-footer"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="product__content-list-item">
-            <div className="product__content-list-item-title">
-              <span className="product-type">Camera</span>
-              <span className="product-name">
-                Đèn cảm ứng thông minh Đèn cảm ứng thông minh...
-              </span>
-            </div>
-            <div className="product__content-list-item-image">
-              <img src={product1} alt="Product 1" />
-            </div>
-            <div className="product__content-list-item-footer">
-              <div className="product__content-list-item-price">
-                <span className="product-price">4.500.000</span>
-                <span className="product-currency">đ</span>
-              </div>
-              <div className="product__content-list-item-active">
-                <HeartIcon className="product__content-list-item-heart-icon" />
-                <CartIcon className="product__content-list-item-cart-icon" />
-                <div className="product__content-list-item-popup">
-                  <div className="product__content-list-item-popup-inner">
-                    Thêm vào giỏ hàng
-                  </div>
-                  <div className="product__content-list-item-popup-footer"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="product__content-list-item">
-            <div className="product__content-list-item-title">
-              <span className="product-type">Camera</span>
-              <span className="product-name">
-                Đèn cảm ứng thông minh Đèn cảm ứng thông minh...
-              </span>
-            </div>
-            <div className="product__content-list-item-image">
-              <img src={product1} alt="Product 1" />
-            </div>
-            <div className="product__content-list-item-footer">
-              <div className="product__content-list-item-price">
-                <span className="product-price">4.500.000</span>
-                <span className="product-currency">đ</span>
-              </div>
-              <div className="product__content-list-item-active">
-                <HeartIcon className="product__content-list-item-heart-icon" />
-                <CartIcon className="product__content-list-item-cart-icon" />
-                <div className="product__content-list-item-popup">
-                  <div className="product__content-list-item-popup-inner">
-                    Thêm vào giỏ hàng
-                  </div>
-                  <div className="product__content-list-item-popup-footer"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="product__content-list-item">
-            <div className="product__content-list-item-title">
-              <span className="product-type">Camera</span>
-              <span className="product-name">
-                Đèn cảm ứng thông minh Đèn cảm ứng thông minh...
-              </span>
-            </div>
-            <div className="product__content-list-item-image">
-              <img src={product1} alt="Product 1" />
-            </div>
-            <div className="product__content-list-item-footer">
-              <div className="product__content-list-item-price">
-                <span className="product-price">4.500.000</span>
-                <span className="product-currency">đ</span>
-              </div>
-              <div className="product__content-list-item-active">
-                <HeartIcon className="product__content-list-item-heart-icon" />
-                <CartIcon className="product__content-list-item-cart-icon" />
-                <div className="product__content-list-item-popup">
-                  <div className="product__content-list-item-popup-inner">
-                    Thêm vào giỏ hàng
-                  </div>
-                  <div className="product__content-list-item-popup-footer"></div>
-                </div>
-              </div>
-            </div>
-          </div>
+          {getProduct.map((id) => (
+            <Card key={id} id={id} />
+          ))}
         </div>
         <div className="product__content-banner">
           <div className="product__content-banner-info">
