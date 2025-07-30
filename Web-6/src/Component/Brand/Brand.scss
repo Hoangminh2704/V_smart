@@ -23,8 +23,35 @@ body {
   max-width: 1280px;
   width: 100%;
   margin: 0 auto;
-  max-height: 150px;
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   align-items: center;
+  justify-items: center;
+  padding: 32px 0;
+
+  @include xs {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 197px * 2 + 20px;
+    gap: 20px;
+    padding: 20px 16px;
+  }
+
+  img {
+    object-fit: contain;
+    // width: 100%;
+    // max-width: 250px;
+    // height: auto;
+
+    @include m {
+      //   max-width: 197px;
+      width: 179px;
+      height: 91px;
+    }
+
+    @include xs {
+      //   max-width: 197px;
+      width: 179px;
+      height: 91px;
+    }
+  }
 }

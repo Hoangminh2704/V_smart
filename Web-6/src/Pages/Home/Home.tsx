@@ -6,6 +6,7 @@ import Product from "../../Component/Product/Product";
 import HorizontalBanner from "../../Component/Horizontal_banner/Horizontal_banner";
 import BestSellingProduct from "../../Component/BestSellingProduct/BestSellingProduct";
 import Brand from "../../Component/Brand/Brand";
+import Discount from "../../Component/Discount/Discount";
 function Home() {
   return (
     <>
@@ -16,6 +17,7 @@ function Home() {
       <HorizontalBanner />
       <BestSellingProduct />
       <Brand />
+      <Discount />
     </>
   );
 }
