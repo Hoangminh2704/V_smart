@@ -30,28 +30,24 @@ body {
   padding: 32px 0;
 
   @include xs {
+    width: 92.27%;
     grid-template-columns: repeat(2, 1fr);
-    max-width: 197px * 2 + 20px;
+    // max-width: 197px * 2 + 20px;
     gap: 20px;
-    padding: 20px 16px;
+    padding: 20px 0;
   }
 
   img {
     object-fit: contain;
-    // width: 100%;
-    // max-width: 250px;
-    // height: auto;
 
     @include m {
-      //   max-width: 197px;
-      width: 179px;
-      height: 91px;
+      aspect-ratio: 179/91;
+      max-width: 179px;
     }
 
     @include xs {
-      //   max-width: 197px;
-      width: 179px;
-      height: 91px;
+      aspect-ratio: 179/91;
+      max-width: 179px;
     }
   }
 }
