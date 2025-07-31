@@ -142,7 +142,14 @@
         opacity: 0;
         width: 133px;
         z-index: 15;
-        display: none;
+        // display: none;
+        // overflow: hidden;
+        @include xs {
+          display: none;
+        }
+        @include m {
+          display: none;
+        }
         &-inner {
           padding: 6px 14px 8px 12px;
           font-weight: 400;
@@ -165,15 +172,13 @@
           z-index: 5;
         }
       }
-      .product__content-list-item-cart-icon {
-        &:hover {
-          color: black;
-          fill: black;
-        }
-      }
       .product__content-list-item-heart-icon {
-        color: red;
-        fill: black;
+        // fill: red;
+        &:hover {
+          path {
+            fill: red;
+          }
+        }
       }
     }
   }

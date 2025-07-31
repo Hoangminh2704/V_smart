@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import "./Header.scss";
 import logo from "../../assets/image/logo.png";
 import {
@@ -9,6 +10,26 @@ import {
 } from "../../assets/svg/svg";
 
 const Header: React.FC = () => {
+  const [activeItem, setActiveItem] = useState<number>(1);
+  const location = useLocation();
+
+  const menuItems = [
+    { id: 0, name: "Bộ điều khiển trung tâm", hasIcon: false },
+    { id: 1, name: "Rèm cửa thông minh", hasIcon: true },
+    { id: 2, name: "Khóa cửa cao cấp", hasIcon: true },
+    { id: 3, name: "Ổ cắm cao cấp", hasIcon: true },
+    { id: 4, name: "Công tắc thông minh", hasIcon: true },
+    { id: 5, name: "Đèn thông minh", hasIcon: true },
+    { id: 6, name: "Thiết bị phụ trợ khác", hasIcon: true },
+  ];
+
+  const handleItemHover = (itemId: number) => {
+    setActiveItem(itemId);
+  };
+
+  const isActiveRoute = (path: string) => {
+    return location.pathname === path;
+  };
   return (
     <header>
       <div className="header">
@@ -21,7 +42,9 @@ const Header: React.FC = () => {
             >
               <span className="header-hamberger-mobile-line"></span>
             </button>
-            <img src={logo} alt="Logo" />
+            <Link to="/">
+              <img src={logo} alt="Logo" />
+            </Link>
           </div>
           <div className="header__right">
             <div className="header__right-search">
@@ -49,48 +72,52 @@ const Header: React.FC = () => {
               Danh mục sản phẩm
             </div>
             <div className="header__element-left-bottom">
-              <div className="header__element-left-bottom-item">
-                <span>Bộ điều khiển trung tâm</span>
-              </div>
-              <div className="header__element-left-bottom-item active">
-                <div className="header__element-left-bottom-active"></div>
-                <span>Rèm cửa thông minh</span>
-                <RightIcon className="header__element-left-bottom-item-icon" />
-              </div>
-              <div className="header__element-left-bottom-item">
-                <span>Khóa cửa cao cấp</span>
-                <RightIcon className="header__element-left-bottom-item-icon" />
-              </div>
-              <div className="header__element-left-bottom-item">
-                <span>Ổ cắm cao cấp</span>
-                <RightIcon className="header__element-left-bottom-item-icon" />
-              </div>
-              <div className="header__element-left-bottom-item">
-                <span>Công tắc thông minh</span>
-                <RightIcon className="header__element-left-bottom-item-icon" />
-              </div>
-              <div className="header__element-left-bottom-item">
-                <span>Đèn thông minh</span>
-                <RightIcon className="header__element-left-bottom-item-icon" />
-              </div>
-              <div className="header__element-left-bottom-item">
-                <span>Thiết bị phụ trợ khác</span>
-                <RightIcon className="header__element-left-bottom-item-icon" />
-              </div>
+              {menuItems.map((item) => (
+                <div
+                  key={item.id}
+                  className={`header__element-left-bottom-item ${
+                    activeItem === item.id ? "active" : ""
+                  }`}
+                  onMouseEnter={() => handleItemHover(item.id)}
+                >
+                  {activeItem === item.id && (
+                    <div className="header__element-left-bottom-active"></div>
+                  )}
+                  <span>{item.name}</span>
+                  {item.hasIcon && (
+                    <RightIcon className="header__element-left-bottom-item-icon" />
+                  )}
+                </div>
+              ))}
             </div>
           </div>
 
           <div className="header__element-right">
-            <div className="header__element-right-option active">
+            <Link
+              to="/"
+              className={`header__element-right-option ${
+                isActiveRoute("/") ? "active" : ""
+              }`}
+            >
               <span>Trang chủ</span>
-            </div>
-            <div className="header__element-right-option">
+            </Link>
+            <Link
+              to="/about"
+              className={`header__element-right-option ${
+                isActiveRoute("/about") ? "active" : ""
+              }`}
+            >
               <span>Giới thiệu</span>
-            </div>
-            <div className="header__element-right-option">
+            </Link>
+            <Link
+              to="/production"
+              className={`header__element-right-option ${
+                isActiveRoute("/production") ? "active" : ""
+              }`}
+            >
               <span>Sản phẩm</span>
               <DownIcon className="header__element-right-option-icon" />
-            </div>
+            </Link>
             <div className="header__element-right-option">
               <span>Tin tức</span>
               <DownIcon className="header__element-right-option-icon" />
@@ -101,9 +128,14 @@ const Header: React.FC = () => {
             <div className="header__element-right-option">
               <span>Đơn hàng</span>
             </div>
-            <div className="header__element-right-option special">
+            <Link
+              to="/contact"
+              className={`header__element-right-option special ${
+                isActiveRoute("/contact") ? "active" : ""
+              }`}
+            >
               <span>Liên hệ</span>
-            </div>
+            </Link>
           </div>
         </div>
       </div>
