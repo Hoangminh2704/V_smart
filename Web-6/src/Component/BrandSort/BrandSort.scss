@@ -54,6 +54,9 @@
     border-radius: 41px;
     transition: all 0.3s ease;
     margin: 0 auto;
+    &:hover {
+      scale: 1.1;
+    }
 
     // @include m {
     //   max-width: 160px;
