@@ -6,7 +6,9 @@
     "imageUrl": "../../src/assets/image/product1.png",
     "price": "4.900.000",
     "state": "new",
-    "order": 150
+    "order": 150,
+    "type": "Đèn LED tự động",
+    "brand": "Panasonic"
   },
   {
     "id": 2,
@@ -15,7 +17,9 @@
     "imageUrl": "../../src/assets/image/product2.png",
     "price": "4.500.000",
     "state": "sold",
-    "order": 89
+    "order": 89,
+    "type": "Đèn LED tự động",
+    "brand": "Lumi"
   },
   {
     "id": 3,
@@ -25,7 +29,9 @@
     "price": "4.500.000",
     "state": "new",
     "discount": "30%",
-    "order": 245
+    "order": 245,
+    "type": "Cảm biến",
+    "brand": "Acis"
   },
   {
     "id": 4,
@@ -35,7 +41,9 @@
     "price": "4.500.000",
     "state": "new",
     "discount": "30%",
-    "order": 120
+    "order": 120,
+    "type": "Đèn LED tự động",
+    "brand": "Philips"
   },
   {
     "id": 5,
@@ -44,7 +52,9 @@
     "imageUrl": "../../src/assets/image/product4.png",
     "price": "4.500.000",
     "state": "new",
-    "order": 95
+    "order": 95,
+    "type": "Đèn LED tự động",
+    "brand": "Siemens"
   },
   {
     "id": 6,
@@ -53,15 +63,386 @@
     "imageUrl": "../../src/assets/image/product5.png",
     "price": "4.500.000",
     "state": "new",
-    "order": 78
+    "order": 78,
+    "type": "Đèn LED tự động",
+    "brand": "Vimar"
   },
   {
     "id": 7,
-    "productType": "Camera",
-    "productName": "Đèn cảm ứng thông minh Đèn cảm ứng thông minh...",
+    "productType": "Cổng tự động",
+    "productName": "Cổng tự động thông minh Pro",
     "imageUrl": "../../src/assets/image/product2.png",
+    "price": "8.900.000",
+    "state": "new",
+    "order": 65,
+    "type": "Cổng tự động",
+    "brand": "Panasonic"
+  },
+  {
+    "id": 8,
+    "productType": "Khóa cửa",
+    "productName": "Khóa cửa thông minh vân tay",
+    "imageUrl": "../../src/assets/image/product1.png",
+    "price": "3.200.000",
+    "state": "new",
+    "order": 65,
+    "type": "Khóa cửa thông minh",
+    "brand": "Lumi"
+  },
+  {
+    "id": 9,
+    "productType": "Công tắc",
+    "productName": "Công tắc cảm ứng 3 phím",
+    "imageUrl": "../../src/assets/image/product3.png",
+    "price": "1.800.000",
+    "state": "new",
+    "order": 65,
+    "type": "Công tắc thông minh",
+    "brand": "Acis"
+  },
+  {
+    "id": 10,
+    "productType": "Rèm cửa",
+    "productName": "Rèm cửa tự động thông minh",
+    "imageUrl": "../../src/assets/image/Best.png",
+    "price": "6.500.000",
+    "state": "new",
+    "discount": "15%",
+    "order": 180,
+    "type": "Rèm cửa thông minh",
+    "brand": "Philips"
+  },
+  {
+    "id": 11,
+    "productType": "Ổ cắm",
+    "productName": "Ổ cắm WiFi thông minh",
+    "imageUrl": "../../src/assets/image/product4.png",
+    "price": "890.000",
+    "state": "new",
+    "order": 320,
+    "type": "Ổ cắm thông minh",
+    "brand": "Siemens"
+  },
+  {
+    "id": 12,
+    "productType": "Bộ điều khiển",
+    "productName": "Bộ điều khiển trung tâm Galaxy",
+    "imageUrl": "../../src/assets/image/product5.png",
+    "price": "12.500.000",
+    "state": "new",
+    "order": 45,
+    "type": "Bộ điều khiển trung tâm",
+    "brand": "Vimar"
+  },
+  {
+    "id": 13,
+    "productType": "Cảm biến",
+    "productName": "Cảm biến chuyển động PIR",
+    "imageUrl": "../../src/assets/image/product1.png",
+    "price": "2.100.000",
+    "state": "new",
+    "order": 210,
+    "type": "Cảm biến",
+    "brand": "Panasonic"
+  },
+  {
+    "id": 14,
+    "productType": "Điều khiển IR",
+    "productName": "Bộ điều khiển hồng ngoại Universal",
+    "imageUrl": "../../src/assets/image/product2.png",
+    "price": "1.650.000",
+    "state": "new",
+    "order": 155,
+    "type": "Bộ điều khiển hồng ngoại",
+    "brand": "Lumi"
+  },
+  {
+    "id": 15,
+    "productType": "Cổng tự động",
+    "productName": "Cổng tự động 2 cánh cao cấp",
+    "imageUrl": "../../src/assets/image/product3.png",
+    "price": "15.200.000",
+    "state": "contact",
+    "order": 25,
+    "type": "Cổng tự động",
+    "brand": "Acis"
+  },
+  {
+    "id": 16,
+    "productType": "Khóa cửa",
+    "productName": "Khóa cửa mật khẩu + thẻ từ",
+    "imageUrl": "../../src/assets/image/Best.png",
+    "price": "4.800.000",
+    "state": "new",
+    "discount": "20%",
+    "order": 98,
+    "type": "Khóa cửa thông minh",
+    "brand": "Philips"
+  },
+  {
+    "id": 17,
+    "productType": "Công tắc",
+    "productName": "Công tắc cảm ứng 2 phím",
+    "imageUrl": "../../src/assets/image/product4.png",
+    "price": "1.450.000",
+    "state": "new",
+    "order": 275,
+    "type": "Công tắc thông minh",
+    "brand": "Siemens"
+  },
+  {
+    "id": 18,
+    "productType": "Đèn LED",
+    "productName": "Đèn LED thông minh RGB",
+    "imageUrl": "../../src/assets/image/product5.png",
+    "price": "2.300.000",
+    "state": "new",
+    "order": 189,
+    "type": "Đèn LED tự động",
+    "brand": "Vimar"
+  },
+  {
+    "id": 19,
+    "productType": "Rèm cửa",
+    "productName": "Rèm cửa điện thông minh Premium",
+    "imageUrl": "../../src/assets/image/product1.png",
+    "price": "8.750.000",
+    "state": "new",
+    "order": 67,
+    "type": "Rèm cửa thông minh",
+    "brand": "Panasonic"
+  },
+  {
+    "id": 20,
+    "productType": "Ổ cắm",
+    "productName": "Ổ cắm thông minh USB-C",
+    "imageUrl": "../../src/assets/image/product2.png",
+    "price": "1.200.000",
+    "state": "new",
+    "order": 340,
+    "type": "Ổ cắm thông minh",
+    "brand": "Lumi"
+  },
+  {
+    "id": 21,
+    "productType": "Bộ điều khiển",
+    "productName": "Hub điều khiển thông minh Pro Max",
+    "imageUrl": "../../src/assets/image/product3.png",
+    "price": "18.900.000",
+    "state": "new",
+    "order": 15,
+    "type": "Bộ điều khiển trung tâm",
+    "brand": "Acis"
+  },
+  {
+    "id": 22,
+    "productType": "Cảm biến",
+    "productName": "Cảm biến cửa sổ thông minh",
+    "imageUrl": "../../src/assets/image/Best.png",
+    "price": "1.850.000",
+    "state": "new",
+    "order": 225,
+    "type": "Cảm biến",
+    "brand": "Philips"
+  },
+  {
+    "id": 23,
+    "productType": "Điều khiển IR",
+    "productName": "Remote IR thông minh AI",
+    "imageUrl": "../../src/assets/image/product4.png",
+    "price": "2.100.000",
+    "state": "sold",
+    "order": 145,
+    "type": "Bộ điều khiển hồng ngoại",
+    "brand": "Siemens"
+  },
+  {
+    "id": 24,
+    "productType": "Cổng tự động",
+    "productName": "Motor cổng tự động 800W",
+    "imageUrl": "../../src/assets/image/product5.png",
+    "price": "5.600.000",
+    "state": "new",
+    "order": 78,
+    "type": "Cổng tự động",
+    "brand": "Vimar"
+  },
+  {
+    "id": 25,
+    "productType": "Khóa cửa",
+    "productName": "Khóa thông minh Face ID",
+    "imageUrl": "../../src/assets/image/product1.png",
+    "price": "7.200.000",
+    "state": "new",
+    "discount": "25%",
+    "order": 56,
+    "type": "Khóa cửa thông minh",
+    "brand": "Panasonic"
+  },
+  {
+    "id": 26,
+    "productType": "Công tắc",
+    "productName": "Công tắc giọng nói thông minh",
+    "imageUrl": "../../src/assets/image/product2.png",
+    "price": "2.800.000",
+    "state": "new",
+    "order": 167,
+    "type": "Công tắc thông minh",
+    "brand": "Lumi"
+  },
+  {
+    "id": 27,
+    "productType": "Đèn LED",
+    "productName": "Bóng đèn LED thông minh E27",
+    "imageUrl": "../../src/assets/image/product3.png",
+    "price": "580.000",
+    "state": "new",
+    "order": 420,
+    "type": "Đèn LED tự động",
+    "brand": "Acis"
+  },
+  {
+    "id": 28,
+    "productType": "Rèm cửa",
+    "productName": "Motor rèm cửa silent",
+    "imageUrl": "../../src/assets/image/Best.png",
     "price": "4.500.000",
     "state": "new",
-    "order": 65
+    "order": 89,
+    "type": "Rèm cửa thông minh",
+    "brand": "Philips"
+  },
+  {
+    "id": 29,
+    "productType": "Ổ cắm",
+    "productName": "Ổ cắm timer thông minh",
+    "imageUrl": "../../src/assets/image/product4.png",
+    "price": "750.000",
+    "state": "new",
+    "order": 385,
+    "type": "Ổ cắm thông minh",
+    "brand": "Siemens"
+  },
+  {
+    "id": 30,
+    "productType": "Bộ điều khiển",
+    "productName": "Gateway IoT thông minh",
+    "imageUrl": "../../src/assets/image/product5.png",
+    "price": "9.800.000",
+    "state": "new",
+    "order": 35,
+    "type": "Bộ điều khiển trung tâm",
+    "brand": "Vimar"
+  },
+  {
+    "id": 31,
+    "productType": "Cảm biến",
+    "productName": "Cảm biến khói thông minh",
+    "imageUrl": "../../src/assets/image/product1.png",
+    "price": "3.200.000",
+    "state": "new",
+    "order": 125,
+    "type": "Cảm biến",
+    "brand": "Panasonic"
+  },
+  {
+    "id": 32,
+    "productType": "Điều khiển IR",
+    "productName": "Hub IR điều khiển toàn nhà",
+    "imageUrl": "../../src/assets/image/product2.png",
+    "price": "3.850.000",
+    "state": "new",
+    "order": 95,
+    "type": "Bộ điều khiển hồng ngoại",
+    "brand": "Lumi"
+  },
+  {
+    "id": 33,
+    "productType": "Cổng tự động",
+    "productName": "Bộ điều khiển cổng từ xa",
+    "imageUrl": "../../src/assets/image/product3.png",
+    "price": "2.650.000",
+    "state": "new",
+    "order": 135,
+    "type": "Cổng tự động",
+    "brand": "Acis"
+  },
+  {
+    "id": 34,
+    "productType": "Khóa cửa",
+    "productName": "Khóa thông minh Bluetooth 5.0",
+    "imageUrl": "../../src/assets/image/Best.png",
+    "price": "5.400.000",
+    "state": "new",
+    "discount": "10%",
+    "order": 72,
+    "type": "Khóa cửa thông minh",
+    "brand": "Philips"
+  },
+  {
+    "id": 35,
+    "productType": "Công tắc",
+    "productName": "Công tắc cảm ứng 4 phím",
+    "imageUrl": "../../src/assets/image/product4.png",
+    "price": "2.200.000",
+    "state": "new",
+    "order": 198,
+    "type": "Công tắc thông minh",
+    "brand": "Siemens"
+  },
+  {
+    "id": 36,
+    "productType": "Đèn LED",
+    "productName": "Dải LED thông minh 5m",
+    "imageUrl": "../../src/assets/image/product5.png",
+    "price": "1.650.000",
+    "state": "sold",
+    "order": 245,
+    "type": "Đèn LED tự động",
+    "brand": "Vimar"
+  },
+  {
+    "id": 37,
+    "productType": "Rèm cửa",
+    "productName": "Rèm cửa WiFi điều khiển app",
+    "imageUrl": "../../src/assets/image/product1.png",
+    "price": "7.800.000",
+    "state": "new",
+    "order": 48,
+    "type": "Rèm cửa thông minh",
+    "brand": "Panasonic"
+  },
+  {
+    "id": 38,
+    "productType": "Ổ cắm",
+    "productName": "Ổ cắm đa năng thông minh 6 lỗ",
+    "imageUrl": "../../src/assets/image/product2.png",
+    "price": "1.950.000",
+    "state": "new",
+    "order": 285,
+    "type": "Ổ cắm thông minh",
+    "brand": "Lumi"
+  },
+  {
+    "id": 39,
+    "productType": "Cảm biến",
+    "productName": "Cảm biến nhiệt độ độ ẩm",
+    "imageUrl": "../../src/assets/image/product3.png",
+    "price": "1.380.000",
+    "state": "new",
+    "order": 312,
+    "type": "Cảm biến",
+    "brand": "Acis"
+  },
+  {
+    "id": 40,
+    "productType": "Điều khiển IR",
+    "productName": "Remote thông minh học lệnh",
+    "imageUrl": "../../src/assets/image/Best.png",
+    "price": "1.450.000",
+    "state": "new",
+    "order": 265,
+    "type": "Bộ điều khiển hồng ngoại",
+    "brand": "Philips"
   }
 ]

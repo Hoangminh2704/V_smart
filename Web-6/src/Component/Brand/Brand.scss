@@ -32,7 +32,6 @@ body {
   @include xs {
     width: 92.27%;
     grid-template-columns: repeat(2, 1fr);
-    // max-width: 197px * 2 + 20px;
     gap: 20px;
     padding: 20px 0;
   }
