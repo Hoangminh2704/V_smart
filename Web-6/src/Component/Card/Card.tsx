@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Card.scss";
 import { HeartIcon, CartIcon } from "../../assets/svg/svg";
 
@@ -19,9 +20,13 @@ interface ProductData {
 
 const Card: React.FC<CardProps> = ({ id }) => {
   const [product, setProduct] = useState<ProductData | null>(null);
+  const navigate = useNavigate();
+  const handleProductClick = () => {
+    navigate(`/product/${id}`);
+  };
 
   useEffect(() => {
-    fetch("/src/data/products.json")
+    fetch("/src/Data/products.json")
       .then((response) => response.json())
       .then((data: ProductData[]) => {
         const productData = data.find((p) => p.id === id);
@@ -61,9 +66,14 @@ const Card: React.FC<CardProps> = ({ id }) => {
     <div className="product__content-list-item">
       <div className="product__content-list-item-title">
         <span className="product-type">{product.productType}</span>
-        <span className="product-name">{product.productName}</span>
+        <span className="product-name clickable" onClick={handleProductClick}>
+          {product.productName}
+        </span>
       </div>
-      <div className="product__content-list-item-image">
+      <div
+        className="product__content-list-item-image clickable"
+        onClick={handleProductClick}
+      >
         <img src={product.imageUrl} alt={product.productName} />
       </div>
       <div className="product__content-list-item-footer">

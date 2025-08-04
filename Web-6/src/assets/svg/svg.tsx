@@ -412,3 +412,58 @@ export const ArrowLeftPagination: React.FC<IconProps> = ({
     />
   </svg>
 );
+export const Rate: React.FC<IconProps> = ({ className = "" }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="16"
+    height="16"
+    viewBox="0 0 16 16"
+    fill="none"
+    className={className}
+  >
+    <path
+      d="M14.6325 6.37152C14.5453 6.08979 14.3058 5.88969 14.0225 5.86305L10.1741 5.49841L8.65237 1.78171C8.54017 1.50933 8.28463 1.33301 8.00071 1.33301C7.71678 1.33301 7.46124 1.50933 7.34904 1.78235L5.82729 5.49841L1.97833 5.86305C1.69552 5.89033 1.45667 6.08979 1.36887 6.37151C1.28108 6.65324 1.36216 6.96225 1.57609 7.15704L4.485 9.81912L3.62723 13.7619C3.56446 14.0518 3.67229 14.3515 3.90281 14.5254C4.02671 14.6188 4.17167 14.6663 4.31786 14.6663C4.4439 14.6663 4.56892 14.6309 4.68113 14.5608L8.0007 12.4905L11.3191 14.5608C11.5619 14.7133 11.868 14.6994 12.098 14.5254C12.3286 14.351 12.4363 14.0512 12.3736 13.7619L11.5158 9.81912L14.4247 7.15757C14.6386 6.96225 14.7203 6.65377 14.6325 6.37152Z"
+      fill="#FEC600"
+    />
+  </svg>
+);
+export const MinusIcon: React.FC<IconProps> = ({ className = "" }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    className={className}
+  >
+    <path
+      fill-rule="evenodd"
+      clip-rule="evenodd"
+      d="M4 12C4 11.4477 4.44772 11 5 11H19C19.5523 11 20 11.4477 20 12C20 12.5523 19.5523 13 19 13H5C4.44772 13 4 12.5523 4 12Z"
+      fill="#1E2B36"
+    />
+  </svg>
+);
+export const PlusIcon: React.FC<IconProps> = ({ className = "" }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    className={className}
+  >
+    <path
+      fill-rule="evenodd"
+      clip-rule="evenodd"
+      d="M12 4C12.5523 4 13 4.44772 13 5V19C13 19.5523 12.5523 20 12 20C11.4477 20 11 19.5523 11 19V5C11 4.44772 11.4477 4 12 4Z"
+      fill="#1E2B36"
+    />
+    <path
+      fill-rule="evenodd"
+      clip-rule="evenodd"
+      d="M4 12C4 11.4477 4.44772 11 5 11H19C19.5523 11 20 11.4477 20 12C20 12.5523 19.5523 13 19 13H5C4.44772 13 4 12.5523 4 12Z"
+      fill="#1E2B36"
+    />
+  </svg>
+);

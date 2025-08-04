@@ -64,6 +64,15 @@
       letter-spacing: 0%;
       color: rgba(71, 87, 101, 1);
       min-height: 56px;
+      transition: color 0.2s ease;
+
+      &:hover {
+        color: rgba(2, 105, 135, 1);
+      }
+    }
+
+    .clickable {
+      cursor: pointer;
     }
   }
   &-image {
@@ -71,9 +80,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
     box-sizing: border-box;
     margin: 0 auto;
+    transition: transform 0.2s ease;
+
+    &:hover {
+      transform: scale(1.02);
+    }
+
     @include xl {
       aspect-ratio: 270/152;
       max-width: 270px;
