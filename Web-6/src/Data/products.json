@@ -1,6 +1,6 @@
 [
   {
-    "id": 1,
+    "id": 843832765801,
     "productType": "Camera",
     "productName": "Đèn cảm ứng thông minh Đèn cảm ứng thông minh...",
     "imageUrl": "../../src/assets/image/product1.png",
@@ -8,10 +8,18 @@
     "state": "new",
     "order": 150,
     "type": "Đèn LED tự động",
-    "brand": "Panasonic"
+    "brand": "Panasonic",
+    "size": ["XL", "S", "M", "L"],
+    "color": ["Gray", "Silver"],
+    "quantity": 159,
+    "rating": {
+      "rate": 3.9,
+      "count": 178
+    },
+    "oldPrice": "4.900.000"
   },
   {
-    "id": 2,
+    "id": 843832765802,
     "productType": "Camera",
     "productName": "Đèn cảm ứng thông minh Đèn cảm ứng thông minh...",
     "imageUrl": "../../src/assets/image/product2.png",
@@ -19,34 +27,58 @@
     "state": "sold",
     "order": 89,
     "type": "Đèn LED tự động",
-    "brand": "Lumi"
+    "brand": "Lumi",
+    "size": ["XL", "S", "L", "M"],
+    "color": ["White", "Gray", "Black"],
+    "quantity": 0,
+    "rating": {
+      "rate": 4.7,
+      "count": 55
+    },
+    "oldPrice": "4.500.000"
   },
   {
-    "id": 3,
+    "id": 843832765803,
     "productType": "Camera",
-    "productName": "Camera C430 4k Waterproof sản phẩm best",
+    "productName": "Camera C430 4k Waterproof",
     "imageUrl": "../../src/assets/image/Best.png",
-    "price": "9.999.999",
+    "price": "4.500.000",
     "state": "new",
     "discount": "30%",
-    "order": 999999,
-    "type": "Sensor",
-    "brand": "Acis"
+    "order": 245,
+    "type": "Cảm biến",
+    "brand": "Acis",
+    "size": ["M", "S", "XL", "L"],
+    "color": ["Black", "White"],
+    "quantity": 140,
+    "rating": {
+      "rate": 4.0,
+      "count": 173
+    },
+    "oldPrice": "6.428.571"
   },
   {
-    "id": 4,
+    "id": 843832765804,
     "productType": "Camera",
     "productName": "Đèn cảm ứng thông minh",
     "imageUrl": "../../src/assets/image/product3.png",
     "price": "4.500.000",
-    "state": "new",
+    "state": "contact",
     "discount": "30%",
     "order": 120,
     "type": "Đèn LED tự động",
-    "brand": "Philips"
+    "brand": "Philips",
+    "size": ["M", "XL", "L"],
+    "color": ["Silver", "Gray"],
+    "quantity": 82,
+    "rating": {
+      "rate": 4.3,
+      "count": 226
+    },
+    "oldPrice": "6.428.571"
   },
   {
-    "id": 5,
+    "id": 843832765805,
     "productType": "Camera",
     "productName": "Đèn cảm ứng thông minh",
     "imageUrl": "../../src/assets/image/product4.png",
@@ -54,10 +86,18 @@
     "state": "new",
     "order": 95,
     "type": "Đèn LED tự động",
-    "brand": "Siemens"
+    "brand": "Siemens",
+    "size": ["L", "S", "XL", "M"],
+    "color": ["Black", "Gold"],
+    "quantity": 112,
+    "rating": {
+      "rate": 4.7,
+      "count": 165
+    },
+    "oldPrice": "4.500.000"
   },
   {
-    "id": 6,
+    "id": 843832765806,
     "productType": "Camera",
     "productName": "Đèn cảm ứng thông minh Đèn cảm ứng thông minh...",
     "imageUrl": "../../src/assets/image/product5.png",
@@ -65,10 +105,18 @@
     "state": "new",
     "order": 78,
     "type": "Đèn LED tự động",
-    "brand": "Vimar"
+    "brand": "Vimar",
+    "size": ["S", "M", "L", "XL"],
+    "color": ["Black", "Gray"],
+    "quantity": 89,
+    "rating": {
+      "rate": 5.0,
+      "count": 60
+    },
+    "oldPrice": "4.500.000"
   },
   {
-    "id": 7,
+    "id": 843832765807,
     "productType": "Cổng tự động",
     "productName": "Cổng tự động thông minh Pro",
     "imageUrl": "../../src/assets/image/product2.png",
@@ -76,10 +124,18 @@
     "state": "new",
     "order": 65,
     "type": "Cổng tự động",
-    "brand": "Panasonic"
+    "brand": "Panasonic",
+    "size": ["M", "XL", "S"],
+    "color": ["Gray", "Black"],
+    "quantity": 177,
+    "rating": {
+      "rate": 4.7,
+      "count": 170
+    },
+    "oldPrice": "8.900.000"
   },
   {
-    "id": 8,
+    "id": 843832765808,
     "productType": "Khóa cửa",
     "productName": "Khóa cửa thông minh vân tay",
     "imageUrl": "../../src/assets/image/product1.png",
@@ -87,10 +143,18 @@
     "state": "new",
     "order": 65,
     "type": "Khóa cửa thông minh",
-    "brand": "Lumi"
+    "brand": "Lumi",
+    "size": ["S", "XL", "M"],
+    "color": ["Silver", "Gold"],
+    "quantity": 85,
+    "rating": {
+      "rate": 4.1,
+      "count": 119
+    },
+    "oldPrice": "3.200.000"
   },
   {
-    "id": 9,
+    "id": 843832765809,
     "productType": "Công tắc",
     "productName": "Công tắc cảm ứng 3 phím",
     "imageUrl": "../../src/assets/image/product3.png",
@@ -98,10 +162,18 @@
     "state": "new",
     "order": 65,
     "type": "Công tắc thông minh",
-    "brand": "Acis"
+    "brand": "Acis",
+    "size": ["L", "S", "M"],
+    "color": ["Gold", "Black", "Gray"],
+    "quantity": 67,
+    "rating": {
+      "rate": 4.5,
+      "count": 460
+    },
+    "oldPrice": "1.800.000"
   },
   {
-    "id": 10,
+    "id": 8438327658010,
     "productType": "Rèm cửa",
     "productName": "Rèm cửa tự động thông minh",
     "imageUrl": "../../src/assets/image/Best.png",
@@ -110,10 +182,18 @@
     "discount": "15%",
     "order": 180,
     "type": "Rèm cửa thông minh",
-    "brand": "Philips"
+    "brand": "Philips",
+    "size": ["M", "L", "XL", "S"],
+    "color": ["Gray", "White"],
+    "quantity": 42,
+    "rating": {
+      "rate": 4.5,
+      "count": 470
+    },
+    "oldPrice": "7.647.058"
   },
   {
-    "id": 11,
+    "id": 8438327658011,
     "productType": "Ổ cắm",
     "productName": "Ổ cắm WiFi thông minh",
     "imageUrl": "../../src/assets/image/product4.png",
@@ -121,10 +201,18 @@
     "state": "new",
     "order": 320,
     "type": "Ổ cắm thông minh",
-    "brand": "Siemens"
+    "brand": "Siemens",
+    "size": ["S", "XL", "L", "M"],
+    "color": ["White", "Gold"],
+    "quantity": 56,
+    "rating": {
+      "rate": 3.9,
+      "count": 196
+    },
+    "oldPrice": "890.000"
   },
   {
-    "id": 12,
+    "id": 8438327658012,
     "productType": "Bộ điều khiển",
     "productName": "Bộ điều khiển trung tâm Galaxy",
     "imageUrl": "../../src/assets/image/product5.png",
@@ -132,10 +220,18 @@
     "state": "new",
     "order": 45,
     "type": "Bộ điều khiển trung tâm",
-    "brand": "Vimar"
+    "brand": "Vimar",
+    "size": ["M", "XL", "S"],
+    "color": ["Silver", "Gold"],
+    "quantity": 180,
+    "rating": {
+      "rate": 4.2,
+      "count": 499
+    },
+    "oldPrice": "12.500.000"
   },
   {
-    "id": 13,
+    "id": 8438327658013,
     "productType": "Cảm biến",
     "productName": "Cảm biến chuyển động PIR",
     "imageUrl": "../../src/assets/image/product1.png",
@@ -143,10 +239,18 @@
     "state": "new",
     "order": 210,
     "type": "Cảm biến",
-    "brand": "Panasonic"
+    "brand": "Panasonic",
+    "size": ["M", "XL", "S", "L"],
+    "color": ["Silver", "Gray"],
+    "quantity": 69,
+    "rating": {
+      "rate": 4.8,
+      "count": 58
+    },
+    "oldPrice": "2.100.000"
   },
   {
-    "id": 14,
+    "id": 8438327658014,
     "productType": "Điều khiển IR",
     "productName": "Bộ điều khiển hồng ngoại Universal",
     "imageUrl": "../../src/assets/image/product2.png",
@@ -154,10 +258,18 @@
     "state": "new",
     "order": 155,
     "type": "Bộ điều khiển hồng ngoại",
-    "brand": "Lumi"
+    "brand": "Lumi",
+    "size": ["XL", "M", "S"],
+    "color": ["Gold", "White", "Black"],
+    "quantity": 13,
+    "rating": {
+      "rate": 4.3,
+      "count": 497
+    },
+    "oldPrice": "1.650.000"
   },
   {
-    "id": 15,
+    "id": 8438327658015,
     "productType": "Cổng tự động",
     "productName": "Cổng tự động 2 cánh cao cấp",
     "imageUrl": "../../src/assets/image/product3.png",
@@ -165,10 +277,18 @@
     "state": "contact",
     "order": 25,
     "type": "Cổng tự động",
-    "brand": "Acis"
+    "brand": "Acis",
+    "size": ["L", "S", "M", "XL"],
+    "color": ["Silver", "White", "Gold"],
+    "quantity": 95,
+    "rating": {
+      "rate": 4.1,
+      "count": 361
+    },
+    "oldPrice": "15.200.000"
   },
   {
-    "id": 16,
+    "id": 8438327658016,
     "productType": "Khóa cửa",
     "productName": "Khóa cửa mật khẩu + thẻ từ",
     "imageUrl": "../../src/assets/image/Best.png",
@@ -177,10 +297,18 @@
     "discount": "20%",
     "order": 98,
     "type": "Khóa cửa thông minh",
-    "brand": "Philips"
+    "brand": "Philips",
+    "size": ["S", "L", "XL", "M"],
+    "color": ["White", "Silver", "Black"],
+    "quantity": 78,
+    "rating": {
+      "rate": 3.6,
+      "count": 150
+    },
+    "oldPrice": "6.000.000"
   },
   {
-    "id": 17,
+    "id": 8438327658017,
     "productType": "Công tắc",
     "productName": "Công tắc cảm ứng 2 phím",
     "imageUrl": "../../src/assets/image/product4.png",
@@ -188,10 +316,18 @@
     "state": "new",
     "order": 275,
     "type": "Công tắc thông minh",
-    "brand": "Siemens"
+    "brand": "Siemens",
+    "size": ["M", "XL", "S"],
+    "color": ["Silver", "Gold", "Black"],
+    "quantity": 100,
+    "rating": {
+      "rate": 3.8,
+      "count": 142
+    },
+    "oldPrice": "1.450.000"
   },
   {
-    "id": 18,
+    "id": 8438327658018,
     "productType": "Đèn LED",
     "productName": "Đèn LED thông minh RGB",
     "imageUrl": "../../src/assets/image/product5.png",
@@ -199,10 +335,18 @@
     "state": "new",
     "order": 189,
     "type": "Đèn LED tự động",
-    "brand": "Vimar"
+    "brand": "Vimar",
+    "size": ["M", "XL", "S", "L"],
+    "color": ["Black", "Gray", "White"],
+    "quantity": 33,
+    "rating": {
+      "rate": 3.8,
+      "count": 290
+    },
+    "oldPrice": "2.300.000"
   },
   {
-    "id": 19,
+    "id": 8438327658019,
     "productType": "Rèm cửa",
     "productName": "Rèm cửa điện thông minh Premium",
     "imageUrl": "../../src/assets/image/product1.png",
@@ -210,10 +354,18 @@
     "state": "new",
     "order": 67,
     "type": "Rèm cửa thông minh",
-    "brand": "Panasonic"
+    "brand": "Panasonic",
+    "size": ["XL", "M", "L"],
+    "color": ["Black", "White", "Gray"],
+    "quantity": 184,
+    "rating": {
+      "rate": 4.1,
+      "count": 496
+    },
+    "oldPrice": "8.750.000"
   },
   {
-    "id": 20,
+    "id": 8438327658020,
     "productType": "Ổ cắm",
     "productName": "Ổ cắm thông minh USB-C",
     "imageUrl": "../../src/assets/image/product2.png",
@@ -221,10 +373,18 @@
     "state": "new",
     "order": 340,
     "type": "Ổ cắm thông minh",
-    "brand": "Lumi"
+    "brand": "Lumi",
+    "size": ["XL", "L", "S"],
+    "color": ["Black", "Gray"],
+    "quantity": 200,
+    "rating": {
+      "rate": 4.6,
+      "count": 371
+    },
+    "oldPrice": "1.200.000"
   },
   {
-    "id": 21,
+    "id": 8438327658021,
     "productType": "Bộ điều khiển",
     "productName": "Hub điều khiển thông minh Pro Max",
     "imageUrl": "../../src/assets/image/product3.png",
@@ -232,10 +392,18 @@
     "state": "new",
     "order": 15,
     "type": "Bộ điều khiển trung tâm",
-    "brand": "Acis"
+    "brand": "Acis",
+    "size": ["L", "XL", "S", "M"],
+    "color": ["Gold", "Black"],
+    "quantity": 111,
+    "rating": {
+      "rate": 3.7,
+      "count": 211
+    },
+    "oldPrice": "18.900.000"
   },
   {
-    "id": 22,
+    "id": 8438327658022,
     "productType": "Cảm biến",
     "productName": "Cảm biến cửa sổ thông minh",
     "imageUrl": "../../src/assets/image/Best.png",
@@ -243,10 +411,18 @@
     "state": "new",
     "order": 225,
     "type": "Cảm biến",
-    "brand": "Philips"
+    "brand": "Philips",
+    "size": ["S", "XL", "L"],
+    "color": ["Black", "White"],
+    "quantity": 159,
+    "rating": {
+      "rate": 4.1,
+      "count": 316
+    },
+    "oldPrice": "1.850.000"
   },
   {
-    "id": 23,
+    "id": 8438327658023,
     "productType": "Điều khiển IR",
     "productName": "Remote IR thông minh AI",
     "imageUrl": "../../src/assets/image/product4.png",
@@ -254,10 +430,18 @@
     "state": "sold",
     "order": 145,
     "type": "Bộ điều khiển hồng ngoại",
-    "brand": "Siemens"
+    "brand": "Siemens",
+    "size": ["S", "L", "XL", "M"],
+    "color": ["Gray", "Silver"],
+    "quantity": 172,
+    "rating": {
+      "rate": 4.1,
+      "count": 326
+    },
+    "oldPrice": "2.100.000"
   },
   {
-    "id": 24,
+    "id": 8438327658024,
     "productType": "Cổng tự động",
     "productName": "Motor cổng tự động 800W",
     "imageUrl": "../../src/assets/image/product5.png",
@@ -265,10 +449,18 @@
     "state": "new",
     "order": 78,
     "type": "Cổng tự động",
-    "brand": "Vimar"
+    "brand": "Vimar",
+    "size": ["S", "M", "L"],
+    "color": ["White", "Gray", "Black"],
+    "quantity": 10,
+    "rating": {
+      "rate": 4.8,
+      "count": 220
+    },
+    "oldPrice": "5.600.000"
   },
   {
-    "id": 25,
+    "id": 8438327658025,
     "productType": "Khóa cửa",
     "productName": "Khóa thông minh Face ID",
     "imageUrl": "../../src/assets/image/product1.png",
@@ -277,10 +469,18 @@
     "discount": "25%",
     "order": 56,
     "type": "Khóa cửa thông minh",
-    "brand": "Panasonic"
+    "brand": "Panasonic",
+    "size": ["L", "XL", "M"],
+    "color": ["Gray", "Black", "Gold"],
+    "quantity": 109,
+    "rating": {
+      "rate": 3.8,
+      "count": 473
+    },
+    "oldPrice": "9.600.000"
   },
   {
-    "id": 26,
+    "id": 8438327658026,
     "productType": "Công tắc",
     "productName": "Công tắc giọng nói thông minh",
     "imageUrl": "../../src/assets/image/product2.png",
@@ -288,10 +488,18 @@
     "state": "new",
     "order": 167,
     "type": "Công tắc thông minh",
-    "brand": "Lumi"
+    "brand": "Lumi",
+    "size": ["L", "XL", "M"],
+    "color": ["Gray", "Black"],
+    "quantity": 83,
+    "rating": {
+      "rate": 3.9,
+      "count": 109
+    },
+    "oldPrice": "2.800.000"
   },
   {
-    "id": 27,
+    "id": 8438327658027,
     "productType": "Đèn LED",
     "productName": "Bóng đèn LED thông minh E27",
     "imageUrl": "../../src/assets/image/product3.png",
@@ -299,10 +507,18 @@
     "state": "new",
     "order": 420,
     "type": "Đèn LED tự động",
-    "brand": "Acis"
+    "brand": "Acis",
+    "size": ["XL", "S", "L"],
+    "color": ["Gray", "Gold"],
+    "quantity": 173,
+    "rating": {
+      "rate": 3.9,
+      "count": 349
+    },
+    "oldPrice": "580.000"
   },
   {
-    "id": 28,
+    "id": 8438327658028,
     "productType": "Rèm cửa",
     "productName": "Motor rèm cửa silent",
     "imageUrl": "../../src/assets/image/Best.png",
@@ -310,10 +526,18 @@
     "state": "new",
     "order": 89,
     "type": "Rèm cửa thông minh",
-    "brand": "Philips"
+    "brand": "Philips",
+    "size": ["S", "M", "L"],
+    "color": ["White", "Black", "Silver"],
+    "quantity": 27,
+    "rating": {
+      "rate": 4.6,
+      "count": 406
+    },
+    "oldPrice": "4.500.000"
   },
   {
-    "id": 29,
+    "id": 8438327658029,
     "productType": "Ổ cắm",
     "productName": "Ổ cắm timer thông minh",
     "imageUrl": "../../src/assets/image/product4.png",
@@ -321,10 +545,18 @@
     "state": "new",
     "order": 385,
     "type": "Ổ cắm thông minh",
-    "brand": "Siemens"
+    "brand": "Siemens",
+    "size": ["S", "M", "L", "XL"],
+    "color": ["Silver", "Gold", "Gray"],
+    "quantity": 112,
+    "rating": {
+      "rate": 3.6,
+      "count": 435
+    },
+    "oldPrice": "750.000"
   },
   {
-    "id": 30,
+    "id": 8438327658030,
     "productType": "Bộ điều khiển",
     "productName": "Gateway IoT thông minh",
     "imageUrl": "../../src/assets/image/product5.png",
@@ -332,10 +564,18 @@
     "state": "new",
     "order": 35,
     "type": "Bộ điều khiển trung tâm",
-    "brand": "Vimar"
+    "brand": "Vimar",
+    "size": ["S", "M", "XL"],
+    "color": ["Gold", "Silver", "Black"],
+    "quantity": 76,
+    "rating": {
+      "rate": 3.9,
+      "count": 108
+    },
+    "oldPrice": "9.800.000"
   },
   {
-    "id": 31,
+    "id": 8438327658031,
     "productType": "Cảm biến",
     "productName": "Cảm biến khói thông minh",
     "imageUrl": "../../src/assets/image/product1.png",
@@ -343,10 +583,18 @@
     "state": "new",
     "order": 125,
     "type": "Cảm biến",
-    "brand": "Panasonic"
+    "brand": "Panasonic",
+    "size": ["XL", "S", "M"],
+    "color": ["Black", "Gold", "Silver"],
+    "quantity": 85,
+    "rating": {
+      "rate": 4.8,
+      "count": 202
+    },
+    "oldPrice": "3.200.000"
   },
   {
-    "id": 32,
+    "id": 8438327658032,
     "productType": "Điều khiển IR",
     "productName": "Hub IR điều khiển toàn nhà",
     "imageUrl": "../../src/assets/image/product2.png",
@@ -354,10 +602,18 @@
     "state": "new",
     "order": 95,
     "type": "Bộ điều khiển hồng ngoại",
-    "brand": "Lumi"
+    "brand": "Lumi",
+    "size": ["M", "S", "L", "XL"],
+    "color": ["Black", "Gray", "White"],
+    "quantity": 166,
+    "rating": {
+      "rate": 3.9,
+      "count": 59
+    },
+    "oldPrice": "3.850.000"
   },
   {
-    "id": 33,
+    "id": 8438327658033,
     "productType": "Cổng tự động",
     "productName": "Bộ điều khiển cổng từ xa",
     "imageUrl": "../../src/assets/image/product3.png",
@@ -365,10 +621,18 @@
     "state": "new",
     "order": 135,
     "type": "Cổng tự động",
-    "brand": "Acis"
+    "brand": "Acis",
+    "size": ["XL", "L", "M", "S"],
+    "color": ["Black", "White"],
+    "quantity": 119,
+    "rating": {
+      "rate": 4.7,
+      "count": 132
+    },
+    "oldPrice": "2.650.000"
   },
   {
-    "id": 34,
+    "id": 8438327658034,
     "productType": "Khóa cửa",
     "productName": "Khóa thông minh Bluetooth 5.0",
     "imageUrl": "../../src/assets/image/Best.png",
@@ -377,10 +641,18 @@
     "discount": "10%",
     "order": 72,
     "type": "Khóa cửa thông minh",
-    "brand": "Philips"
+    "brand": "Philips",
+    "size": ["L", "S", "M"],
+    "color": ["White", "Black"],
+    "quantity": 23,
+    "rating": {
+      "rate": 3.8,
+      "count": 376
+    },
+    "oldPrice": "6.000.000"
   },
   {
-    "id": 35,
+    "id": 8438327658035,
     "productType": "Công tắc",
     "productName": "Công tắc cảm ứng 4 phím",
     "imageUrl": "../../src/assets/image/product4.png",
@@ -388,10 +660,18 @@
     "state": "new",
     "order": 198,
     "type": "Công tắc thông minh",
-    "brand": "Siemens"
+    "brand": "Siemens",
+    "size": ["L", "S", "XL", "M"],
+    "color": ["Silver", "Gray", "Gold"],
+    "quantity": 125,
+    "rating": {
+      "rate": 4.9,
+      "count": 487
+    },
+    "oldPrice": "2.200.000"
   },
   {
-    "id": 36,
+    "id": 8438327658036,
     "productType": "Đèn LED",
     "productName": "Dải LED thông minh 5m",
     "imageUrl": "../../src/assets/image/product5.png",
@@ -399,10 +679,18 @@
     "state": "sold",
     "order": 245,
     "type": "Đèn LED tự động",
-    "brand": "Vimar"
+    "brand": "Vimar",
+    "size": ["S", "XL", "M", "L"],
+    "color": ["Silver", "Black", "Gray"],
+    "quantity": 35,
+    "rating": {
+      "rate": 4.0,
+      "count": 189
+    },
+    "oldPrice": "1.650.000"
   },
   {
-    "id": 37,
+    "id": 8438327658037,
     "productType": "Rèm cửa",
     "productName": "Rèm cửa WiFi điều khiển app",
     "imageUrl": "../../src/assets/image/product1.png",
@@ -410,10 +698,18 @@
     "state": "new",
     "order": 48,
     "type": "Rèm cửa thông minh",
-    "brand": "Panasonic"
+    "brand": "Panasonic",
+    "size": ["L", "S", "XL", "M"],
+    "color": ["Black", "Gold", "Gray"],
+    "quantity": 94,
+    "rating": {
+      "rate": 4.9,
+      "count": 473
+    },
+    "oldPrice": "7.800.000"
   },
   {
-    "id": 38,
+    "id": 8438327658038,
     "productType": "Ổ cắm",
     "productName": "Ổ cắm đa năng thông minh 6 lỗ",
     "imageUrl": "../../src/assets/image/product2.png",
@@ -421,10 +717,18 @@
     "state": "new",
     "order": 285,
     "type": "Ổ cắm thông minh",
-    "brand": "Lumi"
+    "brand": "Lumi",
+    "size": ["L", "XL", "M", "S"],
+    "color": ["Black", "Gold", "Gray"],
+    "quantity": 23,
+    "rating": {
+      "rate": 4.1,
+      "count": 354
+    },
+    "oldPrice": "1.950.000"
   },
   {
-    "id": 39,
+    "id": 8438327658039,
     "productType": "Cảm biến",
     "productName": "Cảm biến nhiệt độ độ ẩm",
     "imageUrl": "../../src/assets/image/product3.png",
@@ -432,10 +736,18 @@
     "state": "new",
     "order": 312,
     "type": "Cảm biến",
-    "brand": "Acis"
+    "brand": "Acis",
+    "size": ["S", "XL", "L"],
+    "color": ["Gray", "Silver"],
+    "quantity": 32,
+    "rating": {
+      "rate": 4.4,
+      "count": 486
+    },
+    "oldPrice": "1.380.000"
   },
   {
-    "id": 40,
+    "id": 8438327658040,
     "productType": "Điều khiển IR",
     "productName": "Remote thông minh học lệnh",
     "imageUrl": "../../src/assets/image/Best.png",
@@ -443,6 +755,14 @@
     "state": "new",
     "order": 265,
     "type": "Bộ điều khiển hồng ngoại",
-    "brand": "Philips"
+    "brand": "Philips",
+    "size": ["M", "L", "XL"],
+    "color": ["Black", "Gray", "White"],
+    "quantity": 156,
+    "rating": {
+      "rate": 3.6,
+      "count": 296
+    },
+    "oldPrice": "1.450.000"
   }
 ]
