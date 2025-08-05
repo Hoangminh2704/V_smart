@@ -1,8 +1,9 @@
-export interface ProductData {
+export interface ProductDataType {
   id: number;
   productType: string;
   productName: string;
   imageUrl: string;
+  oldPrice: string;
   price: string;
   state: string;
   discount?: string;
@@ -10,4 +11,11 @@ export interface ProductData {
   type: string;
   description?: string;
   brand: string;
+  size: string[]; // từ 3 đến 4 size
+  color: string[]; // 2 đến 3 color cơ bản
+  quantity: number;
+  rating: {
+    rate: number;
+    count: number;
+  };
 }
