@@ -133,6 +133,12 @@ body {
           line-height: 44px;
           color: rgba(71, 87, 101, 1);
         }
+        &-contact {
+          font-weight: 500;
+          font-size: 32px;
+          line-height: 44px;
+          color: rgba(71, 87, 101, 1);
+        }
       }
       &-description {
         display: flex;
@@ -250,14 +256,18 @@ body {
             height: 38px;
             box-sizing: border-box;
             border-radius: 8px;
-            &:nth-child(1) {
-              background-color: rgba(222, 225, 228, 1);
-            }
-            &:nth-child(2) {
-              background-color: rgba(30, 43, 54, 1);
-            }
-            &:nth-child(3) {
-              background-color: rgba(255, 9, 9, 1);
+            border: 1px solid rgba(222, 225, 228, 1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: rgba(71, 87, 101, 1);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            padding: 0 12px;
+
+            &.active {
+              scale: 1.1;
             }
           }
         }
@@ -280,15 +290,28 @@ body {
             font-weight: 400;
             font-size: 16px;
             line-height: 24px;
-            padding: 4px 8px;
+            padding: 4px 12px;
             color: rgba(71, 87, 101, 1);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+
+            &:hover {
+              scale: 1.1;
+            }
+
             &.active {
-              // border: 1px solid rgba(2, 105, 135, 0.47);
-              border-radius: 4px;
-              box-shadow: 0 0 0 3px rgba(2, 105, 135, 0.47);
+              background-color: rgba(2, 105, 135, 1);
+              color: white;
             }
           }
         }
+      }
+      &-sold {
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 28px;
+        color: rgb(244, 46, 46);
       }
     }
     .productDetail__button {
@@ -316,6 +339,9 @@ body {
         display: flex;
         align-items: center;
         justify-content: center;
+        &.disabled {
+          display: none;
+        }
       }
       &-buyNow {
         background-color: rgba(2, 105, 135, 1);
@@ -331,6 +357,9 @@ body {
         display: flex;
         align-items: center;
         justify-content: center;
+        &.disabled {
+          display: none;
+        }
       }
     }
   }

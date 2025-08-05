@@ -113,17 +113,39 @@ export const DownIcon: React.FC<IconProps> = ({
 export const RightIcon: React.FC<IconProps> = ({
   className = "",
   fill = "currentColor",
+  width = 30,
+  height = 30,
 }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="16"
-    height="17"
+    width={width}
+    height={height}
     viewBox="0 0 16 17"
     fill="none"
     className={className}
   >
     <path
       d="M10.6663 8.16526L6.16176 12.8291L5.33301 11.9705L9.00884 8.16526L5.33301 4.35575L6.16176 3.49577L10.6663 8.16526Z"
+      fill={fill}
+    />
+  </svg>
+);
+export const LeftIcon: React.FC<IconProps> = ({
+  className = "",
+  fill = "currentColor",
+  width = 30,
+  height = 30,
+}) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={width}
+    height={height}
+    viewBox="0 0 30 30"
+    fill="none"
+    className={className}
+  >
+    <path
+      d="M10 14.9947L18.4461 6.25L20 7.85982L13.1078 14.9947L20 22.1375L18.4461 23.75L10 14.9947Z"
       fill={fill}
     />
   </svg>

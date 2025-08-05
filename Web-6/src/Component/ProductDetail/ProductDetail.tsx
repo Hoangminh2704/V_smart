@@ -1,29 +1,79 @@
-// import React from "react";
+import { useState } from "react";
 import "./ProductDetail.scss";
 import { Rate, MinusIcon, PlusIcon } from "../../assets/svg/svg";
+// import type { ProductDataType } from "../../data/productsDataType.ts";
+export interface ProductDataType {
+  id: number;
+  productType: string;
+  productName: string;
+  imageUrl: string;
+  oldPrice: string;
+  price: string;
+  state: string;
+  discount?: string;
+  order: number;
+  type: string;
+  description?: string;
+  brand: string;
+  size: string[]; // từ 3 đến 4 size
+  color: string[]; // 2 đến 3 color cơ bản
+  quantity: number;
+  rating: {
+    rate: number;
+    count: number;
+  };
+}
 
-function ProductDetail() {
+interface ProductDetailProps {
+  product: ProductDataType | null;
+}
+
+function ProductDetail({ product }: ProductDetailProps) {
+  const [selectedSize, setSelectedSize] = useState<string>("");
+  const [selectedColor, setSelectedColor] = useState<string>("");
+  const [quantity, setQuantity] = useState<number>(1);
+  if (!product) {
+    return null;
+  }
+
+  const handleQuantityChange = (type: "increase" | "decrease") => {
+    if (type === "increase" && quantity < product.quantity) {
+      setQuantity(quantity + 1);
+    } else if (type === "decrease" && quantity > 1) {
+      setQuantity(quantity - 1);
+    }
+  };
+  const handleQuantityCount = () => {
+    if (product.state === "sold") {
+      return 0;
+    }
+    if (product.state === "contact") {
+      return 0;
+    }
+    return quantity;
+  };
+
   return (
     <div className="productDetail">
       <div className="productDetail__img">
         <div className="productDetail__img-overall">
-          <img src="../../src/assets/image/IMG.png" alt="" />
+          <img src={product.imageUrl} alt={product.productName} />
         </div>
         <div className="productDetail__img-thumbnail">
           <div className="productDetail__img-thumbnail-item">
-            <img src="../../src/assets/image/IMG.png" alt="" />
+            <img src={product.imageUrl} alt={product.productName} />
           </div>
           <div className="productDetail__img-thumbnail-item">
-            <img src="../../src/assets/image/IMG.png" alt="" />
+            <img src={product.imageUrl} alt={product.productName} />
           </div>
           <div className="productDetail__img-thumbnail-item">
-            <img src="../../src/assets/image/IMG.png" alt="" />
+            <img src={product.imageUrl} alt={product.productName} />
           </div>
           <div className="productDetail__img-thumbnail-item">
-            <img src="../../src/assets/image/IMG.png" alt="" />
+            <img src={product.imageUrl} alt={product.productName} />
           </div>
           <div className="productDetail__img-thumbnail-item">
-            <img src="../../src/assets/image/IMG.png" alt="" />
+            <img src={product.imageUrl} alt={product.productName} />
           </div>
         </div>
       </div>
@@ -31,13 +81,15 @@ function ProductDetail() {
         <div className="productDetail__info">
           <div className="productDetail__info-overall">
             <div className="productDetail__info-overall-name">
-              Khóa thông minh Luvit{" "}
+              {product.productName}
             </div>
             <div className="productDetail__info-overall-id">
               <div className="productDetail__info-overall-id-text">
                 Mã sản phẩm:
               </div>
-              <div className="productDetail__info-overall-id-value">123456</div>
+              <div className="productDetail__info-overall-id-value">
+                {product.id}
+              </div>
             </div>
             <div className="productDetail__info-overall-star">
               <Rate className="productDetail__info-overall-star-icon" />
@@ -46,12 +98,19 @@ function ProductDetail() {
               <Rate className="productDetail__info-overall-star-icon" />
               <Rate className="productDetail__info-overall-star-icon" />
             </div>
-            <div className="productDetail__info-overall-oldPrice">
-              9.250.000đ
-            </div>
-            <div className="productDetail__info-overall-currentPrice">
-              8.250.000đ
-            </div>
+            {product.oldPrice && product.state !== "contact" && (
+              <div className="productDetail__info-overall-oldPrice">
+                {product.oldPrice}đ
+              </div>
+            )}
+            {product.price && product.state !== "contact" && (
+              <div className="productDetail__info-overall-currentPrice">
+                {product.price}đ
+              </div>
+            )}
+            {product.state === "contact" && (
+              <div className="productDetail__info-overall-contact">Liên hệ</div>
+            )}
           </div>
           <div className="productDetail__info-description">
             <div className="productDetail__info-description-title">
@@ -84,45 +143,99 @@ function ProductDetail() {
           </div>
           <div className="productDetail__info-counting">
             <div className="productDetail__info-counting-input">
-              <div className="productDetail__info-counting-input-minus">
+              <div
+                className="productDetail__info-counting-input-minus"
+                onClick={() => handleQuantityChange("decrease")}
+              >
                 <MinusIcon className="productDetail__info-counting-input-icon" />
               </div>
               <div className="productDetail__info-counting-input-content">
-                0
+                {handleQuantityCount()}
               </div>
-              <div className="productDetail__info-counting-input-plus">
+              <div
+                className="productDetail__info-counting-input-plus"
+                onClick={() => handleQuantityChange("increase")}
+              >
                 <PlusIcon className="productDetail__info-counting-input-icon" />
               </div>
             </div>
             <div className="productDetail__info-counting-quantity">
-              Còn 100 sản phẩm
+              {product.state !== "contact"
+                ? `Còn ${product.quantity} sản phẩm`
+                : ""}
             </div>
           </div>
-          <div className="productDetail__info-color">
-            <div className="productDetail__info-color-text">Màu sắc</div>
-            <div className="productDetail__info-color-select">
-              <div className="productDetail__info-color-select-item"></div>
-              <div className="productDetail__info-color-select-item"></div>
-              <div className="productDetail__info-color-select-item"></div>
-            </div>
-          </div>
-          <div className="productDetail__info-size">
-            <div className="productDetail__info-size-text">Kích thước</div>
-            <div className="productDetail__info-size-select">
-              <div className="productDetail__info-size-select-item active">
-                S
+          {(product.quantity === 0 || product.state === "sold") && (
+            <div className="productDetail__info-sold">Hết hàng</div>
+          )}
+
+          {product.color &&
+            product.color.length > 0 &&
+            product.quantity > 0 &&
+            product.state !== "contact" && (
+              <div className="productDetail__info-color">
+                <div className="productDetail__info-color-text">Màu sắc</div>
+                <div className="productDetail__info-color-select">
+                  {product.color.map((color, index) => (
+                    <div
+                      key={index}
+                      className={`productDetail__info-color-select-item ${
+                        selectedColor === color ? "active" : ""
+                      }`}
+                      onClick={() => setSelectedColor(color)}
+                      title={color}
+                      // backgroundColor={color}
+                      style={{ backgroundColor: color }}
+                    ></div>
+                  ))}
+                </div>
               </div>
-              <div className="productDetail__info-size-select-item">M</div>
-              <div className="productDetail__info-size-select-item">L</div>
-              <div className="productDetail__info-size-select-item">XL</div>
-            </div>
-          </div>
+            )}
+          {product.size &&
+            product.size.length > 0 &&
+            product.quantity > 0 &&
+            product.state !== "contact" && (
+              <div className="productDetail__info-size">
+                <div className="productDetail__info-size-text">Kích thước</div>
+                <div className="productDetail__info-size-select">
+                  {product.size.map((size, index) => (
+                    <div
+                      key={index}
+                      className={`productDetail__info-size-select-item ${
+                        selectedSize === size ? "active" : ""
+                      }`}
+                      onClick={() => setSelectedSize(size)}
+                    >
+                      {size}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
         </div>
         <div className="productDetail__button">
-          <div className="productDetail__button-addToCart">
+          <div
+            className={`productDetail__button-addToCart ${
+              product.quantity === 0 ||
+              product.state === "sold" ||
+              product.state === "contact"
+                ? "disabled"
+                : ""
+            }`}
+          >
             Thêm vào giỏ hàng
           </div>
-          <div className="productDetail__button-buyNow">Mua ngay</div>
+          <div
+            className={`productDetail__button-buyNow ${
+              product.quantity === 0 ||
+              product.state === "sold" ||
+              product.state === "contact"
+                ? "disabled"
+                : ""
+            }`}
+          >
+            Mua ngay
+          </div>
         </div>
       </div>
     </div>
