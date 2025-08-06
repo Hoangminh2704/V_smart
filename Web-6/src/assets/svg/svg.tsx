@@ -449,11 +449,16 @@ export const Rate: React.FC<IconProps> = ({ className = "" }) => (
     />
   </svg>
 );
-export const MinusIcon: React.FC<IconProps> = ({ className = "" }) => (
+export const MinusIcon: React.FC<IconProps> = ({
+  className = "",
+  width = "24",
+  height = "24",
+  fill = "#1E2B36",
+}) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="24"
-    height="24"
+    width={width}
+    height={height}
     viewBox="0 0 24 24"
     fill="none"
     className={className}
@@ -462,15 +467,20 @@ export const MinusIcon: React.FC<IconProps> = ({ className = "" }) => (
       fillRule="evenodd"
       clipRule="evenodd"
       d="M4 12C4 11.4477 4.44772 11 5 11H19C19.5523 11 20 11.4477 20 12C20 12.5523 19.5523 13 19 13H5C4.44772 13 4 12.5523 4 12Z"
-      fill="#1E2B36"
+      fill={fill}
     />
   </svg>
 );
-export const PlusIcon: React.FC<IconProps> = ({ className = "" }) => (
+export const PlusIcon: React.FC<IconProps> = ({
+  className = "",
+  width = "24",
+  height = "24",
+  fill = "#1E2B36",
+}) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="24"
-    height="24"
+    width={width}
+    height={height}
     viewBox="0 0 24 24"
     fill="none"
     className={className}
@@ -479,13 +489,48 @@ export const PlusIcon: React.FC<IconProps> = ({ className = "" }) => (
       fillRule="evenodd"
       clipRule="evenodd"
       d="M12 4C12.5523 4 13 4.44772 13 5V19C13 19.5523 12.5523 20 12 20C11.4477 20 11 19.5523 11 19V5C11 4.44772 11.4477 4 12 4Z"
-      fill="#1E2B36"
+      fill={fill}
     />
     <path
       fillRule="evenodd"
       clipRule="evenodd"
       d="M4 12C4 11.4477 4.44772 11 5 11H19C19.5523 11 20 11.4477 20 12C20 12.5523 19.5523 13 19 13H5C4.44772 13 4 12.5523 4 12Z"
-      fill="#1E2B36"
+      fill={fill}
+    />
+  </svg>
+);
+export const TrashIcon: React.FC<IconProps> = ({ className = "" }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="25"
+    height="25"
+    viewBox="0 0 25 25"
+    fill="none"
+    className={className}
+  >
+    <path
+      fill-rule="evenodd"
+      clip-rule="evenodd"
+      d="M4.95034 9.65293C3.73461 8.03196 4.89121 5.71875 6.91743 5.71875H18.082C20.1082 5.71875 21.2648 8.03196 20.0491 9.65293C19.5302 10.3448 19.2497 11.1862 19.2497 12.051V18.4688C19.2497 21.0921 17.1231 23.2188 14.4997 23.2188H10.4997C7.87635 23.2188 5.74971 21.0921 5.74971 18.4688V12.051C5.74971 11.1862 5.46922 10.3448 4.95034 9.65293ZM6.91743 7.21875C6.12728 7.21875 5.67625 8.12081 6.15034 8.75293C6.86395 9.70441 7.24971 10.8617 7.24971 12.051V18.4688C7.24971 20.2637 8.70478 21.7188 10.4997 21.7188H14.4997C16.2946 21.7188 17.7497 20.2637 17.7497 18.4688V12.051C17.7497 10.8617 18.1355 9.70441 18.8491 8.75293C19.3232 8.12081 18.8721 7.21875 18.082 7.21875H6.91743Z"
+      fill="#475765"
+    />
+    <path
+      fill-rule="evenodd"
+      clip-rule="evenodd"
+      d="M14.5 10.7187C14.9142 10.7187 15.25 11.0545 15.25 11.4688L15.25 17.4688C15.25 17.883 14.9142 18.2187 14.5 18.2187C14.0858 18.2187 13.75 17.883 13.75 17.4687L13.75 11.4687C13.75 11.0545 14.0858 10.7187 14.5 10.7187Z"
+      fill="#475765"
+    />
+    <path
+      fill-rule="evenodd"
+      clip-rule="evenodd"
+      d="M10.5 10.7187C10.9142 10.7187 11.25 11.0545 11.25 11.4688L11.25 17.4688C11.25 17.883 10.9142 18.2187 10.5 18.2187C10.0858 18.2187 9.75 17.883 9.75 17.4687L9.75 11.4687C9.75 11.0545 10.0858 10.7187 10.5 10.7187Z"
+      fill="#475765"
+    />
+    <path
+      fill-rule="evenodd"
+      clip-rule="evenodd"
+      d="M8.33187 4.59912C8.70618 3.47618 9.75706 2.71875 10.9407 2.71875H14.0577C15.2414 2.71875 16.2923 3.47618 16.6666 4.59912L17.2107 6.23158C17.3417 6.62454 17.1294 7.04928 16.7364 7.18026C16.3434 7.31125 15.9187 7.09888 15.7877 6.70592L15.2436 5.07347C15.0734 4.56304 14.5957 4.21875 14.0577 4.21875H10.9407C10.4027 4.21875 9.92503 4.56304 9.75489 5.07347L9.21074 6.70592C9.07975 7.09888 8.65501 7.31125 8.26206 7.18026C7.8691 7.04928 7.65673 6.62454 7.78771 6.23158L8.33187 4.59912Z"
+      fill="#475765"
     />
   </svg>
 );

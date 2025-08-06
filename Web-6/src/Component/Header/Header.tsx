@@ -61,9 +61,9 @@ const Header: React.FC = () => {
                 <SearchIcon className="header__search-icon" />
               </button>
             </div>
-            <div className="header__right-cart">
+            <Link to="/cart" className="header__right-cart">
               <CartIcon className="header__right-cart-icon" />
-            </div>
+            </Link>
           </div>
         </div>
         <div className="header__element">
