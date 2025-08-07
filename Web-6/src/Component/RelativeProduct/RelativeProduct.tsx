@@ -110,7 +110,7 @@ const RelativeProduct: React.FC<RelativeProductProps> = ({
                       src={product.imageUrl}
                       alt={product.productName}
                       onError={(e) => {
-                        e.currentTarget.src = "/src/assets/image/product1.png";
+                        e.currentTarget.src = "/assets/image/product1.png";
                       }}
                     />
                   </div>

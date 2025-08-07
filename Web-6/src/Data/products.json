@@ -433,7 +433,7 @@
     "brand": "Siemens",
     "size": ["S", "L", "XL", "M"],
     "color": ["Gray", "Silver"],
-    "quantity": 172,
+    "quantity": 0,
     "rating": {
       "rate": 4.1,
       "count": 326
@@ -682,7 +682,7 @@
     "brand": "Vimar",
     "size": ["S", "XL", "M", "L"],
     "color": ["Silver", "Black", "Gray"],
-    "quantity": 35,
+    "quantity": 0,
     "rating": {
       "rate": 4.0,
       "count": 189

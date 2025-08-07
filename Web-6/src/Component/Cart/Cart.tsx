@@ -1,13 +1,46 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./Cart.scss";
+import CartItem from "../CartItem/CartItem";
+import { ArrowRightPagination } from "../../assets/svg/svg";
 import {
-  TrashIcon,
-  ArrowRightPagination,
-  MinusIcon,
-  PlusIcon,
-} from "../../assets/svg/svg";
+  getCartFromStorage,
+  getCartTotal,
+  type CartItem as CartItemType,
+} from "../../Utils/cartUtils";
 
 const CartComponent: React.FC = () => {
+  const [cartItems, setCartItems] = useState<CartItemType[]>([]);
+  const [cartTotal, setCartTotal] = useState<number>(0);
+
+  useEffect(() => {
+    const loadCartData = () => {
+      const items = getCartFromStorage();
+      setCartItems(items);
+      setCartTotal(getCartTotal());
+    };
+    loadCartData();
+    const handleStorageChange = (e: StorageEvent) => {
+      if (e.key === "shopping_cart") {
+        loadCartData();
+      }
+    };
+    window.addEventListener("storage", handleStorageChange);
+
+    return () => {
+      window.removeEventListener("storage", handleStorageChange);
+    };
+  }, []);
+
+  const updateCartData = () => {
+    const items = getCartFromStorage();
+    setCartItems(items);
+    setCartTotal(getCartTotal());
+  };
+
+  const formatPrice = (price: number): string => {
+    return price.toLocaleString("vi-VN") + "đ";
+  };
+
   return (
     <div className="background">
       <div className="cart">
@@ -29,240 +62,19 @@ const CartComponent: React.FC = () => {
               </div>
             }
             <div className="cart__item">
-              <div className="cart__item-element">
-                <div className="cart__item-element-left">
-                  <div className="cart__item-element-body">
-                    <input
-                      type="checkbox"
-                      title="checkbox"
-                      className="cart__item-element-body-checkbox"
-                    />
-                    <div className="cart__item-element-body-content">
-                      <img
-                        className="cart__item-element-body-content-img"
-                        src="../../src/assets/image/product1.png"
-                        alt="demo"
-                      />
-                      <div className="cart__item-element-body-content-text">
-                        <div className="product-info">
-                          <div className="product-info-name">
-                            Khóa cửa thông minh Luvit
-                          </div>
-                          <div className="product-info-color">
-                            <span className="product-info-color-text">
-                              Màu xám/ Size XL
-                            </span>
-                            <ArrowRightPagination className="product-info-color-icon" />
-                          </div>
-                        </div>
-                        <div className="product-quantity">
-                          <div className="product-quantity-action">
-                            <div className="product-quantity-action-minus">
-                              <MinusIcon
-                                className="product-quantity-action-icon"
-                                width={16}
-                                height={16}
-                                fill="white"
-                              />
-                            </div>
-                            <div className="product-quantity-action-number">
-                              0
-                            </div>
-                            <div className="product-quantity-action-plus">
-                              <PlusIcon
-                                className="product-quantity-action-icon"
-                                width={16}
-                                height={16}
-                                fill="white"
-                              />
-                            </div>
-                          </div>
-                          <div className="product-quantity-number">
-                            Còn 50 sản phẩm
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="cart__item-element-price">
-                    <div className="cart__item-element-price-mobile">
-                      Đơn giá:
-                    </div>
-
-                    <span>8.250.000đ</span>
-                  </div>
-                  <div className="cart__item-element-totalPrice">
-                    <div className="cart__item-element-totalPrice-mobile">
-                      Số tiền:
-                    </div>
-
-                    <span>8.250.000đ</span>
-                  </div>
+              {cartItems.length > 0 ? (
+                cartItems.map((item) => (
+                  <CartItem
+                    key={`${item.id}-${item.selectedColor}-${item.selectedSize}`}
+                    cartItem={item}
+                    onUpdateCart={updateCartData}
+                  />
+                ))
+              ) : (
+                <div className="cart__empty">
+                  <p>Empty cart</p>
                 </div>
-                <div className="cart__item-element-right">
-                  <TrashIcon className="cart__item-element-right-icon" />
-                </div>
-              </div>
-              <div className="cart__item-element">
-                <div className="cart__item-element-left">
-                  <div className="cart__item-element-body">
-                    <input
-                      type="checkbox"
-                      title="checkbox"
-                      className="cart__item-element-body-checkbox"
-                    />
-                    <div className="cart__item-element-body-content">
-                      <img
-                        className="cart__item-element-body-content-img"
-                        src="../../src/assets/image/product1.png"
-                        alt="demo"
-                      />
-                      <div className="cart__item-element-body-content-text">
-                        <div className="product-info">
-                          <div className="product-info-name">
-                            Khóa cửa thông minh Luvit
-                          </div>
-                          <div className="product-info-color">
-                            <span className="product-info-color-text">
-                              Màu xám/ Size XL
-                            </span>
-                            <ArrowRightPagination className="product-info-color-icon" />
-                          </div>
-                        </div>
-                        <div className="product-quantity">
-                          <div className="product-quantity-action">
-                            <div className="product-quantity-action-minus">
-                              <MinusIcon
-                                className="product-quantity-action-icon"
-                                width={16}
-                                height={16}
-                                fill="white"
-                              />
-                            </div>
-                            <div className="product-quantity-action-number">
-                              0
-                            </div>
-                            <div className="product-quantity-action-plus">
-                              <PlusIcon
-                                className="product-quantity-action-icon"
-                                width={16}
-                                height={16}
-                                fill="white"
-                              />
-                            </div>
-                          </div>
-                          <div className="product-quantity-number">
-                            Còn 50 sản phẩm
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="cart__item-element-price">
-                    {window.innerWidth < 768 ? (
-                      <div className="cart__item-element-price-mobile">
-                        Đơn giá:
-                      </div>
-                    ) : (
-                      ""
-                    )}
-                    <span>8.250.000đ</span>
-                  </div>
-                  <div className="cart__item-element-totalPrice">
-                    {window.innerWidth < 768 ? (
-                      <div className="cart__item-element-price-mobile">
-                        Số tiền:
-                      </div>
-                    ) : (
-                      ""
-                    )}
-                    <span>8.250.000đ</span>
-                  </div>
-                </div>
-                <div className="cart__item-element-right">
-                  <TrashIcon className="cart__item-element-right-icon" />
-                </div>
-              </div>
-              <div className="cart__item-element">
-                <div className="cart__item-element-left">
-                  <div className="cart__item-element-body">
-                    <input
-                      type="checkbox"
-                      title="checkbox"
-                      className="cart__item-element-body-checkbox"
-                    />
-                    <div className="cart__item-element-body-content">
-                      <img
-                        className="cart__item-element-body-content-img"
-                        src="../../src/assets/image/product1.png"
-                        alt="demo"
-                      />
-                      <div className="cart__item-element-body-content-text">
-                        <div className="product-info">
-                          <div className="product-info-name">
-                            Khóa cửa thông minh Luvit
-                          </div>
-                          <div className="product-info-color">
-                            <span className="product-info-color-text">
-                              Màu xám/ Size XL
-                            </span>
-                            <ArrowRightPagination className="product-info-color-icon" />
-                          </div>
-                        </div>
-                        <div className="product-quantity">
-                          <div className="product-quantity-action">
-                            <div className="product-quantity-action-minus">
-                              <MinusIcon
-                                className="product-quantity-action-icon"
-                                width={16}
-                                height={16}
-                                fill="white"
-                              />
-                            </div>
-                            <div className="product-quantity-action-number">
-                              0
-                            </div>
-                            <div className="product-quantity-action-plus">
-                              <PlusIcon
-                                className="product-quantity-action-icon"
-                                width={16}
-                                height={16}
-                                fill="white"
-                              />
-                            </div>
-                          </div>
-                          <div className="product-quantity-number">
-                            Còn 50 sản phẩm
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="cart__item-element-price">
-                    {window.innerWidth < 768 ? (
-                      <div className="cart__item-element-price-mobile">
-                        Đơn giá:
-                      </div>
-                    ) : (
-                      ""
-                    )}
-                    <span>8.250.000đ</span>
-                  </div>
-                  <div className="cart__item-element-totalPrice">
-                    {window.innerWidth < 768 ? (
-                      <div className="cart__item-element-price-mobile">
-                        Số tiền:
-                      </div>
-                    ) : (
-                      ""
-                    )}
-                    <span>8.250.000đ</span>
-                  </div>
-                </div>
-                <div className="cart__item-element-right">
-                  <TrashIcon className="cart__item-element-right-icon" />
-                </div>
-              </div>
+              )}
             </div>
           </div>
           <div className="cart__content-info">
@@ -348,7 +160,7 @@ const CartComponent: React.FC = () => {
                       </span>
                     </div>
                     <div className="Payment__content-price-totalCart-value">
-                      9.650.000đ
+                      {formatPrice(cartTotal)}
                     </div>
                   </div>
                   <div className="Payment__content-price-afterCalculate">
@@ -356,7 +168,7 @@ const CartComponent: React.FC = () => {
                       Tổng thanh toán:
                     </div>
                     <div className="Payment__content-price-afterCalculate-value">
-                      9.670.000đ
+                      {formatPrice(cartTotal + 20000)}{" "}
                     </div>
                   </div>
                 </div>

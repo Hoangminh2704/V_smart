@@ -18,6 +18,29 @@ body {
   margin: 0;
   font-family: "Open Sans", sans-serif;
   touch-action: manipulation;
+  padding-top: 202px;
+  @include m {
+    padding-top: 80px;
+  }
+  @include xs {
+    padding-top: 60px;
+  }
+}
+.header__background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 20;
+  background-color: rgba(246, 246, 246, 1);
+  max-height: 202px;
+  @include m {
+    max-height: 80px;
+  }
+  @include xs {
+    max-height: 60px;
+  }
 }
 .header {
   max-width: 1280px;
@@ -27,11 +50,26 @@ body {
   justify-content: flex-start;
   align-items: center;
   margin: 0 auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 19;
+  background-color: rgba(246, 246, 246, 1);
+  @include xl {
+    max-width: 1280px;
+    margin: 0 auto;
+    left: 50%;
+    transform: translateX(-50%);
+  }
   @include m {
     width: 96.56%;
+    left: 50%;
+    transform: translateX(-50%);
   }
   @include xs {
     width: 92.27%;
+    left: 50%;
+    transform: translateX(-50%);
   }
   &__nav {
     max-width: 1280px;
@@ -188,6 +226,39 @@ body {
       &-cart {
         width: 24px;
         height: 24px;
+        display: flex;
+        position: relative;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        .header__right-cart-count {
+          position: absolute;
+          top: -10px;
+          right: -8px;
+          // width: 20px;
+          // height: 20px;
+          padding: 3px;
+          background-color: rgba(2, 105, 135, 1);
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: white;
+
+          position: absolute;
+          padding: 2px;
+          font-family: "Open Sans";
+          font-weight: 400;
+          font-size: 12px;
+          line-height: 18px;
+          box-sizing: border-box;
+          width: 20px;
+          height: 20px;
+          border-radius: 10px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
       }
 
       &-search {
