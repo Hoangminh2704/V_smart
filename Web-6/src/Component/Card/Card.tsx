@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import "./Card.scss";
 import { HeartIcon, CartIcon, CloseIcon } from "../../assets/svg/svg";
 import { addToCart, getCartItemCount } from "../../Utils/cartUtils";
+import Notification from "../Notification/Notification";
 
 interface CardProps {
   id: number;
@@ -35,6 +36,8 @@ const Card: React.FC<CardProps> = ({ id }) => {
   const [showAddToCartPopup, setShowAddToCartPopup] = useState(false);
   const [selectedColor, setSelectedColor] = useState<string>("");
   const [selectedSize, setSelectedSize] = useState<string>("");
+  const [showNotification, setShowNotification] = useState(false);
+  const [notificationCartItem, setNotificationCartItem] = useState<any>(null);
   const navigate = useNavigate();
   const handleProductClick = () => {
     navigate(`/product/${id}`);
@@ -90,6 +93,7 @@ const Card: React.FC<CardProps> = ({ id }) => {
       selectedSize: selectedSize,
       quantity: 1,
       totalQuantityLeft: product.quantity,
+      state: product.state,
     };
 
     const updatedCart = addToCart(cartItem);
@@ -98,6 +102,14 @@ const Card: React.FC<CardProps> = ({ id }) => {
 
     updateCartDisplay();
     setShowAddToCartPopup(false);
+
+    setNotificationCartItem(cartItem);
+    setShowNotification(true);
+  };
+
+  const handleCloseNotification = () => {
+    setShowNotification(false);
+    setNotificationCartItem(null);
   };
 
   const renderPrice = () => {
@@ -216,7 +228,7 @@ const Card: React.FC<CardProps> = ({ id }) => {
                       {product.color.map((color, index) => (
                         <div
                           key={index}
-                          className={`product__selected-info-act-color-box-item ${color.toLowerCase()} ${
+                          className={`product__selected-info-act-color-box-item  ${
                             selectedColor === color ? "selected" : ""
                           }`}
                           onClick={() => handleColorSelect(color)}
@@ -256,6 +268,12 @@ const Card: React.FC<CardProps> = ({ id }) => {
             </div>
           </div>
         </div>
+      )}
+      {showNotification && notificationCartItem && (
+        <Notification
+          cartItem={notificationCartItem}
+          onClose={handleCloseNotification}
+        />
       )}
     </div>
   );

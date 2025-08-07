@@ -289,7 +289,7 @@ const CartItem: React.FC<CartItemProps> = ({ cartItem, onUpdateCart }) => {
           {gettotalQuantityLeft() > 0 ? (
             <span>{formatPrice(calculateItemTotal())}</span>
           ) : (
-            <span className="sold-out">0đ</span>
+            <span className="sold-out">{formatPrice("0")}</span>
           )}
         </div>
       </div>

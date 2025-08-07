@@ -11,6 +11,7 @@ export interface CartItem {
   selectedSize?: string;
   quantity: number;
   totalQuantityLeft: number;
+  state: string;
 }
 
 const CART_STORAGE_KEY = "shopping_cart";
