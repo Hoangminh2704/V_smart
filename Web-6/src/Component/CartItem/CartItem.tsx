@@ -132,7 +132,7 @@ const CartItem: React.FC<CartItemProps> = ({ cartItem, onUpdateCart }) => {
   const formatPrice = (price: number | string): string => {
     console.log("formatPrice", typeof price, price);
     const numPrice = typeof price === "string" ? parseFloat(price) : price;
-    return numPrice.toLocaleString("vi-VN") + " đ";
+    return numPrice.toLocaleString("vi-VN");
   };
 
   const calculateItemTotal = (): string => {
