@@ -9,9 +9,12 @@ import {
   RightIcon,
 } from "../../assets/svg/svg";
 import { getCartItemCount } from "../../Utils/cartUtils";
+import PopupHoverCart from "../PopupHoverCart/PopupHoverCart";
 
 const Header: React.FC = () => {
   const [activeItem, setActiveItem] = useState<number>(1);
+  const [showCartPopup, setShowCartPopup] = useState<boolean>(false);
+  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const location = useLocation();
 
   const menuItems = [
@@ -28,6 +31,18 @@ const Header: React.FC = () => {
     setActiveItem(itemId);
   };
 
+  const handleCartMouseEnter = () => {
+    setShowCartPopup(true);
+  };
+
+  const handleCartMouseLeave = () => {
+    setShowCartPopup(false);
+  };
+
+  const handleMenuToggle = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   const isActiveRoute = (path: string) => {
     return location.pathname === path;
   };
@@ -40,7 +55,10 @@ const Header: React.FC = () => {
               <button
                 title="hamburger"
                 type="button"
-                className="header-hamberger-mobile header-hamberger-mobile--htx"
+                className={`header-hamberger-mobile header-hamberger-mobile--htx ${
+                  isMenuOpen ? "is-active" : ""
+                }`}
+                onClick={handleMenuToggle}
               >
                 <span className="header-hamberger-mobile-line"></span>
               </button>
@@ -63,12 +81,27 @@ const Header: React.FC = () => {
                   <SearchIcon className="header__search-icon" />
                 </button>
               </div>
-              <Link to="/cart" className="header__right-cart">
-                <CartIcon className="header__right-cart-icon" />
-                <div className="header__right-cart-count">
-                  {getCartItemCount()}
-                </div>
-              </Link>
+              <div
+                className="header__right-cart-container"
+                onMouseEnter={handleCartMouseEnter}
+                onMouseLeave={handleCartMouseLeave}
+              >
+                <Link to="/cart" className="header__right-cart">
+                  <CartIcon className="header__right-cart-icon" />
+                  <div className="header__right-cart-count">
+                    {getCartItemCount()}
+                  </div>
+                </Link>
+                {showCartPopup && (
+                  <div
+                    className={`popup-hover-cart ${
+                      showCartPopup ? "popup-hover-cart--active" : ""
+                    }`}
+                  >
+                    <PopupHoverCart />
+                  </div>
+                )}
+              </div>
             </div>
           </div>
           <div className="header__element">
@@ -142,6 +175,117 @@ const Header: React.FC = () => {
                 <span>Liên hệ</span>
               </Link>
             </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        className={`mobileMenu-overlay ${
+          isMenuOpen ? "mobileMenu-overlay--active" : ""
+        }`}
+        onClick={() => setIsMenuOpen(false)}
+      ></div>
+
+      <div className={`mobileMenu ${isMenuOpen ? "mobileMenu--active" : ""}`}>
+        <div className="mobileMenu-header">
+          <button
+            title="close menu"
+            className="mobileMenu-close"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 20 20"
+              fill="none"
+            >
+              <path
+                d="M15 5L5 15M5 5L15 15"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </button>
+        </div>
+
+        <div className="mobileMenu-content">
+          <div className="mobileMenu-main">
+            <Link
+              to="/"
+              className={`mobileMenu-item ${
+                isActiveRoute("/") ? "active" : ""
+              }`}
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Trang chủ
+            </Link>
+            <Link
+              to="/about"
+              className={`mobileMenu-item ${
+                isActiveRoute("/about") ? "active" : ""
+              }`}
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Giới thiệu
+            </Link>
+            <Link to="/production" className="mobileMenu-item">
+              <span>Sản phẩm</span>
+              <RightIcon className="mobileMenu-arrow" />
+            </Link>
+            <div className="mobileMenu-item ">
+              <span>Tin tức</span>
+              <RightIcon className="mobileMenu-arrow" />
+            </div>
+            <div className="mobileMenu-item">
+              <span>Khuyến mãi</span>
+            </div>
+            <div className="mobileMenu-item">
+              <span>Đơn hàng</span>
+            </div>
+          </div>
+
+          <div className="mobileMenu-category">
+            <div className="mobileMenu-category-title">Danh mục sản phẩm</div>
+            <div className="mobileMenu-category-item">
+              Bộ điều khiển trung tâm
+            </div>
+            <div className="mobileMenu-category-item ">
+              <span>Rèm cửa thông minh</span>
+              <RightIcon className="mobileMenu-arrow" />
+            </div>
+            <div className="mobileMenu-category-item ">
+              <span>Khóa cửa cao cấp</span>
+              <RightIcon className="mobileMenu-arrow" />
+            </div>
+            <div className="mobileMenu-category-item ">
+              <span>Ổ cắm cao cấp</span>
+              <RightIcon className="mobileMenu-arrow" />
+            </div>
+            <div className="mobileMenu-category-item ">
+              <span>Công tắc thông minh</span>
+              <RightIcon className="mobileMenu-arrow" />
+            </div>
+            <div className="mobileMenu-category-item ">
+              <span>Đèn thông minh</span>
+              <RightIcon className="mobileMenu-arrow" />
+            </div>
+            <div className="mobileMenu-category-item ">
+              <span>Thiết bị phụ trợ khác</span>
+              <RightIcon className="mobileMenu-arrow" />
+            </div>
+          </div>
+
+          <div className="mobileMenu-footer">
+            <Link
+              to="/contact"
+              className="mobileMenu-contact-btn"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Liên hệ
+            </Link>
           </div>
         </div>
       </div>

@@ -12,6 +12,7 @@ export interface CartItem {
   quantity: number;
   totalQuantityLeft: number;
   state: string;
+  isChecked?: boolean;
 }
 
 const CART_STORAGE_KEY = "shopping_cart";
@@ -97,15 +98,6 @@ export const getCartItemCount = (): number => {
   return cart.reduce((total, item) => total + item.quantity, 0);
 };
 
-export const getCartTotal = (): number => {
-  const cart = getCartFromStorage();
-  return cart.reduce((total, item) => {
-    const price =
-      typeof item.price === "string" ? parseFloat(item.price) : item.price;
-    return total + price * item.quantity;
-  }, 0);
-};
-
 export const formatPrice = (price: number): string => {
   return price.toLocaleString("vi-VN") + "đ";
 };
@@ -145,4 +137,57 @@ export const updateCartItemColorSize = (
 
   saveCartToStorage(currentCart);
   return currentCart;
+};
+
+export const updateCartItemChecked = (
+  id: number,
+  selectedColor: string,
+  selectedSize: string,
+  isChecked: boolean
+): CartItem[] => {
+  const currentCart = getCartFromStorage();
+
+  const itemIndex = currentCart.findIndex(
+    (item) =>
+      item.id === id &&
+      item.selectedColor === selectedColor &&
+      item.selectedSize === selectedSize
+  );
+
+  if (itemIndex >= 0) {
+    currentCart[itemIndex].isChecked = isChecked;
+    saveCartToStorage(currentCart);
+  }
+
+  return currentCart;
+};
+
+export const updateAllCartItemsChecked = (isChecked: boolean): CartItem[] => {
+  const currentCart = getCartFromStorage();
+
+  const updatedCart = currentCart.map((item) => ({
+    ...item,
+    isChecked: isChecked,
+  }));
+
+  saveCartToStorage(updatedCart);
+  return updatedCart;
+};
+
+export const isAllCartItemsChecked = (): boolean => {
+  const cart = getCartFromStorage();
+  if (cart.length === 0) return false;
+  return cart.every((item) => item.isChecked === true);
+};
+
+export const getCartTotal = (): number => {
+  const cart = getCartFromStorage();
+  return cart
+    .filter((item) => item.isChecked === true)
+    .reduce((total, item) => {
+      const itemPrice =
+        typeof item.price === "string" ? parseFloat(item.price) : item.price;
+      if (isNaN(itemPrice)) return total;
+      return total + itemPrice * item.quantity;
+    }, 0);
 };

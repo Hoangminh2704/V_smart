@@ -1,0 +1,212 @@
+@mixin xs {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+@mixin m {
+  @media (min-width: 768px) and (max-width: 1279px) {
+    @content;
+  }
+}
+@mixin xl {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}
+.header--search-hover {
+  position: absolute;
+  top: 100%;
+  right: -24px;
+  width: 500px;
+  //   width: 100%;
+  background-color: white;
+  z-index: 1001;
+  border: 1px solid #e9edf2;
+  border-radius: 10px;
+  opacity: 1;
+  visibility: hidden;
+  transform: translateY(-10px);
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 16px;
+  box-sizing: border-box;
+  gap: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  margin-top: 8px;
+  display: flex;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 0;
+    right: 0;
+    height: 10px;
+    background: transparent;
+  }
+  &.active {
+    display: flex;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+  @include xs {
+    width: 350px;
+  }
+  .header--search-hover-header {
+    font-family: "Open Sans";
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 26px;
+    color: #161c24;
+    margin: 0;
+  }
+  .header--search-hover-body {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-height: 300px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 8px;
+
+    &::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: #f8f9fb;
+      border-radius: 3px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: #e2e7ed;
+      border-radius: 3px;
+
+      &:hover {
+        background: #c4cdd5;
+      }
+    }
+
+    .header--search-hover-item {
+      display: flex;
+      gap: 12px;
+      flex-direction: column;
+      .header--search-hover-item-content {
+        display: flex;
+        gap: 12px;
+        flex-direction: row;
+        .header--search-hover-item-image {
+          width: 70px;
+          height: 70px;
+          object-fit: contain;
+          border-radius: 3px;
+          background-color: #f8f9fb;
+          flex-shrink: 0;
+        }
+
+        .header--search-hover-item-info {
+          display: flex;
+          flex-direction: column;
+          gap: 3px;
+          justify-content: center;
+          width: 100%;
+          .header--search-hover-item-overall {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            align-items: center;
+            gap: 16px;
+            .header--search-hover-item-title {
+              font-family: "Open Sans";
+              font-weight: 400;
+              font-size: 12px;
+              line-height: 18px;
+              color: #161c24;
+              padding: 0;
+              margin: 0;
+            }
+
+            .header--search-hover-item-price {
+              font-family: "Open Sans";
+              font-weight: 400;
+              font-size: 13px;
+              line-height: 22px;
+              color: #c48c46;
+              min-width: 75px;
+            }
+          }
+
+          .header--search-hover-item-option {
+            display: flex;
+            justify-content: space-between;
+            text-align: center;
+            align-items: center;
+            .header--search-hover-item-size {
+              font-family: "Open Sans";
+              font-weight: 400;
+              font-size: 12px;
+              line-height: 18px;
+              color: #161c24;
+              align-items: center;
+            }
+            .header--search-hover-item-quantity {
+              font-family: "Open Sans";
+              font-weight: 400;
+              font-size: 12px;
+              line-height: 18px;
+              color: #161c24;
+              text-align: center;
+              padding: 3px 6px;
+              border-radius: 4px;
+              background-color: #f0f1f3;
+            }
+          }
+        }
+        .header--search-hover-item-remove {
+          width: 30px;
+          height: 30px;
+          box-sizing: border-box;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          cursor: pointer;
+          border: 1px solid #e2e7ed;
+          border-radius: 4px;
+          background-color: white;
+          border: none;
+          &:hover {
+            background-color: #f0f1f3;
+          }
+        }
+      }
+      .header--search-hover-item-divider {
+        height: 1px;
+        background-color: #e2e7ed;
+        width: 100%;
+      }
+    }
+  }
+  .header--search-hover-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 40px;
+    background-color: #2b88fb;
+    color: #ffffff;
+    border-radius: 4px;
+    border: none;
+    font-family: "Open Sans";
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: #006eef;
+    }
+  }
+}

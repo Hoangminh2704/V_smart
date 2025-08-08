@@ -10,6 +10,7 @@ import {
   removeFromCart,
   updateCartItemQuantity,
   updateCartItemColorSize,
+  updateCartItemChecked,
   type CartItem as CartItemType,
   getCartItemCount,
 } from "../../Utils/cartUtils";
@@ -21,6 +22,14 @@ interface CartItemProps {
 
 const CartItem: React.FC<CartItemProps> = ({ cartItem, onUpdateCart }) => {
   console.log("CartItem:", cartItem);
+  const [isChecked, setIsChecked] = React.useState<boolean>(
+    cartItem.isChecked ?? true
+  );
+
+  React.useEffect(() => {
+    setIsChecked(cartItem.isChecked ?? true);
+  }, [cartItem.isChecked]);
+
   const [popupCart, setPopupCart] = React.useState(false);
   const [selectedColor, setSelectedColor] = React.useState<string>(
     cartItem.selectedColor || ""
@@ -115,6 +124,18 @@ const CartItem: React.FC<CartItemProps> = ({ cartItem, onUpdateCart }) => {
   const gettotalQuantityLeft = () => {
     return cartItem.totalQuantityLeft || 0;
   };
+  const handleCheckboxChange = () => {
+    const newCheckedState = !isChecked;
+    setIsChecked(newCheckedState);
+
+    updateCartItemChecked(
+      cartItem.id,
+      selectedColor,
+      selectedSize,
+      newCheckedState
+    );
+    onUpdateCart();
+  };
 
   const handleIncreaseQuantity = () => {
     console.log("Increase quantity");
@@ -154,6 +175,8 @@ const CartItem: React.FC<CartItemProps> = ({ cartItem, onUpdateCart }) => {
             type="checkbox"
             title="checkbox"
             className="cart__item-element-body-checkbox"
+            checked={isChecked}
+            onChange={handleCheckboxChange}
           />
           <div className="cart__item-element-body-content">
             <img
@@ -176,7 +199,9 @@ const CartItem: React.FC<CartItemProps> = ({ cartItem, onUpdateCart }) => {
                   <ArrowRightPagination className="product-info-color-icon" />
                   {popupCart && (
                     <div
-                      className="product-info-color-popup"
+                      className={`product-info-color-popup ${
+                        popupCart ? "product-info-color-popup--open" : ""
+                      }`}
                       onClick={(e) => e.stopPropagation()}
                     >
                       <div className="product-info-color-popup-content">

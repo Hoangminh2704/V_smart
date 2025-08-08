@@ -5,18 +5,22 @@ import { ArrowRightPagination } from "../../assets/svg/svg";
 import {
   getCartFromStorage,
   getCartTotal,
+  updateAllCartItemsChecked,
+  isAllCartItemsChecked,
   type CartItem as CartItemType,
 } from "../../Utils/cartUtils";
 
 const CartComponent: React.FC = () => {
   const [cartItems, setCartItems] = useState<CartItemType[]>([]);
   const [cartTotal, setCartTotal] = useState<number>(0);
+  const [isAllSelected, setIsAllSelected] = useState<boolean>(false);
 
   useEffect(() => {
     const loadCartData = () => {
       const items = getCartFromStorage();
       setCartItems(items);
       setCartTotal(getCartTotal());
+      setIsAllSelected(isAllCartItemsChecked());
     };
     loadCartData();
     const handleStorageChange = (e: StorageEvent) => {
@@ -34,6 +38,17 @@ const CartComponent: React.FC = () => {
   const updateCartData = () => {
     const items = getCartFromStorage();
     setCartItems(items);
+    setCartTotal(getCartTotal());
+    setIsAllSelected(isAllCartItemsChecked());
+  };
+
+  const handleSelectAll = () => {
+    const newSelectAllState = !isAllSelected;
+    updateAllCartItemsChecked(newSelectAllState);
+    setIsAllSelected(newSelectAllState);
+
+    const updatedItems = getCartFromStorage();
+    setCartItems([...updatedItems]);
     setCartTotal(getCartTotal());
   };
 
@@ -54,6 +69,8 @@ const CartComponent: React.FC = () => {
                     className="cart__header-select-checkbox"
                     type="checkbox"
                     title="Chọn tất cả"
+                    checked={isAllSelected}
+                    onChange={handleSelectAll}
                   />
                   <span className="cart__header-select-text">Sản phẩm</span>
                 </div>

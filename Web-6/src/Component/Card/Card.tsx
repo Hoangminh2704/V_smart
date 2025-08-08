@@ -105,6 +105,7 @@ const Card: React.FC<CardProps> = ({ id }) => {
       quantity: 1,
       totalQuantityLeft: product.quantity,
       state: product.state,
+      isChecked: true,
     };
 
     const updatedCart = addToCart(cartItem);
