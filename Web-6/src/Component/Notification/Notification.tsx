@@ -12,6 +12,10 @@ interface NotificationProps {
 const Notification: React.FC<NotificationProps> = ({ cartItem, onClose }) => {
   const [isVisible, setIsVisible] = useState(false);
 
+  const formatPrice = (price: number): string => {
+    return price.toLocaleString("vi-VN");
+  };
+
   useEffect(() => {
     setIsVisible(true);
     const timer = setTimeout(() => {
@@ -55,7 +59,9 @@ const Notification: React.FC<NotificationProps> = ({ cartItem, onClose }) => {
             />
             <div className="product-details">
               <h1 className="product-name">{cartItem.productName}</h1>
-              <div className="product-price">{cartItem.price}đ</div>
+              <div className="product-price">
+                {formatPrice(cartItem.price)}đ
+              </div>
               <div className="product-option">
                 <div className="product-size">
                   {cartItem.selectedColor} - {cartItem.selectedSize}

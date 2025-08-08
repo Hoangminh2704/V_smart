@@ -129,16 +129,15 @@ const CartItem: React.FC<CartItemProps> = ({ cartItem, onUpdateCart }) => {
     updateCartDisplay();
     onUpdateCart();
   };
-
-  const formatPrice = (price: string): string => {
-    const numPrice = parseFloat(price.replace(/[.,]/g, ""));
-    return numPrice.toLocaleString("vi-VN") + "đ";
+  const formatPrice = (price: number | string): string => {
+    console.log("formatPrice", typeof price, price);
+    const numPrice = typeof price === "string" ? parseFloat(price) : price;
+    return numPrice.toLocaleString("vi-VN") + " đ";
   };
 
   const calculateItemTotal = (): string => {
-    const numPrice = parseFloat(cartItem.price.replace(/[.,]/g, ""));
-    const total = numPrice * quantity;
-    return total.toLocaleString("vi-VN") + "đ";
+    const total = cartItem.price * quantity;
+    return formatPrice(total);
   };
 
   return (
@@ -287,9 +286,9 @@ const CartItem: React.FC<CartItemProps> = ({ cartItem, onUpdateCart }) => {
         <div className="cart__item-element-totalPrice">
           <div className="cart__item-element-totalPrice-mobile">Số tiền:</div>
           {gettotalQuantityLeft() > 0 ? (
-            <span>{formatPrice(calculateItemTotal())}</span>
+            <span>{calculateItemTotal()}</span>
           ) : (
-            <span className="sold-out">{formatPrice("0")}</span>
+            <span className="sold-out">{formatPrice(0)}</span>
           )}
         </div>
       </div>

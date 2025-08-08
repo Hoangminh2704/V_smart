@@ -3,8 +3,8 @@ export interface ProductDataType {
   productType: string;
   productName: string;
   imageUrl: string;
-  oldPrice: string;
-  price: string;
+  oldPrice: number;
+  price: number;
   state: string;
   discount?: string;
   order: number;

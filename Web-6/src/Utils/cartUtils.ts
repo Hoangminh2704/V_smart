@@ -3,8 +3,8 @@ export interface CartItem {
   productName: string;
   productType: string;
   imageUrl: string;
-  price: string;
-  oldPrice: string;
+  price: number;
+  oldPrice: number;
   color: string[];
   selectedColor?: string;
   size: string[];
@@ -100,7 +100,8 @@ export const getCartItemCount = (): number => {
 export const getCartTotal = (): number => {
   const cart = getCartFromStorage();
   return cart.reduce((total, item) => {
-    const price = parseFloat(item.price.replace(/[.,]/g, ""));
+    const price =
+      typeof item.price === "string" ? parseFloat(item.price) : item.price;
     return total + price * item.quantity;
   }, 0);
 };

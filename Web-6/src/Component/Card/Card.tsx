@@ -2,7 +2,11 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Card.scss";
 import { HeartIcon, CartIcon, CloseIcon } from "../../assets/svg/svg";
-import { addToCart, getCartItemCount } from "../../Utils/cartUtils";
+import {
+  addToCart,
+  getCartItemCount,
+  type CartItem,
+} from "../../Utils/cartUtils";
 import Notification from "../Notification/Notification";
 
 interface CardProps {
@@ -14,8 +18,8 @@ interface ProductData {
   productType: string;
   productName: string;
   imageUrl: string;
-  oldPrice: string;
-  price: string;
+  oldPrice: number;
+  price: number;
   state: string;
   discount?: string;
   order: number;
@@ -37,7 +41,8 @@ const Card: React.FC<CardProps> = ({ id }) => {
   const [selectedColor, setSelectedColor] = useState<string>("");
   const [selectedSize, setSelectedSize] = useState<string>("");
   const [showNotification, setShowNotification] = useState(false);
-  const [notificationCartItem, setNotificationCartItem] = useState<any>(null);
+  const [notificationCartItem, setNotificationCartItem] =
+    useState<CartItem | null>(null);
   const navigate = useNavigate();
   const handleProductClick = () => {
     navigate(`/product/${id}`);
@@ -75,6 +80,12 @@ const Card: React.FC<CardProps> = ({ id }) => {
 
   const handleSizeSelect = (size: string) => {
     setSelectedSize(size);
+  };
+
+  const formatPrice = (price: number | string): string => {
+    console.log("formatPrice Card", typeof price, price);
+    const numPrice = typeof price === "string" ? parseFloat(price) : price;
+    return numPrice.toLocaleString("vi-VN");
   };
 
   const handleConfirmAddToCart = () => {
@@ -129,7 +140,9 @@ const Card: React.FC<CardProps> = ({ id }) => {
     }
     return (
       <div className="product__content-list-item-price">
-        <span className="product-price">{product?.price}</span>
+        <span className="product-price">
+          {formatPrice(product?.price || 0)}
+        </span>
         <span className="product-currency">đ</span>
       </div>
     );
@@ -213,10 +226,10 @@ const Card: React.FC<CardProps> = ({ id }) => {
                     {product.productName}
                   </div>
                   <div className="product__selected-info-nonact-oldPrice">
-                    {product.oldPrice}đ
+                    {formatPrice(product.oldPrice || 0)}đ
                   </div>
                   <div className="product__selected-info-nonact-currentPrice">
-                    {product.price}đ
+                    {formatPrice(product.price || 0)}đ
                   </div>
                 </div>
                 <div className="product__selected-info-act">

@@ -7,8 +7,8 @@ export interface ProductDataType {
   productType: string;
   productName: string;
   imageUrl: string;
-  oldPrice: string;
-  price: string;
+  oldPrice: number;
+  price: number;
   state: string;
   discount?: string;
   order: number;
@@ -32,6 +32,11 @@ function ProductDetail({ product }: ProductDetailProps) {
   const [selectedSize, setSelectedSize] = useState<string>("");
   const [selectedColor, setSelectedColor] = useState<string>("");
   const [quantity, setQuantity] = useState<number>(1);
+
+  const formatPrice = (price: number): string => {
+    return price.toLocaleString("vi-VN");
+  };
+
   if (!product) {
     return null;
   }
@@ -100,12 +105,12 @@ function ProductDetail({ product }: ProductDetailProps) {
             </div>
             {product.oldPrice && product.state !== "contact" && (
               <div className="productDetail__info-overall-oldPrice">
-                {product.oldPrice}đ
+                {formatPrice(product.oldPrice)}đ
               </div>
             )}
             {product.price && product.state !== "contact" && (
               <div className="productDetail__info-overall-currentPrice">
-                {product.price}đ
+                {formatPrice(product.price)}đ
               </div>
             )}
             {product.state === "contact" && (
