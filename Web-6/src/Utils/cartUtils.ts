@@ -64,6 +64,10 @@ export const removeFromCart = (
   );
 
   saveCartToStorage(updatedCart);
+
+  // Dispatch custom event to notify components
+  window.dispatchEvent(new CustomEvent("cartUpdated"));
+
   return updatedCart;
 };
 
@@ -190,4 +194,63 @@ export const getCartTotal = (): number => {
       if (isNaN(itemPrice)) return total;
       return total + itemPrice * item.quantity;
     }, 0);
+};
+
+export interface Order {
+  id: string;
+  customerName: string;
+  customerPhone: string;
+  customerEmail: string;
+  items: CartItem[];
+  total: number;
+  status: string;
+}
+
+const ORDER_STORAGE_KEY = "orders";
+
+export const getOrdersFromStorage = (): Order[] => {
+  const orderData = localStorage.getItem(ORDER_STORAGE_KEY);
+  if (!orderData) return [];
+  return JSON.parse(orderData);
+};
+
+export const saveOrderToStorage = (orders: Order[]): void => {
+  localStorage.setItem(ORDER_STORAGE_KEY, JSON.stringify(orders));
+  console.log("Orders:", orders);
+};
+
+export const createOrder = (
+  customerName: string,
+  customerPhone: string,
+  customerEmail: string
+): Order => {
+  const checkedItems = getCartFromStorage().filter(
+    (item) => item.isChecked === true
+  );
+  const total = getCartTotal();
+
+  const newOrder: Order = {
+    id: Date.now().toString(),
+    customerName,
+    customerPhone,
+    customerEmail,
+    items: checkedItems,
+    total,
+    status: "Chờ xác nhận",
+  };
+
+  const orders = getOrdersFromStorage();
+  orders.push(newOrder);
+  saveOrderToStorage(orders);
+
+  const remainingItems = getCartFromStorage().filter(
+    (item) => item.isChecked !== true
+  );
+  saveCartToStorage(remainingItems);
+  return newOrder;
+};
+
+export const getOrderById = (orderId: string): Order | null => {
+  const orders = getOrdersFromStorage();
+  return orders.find((order) => order.id === orderId) || null;
 };
