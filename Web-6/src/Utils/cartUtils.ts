@@ -65,7 +65,6 @@ export const removeFromCart = (
 
   saveCartToStorage(updatedCart);
 
-  // Dispatch custom event to notify components
   window.dispatchEvent(new CustomEvent("cartUpdated"));
 
   return updatedCart;

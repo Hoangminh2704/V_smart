@@ -1,0 +1,176 @@
+@mixin xs {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+@mixin m {
+  @media (min-width: 768px) and (max-width: 1279px) {
+    @content;
+  }
+}
+@mixin xl {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}
+.order__background {
+  width: 100%;
+  background-color: white;
+  padding-top: 100px;
+  padding-bottom: 100px;
+
+  .order__content {
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    background-color: rgba(246, 246, 246, 1);
+    align-items: center;
+    padding: 60px;
+    gap: 122px;
+    justify-content: space-between;
+
+    @include m {
+      gap: 40px;
+      padding: 40px 24px;
+    }
+
+    @include xs {
+      flex-direction: column;
+      gap: 30px;
+      padding: 20px 16px;
+    }
+
+    &-action {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      width: 100%;
+
+      &-header {
+        font-weight: 500;
+        font-size: 32px;
+        line-height: 44px;
+        color: rgba(71, 87, 101, 1);
+
+        @include m {
+          font-size: 28px;
+          line-height: 36px;
+        }
+
+        @include xs {
+          font-size: 24px;
+          line-height: 32px;
+        }
+      }
+
+      &-input {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        width: 100%;
+
+        .input-wrapper {
+          display: flex;
+          align-items: center;
+          border: 1px solid rgba(170, 195, 202, 1);
+          border-radius: 8px;
+          min-width: 544px;
+          height: 48px;
+          justify-content: space-between;
+          transition: border-color 0.3s ease;
+
+          @include m {
+            min-width: 400px;
+          }
+
+          @include xs {
+            min-width: 100%;
+            width: 100%;
+          }
+
+          &:focus-within {
+            border-color: rgba(2, 105, 135, 1);
+          }
+
+          input {
+            border: none;
+            outline: none;
+            font-family: SVN-Gilroy;
+            font-weight: 300;
+            font-size: 14px;
+            line-height: 24px;
+            background-color: transparent;
+            color: rgba(71, 87, 101, 1);
+            margin-left: 26px;
+            flex: 1;
+
+            &::placeholder {
+              color: rgba(142, 155, 166, 1);
+            }
+
+            &.error {
+              color: rgba(234, 62, 83, 1);
+            }
+          }
+
+          &.error {
+            border-color: rgba(234, 62, 83, 1);
+          }
+
+          button {
+            border-radius: 8px;
+            border: none;
+            font-weight: 500;
+            font-style: SemiBold;
+            font-size: 16px;
+            line-height: 24px;
+            text-align: center;
+            color: rgba(246, 246, 246, 1);
+            background-color: rgba(2, 105, 135, 1);
+            box-sizing: border-box;
+            height: 100%;
+            width: 116px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+
+            &:hover {
+              background-color: rgba(1, 85, 110, 1);
+            }
+
+            &:active {
+              background-color: rgba(1, 75, 95, 1);
+            }
+          }
+        }
+
+        .error-message {
+          color: rgba(234, 62, 83, 1);
+          font-size: 12px;
+          font-weight: 400;
+          line-height: 18px;
+          margin-left: 4px;
+          font-family: "Open Sans", sans-serif;
+        }
+      }
+    }
+
+    &-img {
+      flex-shrink: 0;
+
+      @include m {
+        max-width: 320px;
+      }
+
+      @include xs {
+        width: 100%;
+      }
+
+      img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+      }
+    }
+  }
+}
