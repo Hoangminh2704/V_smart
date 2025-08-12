@@ -228,8 +228,12 @@ export const createOrder = (
   );
   const total = getCartTotal();
 
+  const orders = getOrdersFromStorage();
+  const nextOrderNumber = orders.length + 1;
+  const orderId = nextOrderNumber.toString().padStart(6, "0");
+
   const newOrder: Order = {
-    id: Date.now().toString(),
+    id: orderId,
     customerName,
     customerPhone,
     customerEmail,
@@ -238,7 +242,6 @@ export const createOrder = (
     status: "Chờ xác nhận",
   };
 
-  const orders = getOrdersFromStorage();
   orders.push(newOrder);
   saveOrderToStorage(orders);
 

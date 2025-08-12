@@ -5,9 +5,14 @@ import { CheckCircle } from "../../assets/svg/svg";
 interface CheckCartProps {
   isVisible: boolean;
   onClose: () => void;
+  orderCode?: string;
 }
 
-const CheckCart: React.FC<CheckCartProps> = ({ isVisible, onClose }) => {
+const CheckCart: React.FC<CheckCartProps> = ({
+  isVisible,
+  onClose,
+  orderCode,
+}) => {
   if (!isVisible) return null;
 
   return (
@@ -21,7 +26,7 @@ const CheckCart: React.FC<CheckCartProps> = ({ isVisible, onClose }) => {
             <div className="check-cart-title">Thành Công</div>
 
             <div className="check-cart-message">Đơn hàng đã được gửi!</div>
-
+            <div className="check-cart-code">Mã đơn hàng: {orderCode}</div>
             <div className="check-cart-description">
               Chúng tôi sẽ liên hệ Quý khách trong thời gian sớm nhất!
             </div>
