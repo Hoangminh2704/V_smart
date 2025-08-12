@@ -178,6 +178,13 @@
             display: flex;
             flex-direction: column;
             gap: 20px;
+
+            .input-field {
+              display: flex;
+              flex-direction: column;
+              gap: 8px;
+            }
+
             &-item {
               display: flex;
               padding: 6px 12px;
@@ -192,13 +199,52 @@
               border: 1px solid rgba(226, 231, 237, 1);
               border-radius: 8px;
               outline: none;
-              box-shadow: 0 0 0 0.5px rgba(40, 167, 69, 0.2);
+              transition: border-color 0.3s ease;
 
               &::placeholder {
                 color: rgba(142, 155, 166, 1);
                 font-weight: 300;
                 font-size: 14px;
                 line-height: 24px;
+              }
+
+              &.error {
+                border-color: rgba(234, 62, 83, 1);
+                box-shadow: 0 0 0 1px rgba(234, 62, 83, 0.2);
+              }
+
+              &:focus {
+                border-color: rgba(2, 105, 135, 1);
+                box-shadow: 0 0 0 1px rgba(2, 105, 135, 0.2);
+
+                &.error {
+                  border-color: rgba(234, 62, 83, 1);
+                  box-shadow: 0 0 0 1px rgba(234, 62, 83, 0.2);
+                }
+              }
+            }
+
+            .error-message {
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              color: rgba(234, 62, 83, 1);
+              font-size: 12px;
+              font-weight: 400;
+              line-height: 18px;
+
+              .error-icon {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 16px;
+                height: 16px;
+                background-color: rgba(234, 62, 83, 1);
+                color: white;
+                border-radius: 50%;
+                font-size: 10px;
+                font-weight: bold;
+                flex-shrink: 0;
               }
             }
           }
@@ -418,6 +464,16 @@
             line-height: 24px;
             text-align: center;
             color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+
+            &:hover {
+              background-color: rgba(1, 85, 110, 1);
+            }
+
+            &:active {
+              background-color: rgba(1, 75, 95, 1);
+            }
           }
         }
       }
