@@ -1,27 +1,28 @@
 import React from "react";
 import "./DeliveryOrder.scss";
 import { LeftIcon } from "../../assets/svg/svg";
-
+import { getOrderById } from "../../Utils/cartUtils";
+import type { Order } from "../../Utils/cartUtils";
 interface DeliveryOrderProps {
   orderCode: string;
   onBack: () => void;
 }
 
 const DeliveryOrder: React.FC<DeliveryOrderProps> = ({ orderCode, onBack }) => {
-  //   const order: Order | null = getOrderById(orderCode);
+  const order: Order | null = getOrderById(orderCode);
 
-  //   if (!order) {
-  //     return (
-  //       <div className="delivery__background">
-  //         <div className="delivery__content">
-  //           <div className="delivery__error">
-  //             <h2>Không tìm thấy đơn hàng</h2>
-  //             <button onClick={onBack}>Quay lại</button>
-  //           </div>
-  //         </div>
-  //       </div>
-  //     );
-  //   }
+  if (!order) {
+    return (
+      <div className="delivery__background">
+        <div className="delivery__content">
+          <div className="delivery__error">
+            <h2>Không tìm thấy đơn hàng</h2>
+            <button onClick={onBack}>Quay lại</button>
+          </div>
+        </div>
+      </div>
+    );
+  }
   return (
     <div className="delivery__background">
       <div className="delivery__content">
@@ -64,40 +65,27 @@ const DeliveryOrder: React.FC<DeliveryOrderProps> = ({ orderCode, onBack }) => {
               <div className="delivery__info-item-title-total">Số tiền</div>
             </div>
             <div className="delivery__info-item-content">
-              <div className="delivery__info-item-content-order">
-                <div className="delivery__item-overall">
-                  <div className="delivery__item-overall-img">
-                    <img src="../../src/assets/image/product1.png" alt="" />
+              {order.items.map((item) => (
+                <div className="delivery__info-item-content-order">
+                  <div className="delivery__item-overall">
+                    <div className="delivery__item-overall-img">
+                      <img src={item.imageUrl} alt={item.productName} />
+                    </div>
+                    <div className="delivery__item-overall-info">
+                      <div className="delivery__item-overall-info-name">
+                        {item.productName}
+                      </div>
+                      <div className="delivery__item-overall-info-quantity">
+                        x{item.quantity}
+                      </div>
+                    </div>
                   </div>
-                  <div className="delivery__item-overall-info">
-                    <div className="delivery__item-overall-info-name">
-                      Khóa cửa thông minh Luvit
-                    </div>
-                    <div className="delivery__item-overall-info-quantity">
-                      x1
-                    </div>
-                  </div>
-                </div>
-                <div className="delivery__item-price">8.250.000đ</div>
-                <div className="delivery__item-totalPrice">8.250.000đ</div>
-              </div>
-              <div className="delivery__info-item-content-order">
-                <div className="delivery__item-overall">
-                  <div className="delivery__item-overall-img">
-                    <img src="../../src/assets/image/product1.png" alt="" />
-                  </div>
-                  <div className="delivery__item-overall-info">
-                    <div className="delivery__item-overall-info-name">
-                      Khóa cửa thông minh Luvit
-                    </div>
-                    <div className="delivery__item-overall-info-quantity">
-                      x1
-                    </div>
+                  <div className="delivery__item-price">{item.price}đ</div>
+                  <div className="delivery__item-totalPrice">
+                    {item.price * item.quantity}đ
                   </div>
                 </div>
-                <div className="delivery__item-price">8.250.000đ</div>
-                <div className="delivery__item-totalPrice">8.250.000đ</div>
-              </div>{" "}
+              ))}
             </div>
           </div>
           <div className="delivery__info-customer">
@@ -107,10 +95,10 @@ const DeliveryOrder: React.FC<DeliveryOrderProps> = ({ orderCode, onBack }) => {
               </div>
               <div className="delivery__address-content">
                 <div className="delivery__address-content-name">
-                  Nguyễn Văn A
+                  {order.customerName}
                 </div>
                 <div className="delivery__address-content-phone">
-                  (+84) 819 123 123
+                  {order.customerPhone}
                 </div>
                 <div className="delivery__address-content-address">
                   112A Trần Hưng Đạo, Bến Nghé, Quận 1, Tp Hồ Chí Minh
