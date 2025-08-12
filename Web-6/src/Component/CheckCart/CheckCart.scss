@@ -1,0 +1,135 @@
+@mixin xs {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+@mixin m {
+  @media (min-width: 768px) and (max-width: 1279px) {
+    @content;
+  }
+}
+@mixin xl {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}
+
+.check-cart-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  animation: fadeIn 0.3s ease;
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
+
+.check-cart-modal {
+  background: white;
+  border-radius: 16px;
+  max-width: 382px;
+  width: 90%;
+  overflow-y: auto;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+  animation: slideUp 0.3s ease;
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @include xs {
+    width: 95%;
+    border-radius: 12px;
+  }
+}
+
+.check-cart-content {
+  padding: 40px 16px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.check-cart-icon {
+  svg {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+.check-cart-overall {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: center;
+  .check-cart-title {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 28px;
+    text-align: center;
+    color: rgba(31, 59, 83, 1);
+  }
+  .check-cart-message {
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    color: rgba(31, 59, 83, 1);
+  }
+  .check-cart-description {
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    color: rgba(31, 59, 83, 1);
+  }
+}
+
+.check-cart-button {
+  background-color: #026987;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 32px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  min-width: 200px;
+
+  &:hover {
+    background-color: #025a73;
+  }
+
+  &:active {
+    background-color: #024d63;
+  }
+
+  @include xs {
+    min-width: 180px;
+    padding: 10px 24px;
+    font-size: 14px;
+  }
+}
