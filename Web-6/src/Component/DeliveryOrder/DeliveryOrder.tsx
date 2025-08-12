@@ -3,6 +3,8 @@ import "./DeliveryOrder.scss";
 import { LeftIcon } from "../../assets/svg/svg";
 import { getOrderById } from "../../Utils/cartUtils";
 import type { Order } from "../../Utils/cartUtils";
+import { CheckCircle } from "../../assets/svg/svg";
+
 interface DeliveryOrderProps {
   orderCode: string;
   onBack: () => void;
@@ -23,6 +25,14 @@ const DeliveryOrder: React.FC<DeliveryOrderProps> = ({ orderCode, onBack }) => {
       </div>
     );
   }
+
+  const formatPrice = (price: number): string => {
+    return price.toLocaleString("vi-VN") + "đ";
+  };
+
+  const shippingFee = 20000;
+  const totalWithShipping = order.total + shippingFee;
+
   return (
     <div className="delivery__background">
       <div className="delivery__content">
@@ -44,7 +54,9 @@ const DeliveryOrder: React.FC<DeliveryOrderProps> = ({ orderCode, onBack }) => {
           </div>
           <div className="delivery__state-follow">
             <div className="delivery__status">
-              <div className="delivery__status-confirm"></div>
+              <div className="delivery__status-confirm active">
+                <CheckCircle className="delivery__status-icon" fill="white" />
+              </div>
               <div className="delivery__status-line"></div>
               <div className="delivery__status-handle"></div>
               <div className="delivery__status-line"></div>
@@ -135,7 +147,7 @@ const DeliveryOrder: React.FC<DeliveryOrderProps> = ({ orderCode, onBack }) => {
                     </span>
                   </div>
                   <div className="delivery__payment-content-total-value">
-                    9.650.000đ{" "}
+                    {formatPrice(order.total)}
                   </div>
                 </div>
                 <div className="delivery__payment-content-afterShip">
@@ -143,7 +155,7 @@ const DeliveryOrder: React.FC<DeliveryOrderProps> = ({ orderCode, onBack }) => {
                     Tổng thanh toán:{" "}
                   </div>
                   <div className="delivery__payment-content-afterShip-value">
-                    9.670.000đ{" "}
+                    {formatPrice(totalWithShipping)}
                   </div>
                 </div>
               </div>
