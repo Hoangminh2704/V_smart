@@ -8,7 +8,7 @@ function Cart() {
   return (
     <>
       <Header />
-      <Direction />
+      <Direction directions="Giỏ hàng" />
       <CartComponent />
       <Footer />
     </>

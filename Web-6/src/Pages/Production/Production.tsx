@@ -41,7 +41,7 @@ function Production() {
     <>
       <Header />
       <Slides />
-      <Direction />
+      <Direction directions="Sản phẩm" />
       <BrandSort
         onBrandClick={handleBrandFilter}
         selectedBrand={currentFilter.brand}

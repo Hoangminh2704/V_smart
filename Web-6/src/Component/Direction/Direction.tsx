@@ -1,7 +1,12 @@
 import React from "react";
 import "./Direction.scss";
 import { RightIcon } from "../../assets/svg/svg";
-const Direction: React.FC = () => {
+
+interface DirectionProps {
+  directions: string;
+}
+
+const Direction: React.FC<DirectionProps> = ({ directions }) => {
   return (
     <div className="direction">
       <div className="direction__content">
@@ -10,7 +15,7 @@ const Direction: React.FC = () => {
           <div className="direction__icon">
             <RightIcon className="direction__icon-svg" />
           </div>
-          <div className="direction__to">Sản phẩm</div>
+          <div className="direction__to">{directions}</div>
         </div>
       </div>
     </div>

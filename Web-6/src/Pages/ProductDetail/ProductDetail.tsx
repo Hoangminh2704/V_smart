@@ -50,7 +50,7 @@ function ProductDetailPage() {
   return (
     <>
       <Header />
-      <Direction />
+      <Direction directions="Chi tiết sản phẩm" />
       <ProductDetail product={currentProduct} />
       <DescriptionDetail />
       <RelativeProduct

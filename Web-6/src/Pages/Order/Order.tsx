@@ -6,7 +6,7 @@ function OrderPage() {
   return (
     <>
       <Header />
-      <Direction />
+      <Direction directions="Đơn hàng" />
       <Order />
       <Footer />
     </>
