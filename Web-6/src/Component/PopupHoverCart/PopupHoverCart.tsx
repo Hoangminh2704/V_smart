@@ -7,6 +7,7 @@ import {
   getCartItemCount,
   type CartItem,
 } from "../../Utils/cartUtils";
+import cartEmpty from "../../assets/image/CartEmpty.png";
 
 const PopupHoverCart: React.FC = () => {
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
@@ -94,7 +95,12 @@ const PopupHoverCart: React.FC = () => {
             </div>
           ))
         ) : (
-          <div className="header--search-hover-empty">Giỏ hàng trống</div>
+          <div className="header--search-hover-empty">
+            <img src={cartEmpty} alt="Giỏ hàng trống" />
+            <div className="header--search-hover-empty-text">
+              Chưa có sản phẩm nào
+            </div>
+          </div>
         )}
       </div>
       <Link to="/cart" className="header--search-hover-button">
