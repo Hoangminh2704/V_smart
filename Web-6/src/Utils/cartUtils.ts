@@ -249,6 +249,8 @@ export const createOrder = (
     (item) => item.isChecked !== true
   );
   saveCartToStorage(remainingItems);
+  window.dispatchEvent(new CustomEvent("cartUpdated"));
+
   return newOrder;
 };
 

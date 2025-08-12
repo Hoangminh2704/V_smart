@@ -22,6 +22,7 @@ const Header: React.FC = () => {
     const updateCartCount = () => {
       setCartCount(getCartItemCount());
     };
+    updateCartCount();
     window.addEventListener("storage", updateCartCount);
     window.addEventListener("cartUpdated", updateCartCount);
     return () => {

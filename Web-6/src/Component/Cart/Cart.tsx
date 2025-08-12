@@ -9,6 +9,7 @@ import {
   updateAllCartItemsChecked,
   isAllCartItemsChecked,
   createOrder,
+  getCartItemCount,
   type CartItem as CartItemType,
 } from "../../Utils/cartUtils";
 import cartEmpty from "../../assets/image/CartEmpty.png";
@@ -100,6 +101,21 @@ const CartComponent: React.FC = () => {
     return isValid;
   };
 
+  const updateCartDisplay = (): void => {
+    const cartCountElements = document.querySelectorAll(
+      ".header__right-cart-count"
+    );
+    const count = getCartItemCount();
+
+    cartCountElements.forEach((element) => {
+      if (element) {
+        element.textContent = count.toString();
+      }
+    });
+
+    window.dispatchEvent(new CustomEvent("cartUpdated"));
+  };
+
   const handlePlaceOrder = () => {
     if (validateForm()) {
       console.log("Order success");
@@ -109,7 +125,10 @@ const CartComponent: React.FC = () => {
       // Set order code for popup
       setCurrentOrderCode(newOrder.id);
 
+      // Cập nhật cart data và header count
       updateCartData();
+      updateCartDisplay();
+
       setShowSuccessPopup(true);
       setCustomerName("");
       setCustomerPhone("");

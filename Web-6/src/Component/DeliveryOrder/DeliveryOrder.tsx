@@ -65,8 +65,11 @@ const DeliveryOrder: React.FC<DeliveryOrderProps> = ({ orderCode, onBack }) => {
               <div className="delivery__info-item-title-total">Số tiền</div>
             </div>
             <div className="delivery__info-item-content">
-              {order.items.map((item) => (
-                <div className="delivery__info-item-content-order">
+              {order.items.map((item, index) => (
+                <div
+                  key={`${item.id}-${item.selectedColor}-${item.selectedSize}-${index}`}
+                  className="delivery__info-item-content-order"
+                >
                   <div className="delivery__item-overall">
                     <div className="delivery__item-overall-img">
                       <img src={item.imageUrl} alt={item.productName} />
@@ -80,9 +83,13 @@ const DeliveryOrder: React.FC<DeliveryOrderProps> = ({ orderCode, onBack }) => {
                       </div>
                     </div>
                   </div>
-                  <div className="delivery__item-price">{item.price}đ</div>
+                  <div className="delivery__item-price">
+                    <span>Đơn giá:</span>
+                    {item.price.toLocaleString("vi-VN")}đ
+                  </div>
                   <div className="delivery__item-totalPrice">
-                    {item.price * item.quantity}đ
+                    <span>Số tiền:</span>
+                    {(item.price * item.quantity).toLocaleString("vi-VN")}đ
                   </div>
                 </div>
               ))}
