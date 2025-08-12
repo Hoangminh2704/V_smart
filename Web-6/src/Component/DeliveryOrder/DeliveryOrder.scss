@@ -1,0 +1,342 @@
+@mixin xs {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+@mixin m {
+  @media (min-width: 768px) and (max-width: 1279px) {
+    @content;
+  }
+}
+@mixin xl {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}
+.delivery__background {
+  width: 100%;
+  background-color: white;
+  padding-top: 40px;
+  padding-bottom: 80px;
+
+  .delivery__content {
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    .delivery__state {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      padding: 20px 0 40px 0;
+      background-color: rgba(246, 246, 246, 1);
+      border-radius: 12px;
+      &-action {
+        width: 100%;
+        padding: 20px 48px;
+        justify-content: space-between;
+        align-items: center;
+        display: flex;
+        border-bottom: 0.5px solid rgba(167, 177, 186, 1);
+        &-back {
+          display: flex;
+          align-items: center;
+          gap: 4px;
+          cursor: pointer;
+          &-text {
+            font-weight: 300;
+            font-size: 14px;
+            line-height: 24px;
+          }
+          &-icon {
+            width: 24px;
+            height: 24px;
+            color: rgba(30, 43, 54, 1);
+          }
+        }
+        &-info {
+          display: flex;
+          gap: 20px;
+          align-items: center;
+          &-code {
+            font-weight: 400;
+            font-style: Medium;
+            font-size: 16px;
+            line-height: 24px;
+            letter-spacing: 0%;
+            text-align: center;
+            vertical-align: bottom;
+          }
+          &-line {
+            width: 1px;
+            height: 24px;
+            background-color: rgba(167, 177, 186, 1);
+          }
+          &-state {
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 24px;
+            text-align: center;
+            vertical-align: bottom;
+            width: 143px;
+            box-sizing: border-box;
+            color: rgba(233, 146, 8, 1);
+          }
+        }
+      }
+      &-follow {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin: 0 auto;
+        .delivery__status {
+          display: flex;
+          align-items: center;
+          &-confirm,
+          &-handle,
+          &-complete {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 1px solid rgba(2, 105, 135, 1);
+          }
+
+          &-line {
+            width: 350px;
+            height: 1px;
+            background-color: rgba(2, 105, 135, 1);
+          }
+        }
+        .delivery__text {
+          display: flex;
+          justify-content: space-between;
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 24px;
+          vertical-align: bottom;
+          color: rgba(30, 43, 54, 1);
+        }
+      }
+    }
+    .delivery__info {
+      display: flex;
+      gap: 24px;
+      width: 100%;
+      background-color: white;
+      border-radius: 12px;
+      padding: 24px;
+      margin-top: 20px;
+
+      &-item {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        border-radius: 12px;
+        padding: 40px 28px;
+        background-color: rgba(246, 246, 246, 1);
+        width: 59%;
+        height: fit-content;
+        &-title {
+          display: grid;
+
+          grid-template-columns: 480px 1fr 1fr;
+          &-product,
+          &-price,
+          &-total {
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 24px;
+            color: rgba(31, 59, 83, 1);
+          }
+        }
+        &-content {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          &-order {
+            display: flex;
+            gap: 36px;
+            border-top: 0.5px solid rgba(167, 177, 186, 1);
+            padding: 32px 0;
+            align-items: center;
+            .delivery__item-overall {
+              display: flex;
+              gap: 20px;
+              align-items: center;
+              min-width: 428px;
+              &-img {
+                width: 94px;
+                height: 96px;
+                img {
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                }
+              }
+              &-info {
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+                &-name,
+                &-quantity {
+                  font-weight: 400;
+                  font-size: 16px;
+                  line-height: 24px;
+                  color: rgba(84, 84, 84, 1);
+                }
+              }
+            }
+            .delivery__item-price,
+            .delivery__item-totalPrice {
+              font-weight: 400;
+              font-size: 16px;
+              line-height: 24px;
+              color: rgba(71, 87, 101, 1);
+            }
+          }
+        }
+      }
+      &-customer {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        width: 39%;
+        &-address {
+          display: flex;
+          flex-direction: column;
+          gap: 24px;
+          padding: 40px;
+          background-color: rgba(246, 246, 246, 1);
+          border-radius: 12px;
+          .delivery__address-header {
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 28px;
+          }
+          .delivery__address-content {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            &-name {
+              font-family: "Open Sans";
+
+              width: 100%;
+              font-weight: 400;
+              font-size: 16px;
+              line-height: 24px;
+              color: rgba(31, 59, 83, 1);
+            }
+            &-phone,
+            &-address {
+              font-family: "Open Sans";
+
+              font-weight: 300;
+              font-size: 16px;
+              line-height: 24px;
+              color: rgba(31, 59, 83, 1);
+            }
+            &-note {
+              display: flex;
+              gap: 4px;
+              &-title {
+                font-family: "Open Sans";
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 24px;
+                color: rgba(31, 59, 83, 1);
+              }
+              &-text {
+                font-weight: 300;
+                font-size: 16px;
+                line-height: 24px;
+                color: rgba(31, 59, 83, 1);
+              }
+            }
+          }
+        }
+        &-payment {
+          display: flex;
+          flex-direction: column;
+          gap: 24px;
+          padding: 40px;
+          background-color: rgba(246, 246, 246, 1);
+          border-radius: 12px;
+          .delivery__payment-header {
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 28px;
+            color: rgba(31, 59, 83, 1);
+          }
+          .delivery__payment-content {
+            display: flex;
+            flex-direction: column;
+            gap: 26px;
+            &-total {
+              display: flex;
+              gap: 12px;
+              justify-content: space-between;
+              &-label {
+                display: flex;
+                flex-direction: column;
+                &-text {
+                  font-weight: 500;
+                  font-size: 16px;
+                  line-height: 24px;
+                  vertical-align: bottom;
+                  color: rgba(30, 43, 54, 1);
+                }
+                &-note {
+                  font-weight: 400;
+                  font-size: 12px;
+                  line-height: 18px;
+                  color: rgba(30, 43, 54, 1);
+                }
+              }
+            }
+            &-afterShip {
+              display: flex;
+              gap: 18px;
+              padding-top: 20px;
+              border-top: 1px solid rgba(208, 215, 221, 1);
+              justify-content: space-between;
+              &-label {
+                font-weight: 500;
+                font-size: 20px;
+                line-height: 28px;
+                vertical-align: bottom;
+                color: rgba(71, 87, 101, 1);
+              }
+              &-value {
+                font-weight: 500;
+                font-size: 20px;
+                line-height: 28px;
+                color: rgba(2, 105, 135, 1);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.delivery__error {
+  text-align: center;
+  padding: 40px;
+
+  h2 {
+    color: #ea3e53;
+    margin-bottom: 20px;
+  }
+
+  button {
+    background-color: #026987;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 24px;
+    cursor: pointer;
+  }
+}
