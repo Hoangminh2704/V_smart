@@ -55,6 +55,8 @@ const CartItem: React.FC<CartItemProps> = ({ cartItem, onUpdateCart }) => {
         element.textContent = count.toString();
       }
     });
+
+    window.dispatchEvent(new CustomEvent("cartUpdated"));
   }
   const togglePopupCart = () => {
     setTempColor(selectedColor);

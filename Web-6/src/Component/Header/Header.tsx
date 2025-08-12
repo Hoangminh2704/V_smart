@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "./Header.scss";
 import logo from "../../assets/image/logo.png";
@@ -15,7 +15,20 @@ const Header: React.FC = () => {
   const [activeItem, setActiveItem] = useState<number>(1);
   const [showCartPopup, setShowCartPopup] = useState<boolean>(false);
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
+  const [cartCount, setCartCount] = useState<number>(getCartItemCount());
   const location = useLocation();
+
+  useEffect(() => {
+    const updateCartCount = () => {
+      setCartCount(getCartItemCount());
+    };
+    window.addEventListener("storage", updateCartCount);
+    window.addEventListener("cartUpdated", updateCartCount);
+    return () => {
+      window.removeEventListener("storage", updateCartCount);
+      window.removeEventListener("cartUpdated", updateCartCount);
+    };
+  }, []);
 
   const menuItems = [
     { id: 0, name: "Bộ điều khiển trung tâm", hasIcon: false },
@@ -88,9 +101,7 @@ const Header: React.FC = () => {
               >
                 <Link to="/cart" className="header__right-cart">
                   <CartIcon className="header__right-cart-icon" />
-                  <div className="header__right-cart-count">
-                    {getCartItemCount()}
-                  </div>
+                  <div className="header__right-cart-count">{cartCount}</div>
                 </Link>
                 {showCartPopup && (
                   <div
@@ -163,9 +174,9 @@ const Header: React.FC = () => {
               <div className="header__element-right-option">
                 <span>Khuyến mãi</span>
               </div>
-              <div className="header__element-right-option">
+              <Link to="/order" className="header__element-right-option">
                 <span>Đơn hàng</span>
-              </div>
+              </Link>
               <Link
                 to="/contact"
                 className={`header__element-right-option special ${
