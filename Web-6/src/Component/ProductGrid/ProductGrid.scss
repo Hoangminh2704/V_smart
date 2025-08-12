@@ -72,6 +72,32 @@
       width: 100%;
       order: 2;
     }
+    &-empty {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 40px;
+      &-icon {
+        width: 200px;
+        &-svg {
+          width: 100%;
+          height: auto;
+        }
+      }
+      &-text {
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 28px;
+        color: rgba(30, 43, 54, 1);
+        text-align: center;
+
+        @include xs {
+          font-size: 16px;
+          line-height: 24px;
+        }
+      }
+    }
     &-header {
       display: flex;
       justify-content: space-between;
@@ -132,6 +158,7 @@
     &-items {
       display: grid;
       gap: 24px;
+      position: relative;
 
       @include xl {
         grid-template-columns: repeat(3, 1fr);

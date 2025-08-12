@@ -5,6 +5,7 @@ import {
   Sort,
   ArrowLeftPagination,
   ArrowRightPagination,
+  NoProductSelectIcon,
 } from "../../assets/svg/svg";
 
 interface ProductData {
@@ -39,6 +40,19 @@ const ProductGrid: React.FC<ProductGridProps> = ({
   const [isFilterOpen, setIsFilterOpen] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const productsPerPage = 9;
+
+  const productTypeFilters = [
+    "Cổng tự động",
+    "Khóa cửa thông minh",
+    "Công tắc thông minh",
+    "Đèn LED tự động",
+    "Bộ điều khiển trung tâm",
+    "Cảm biến",
+    "Sensor",
+    "Bộ điều khiển hồng ngoại",
+    "Rèm cửa thông minh",
+    "Ổ cắm thông minh",
+  ];
 
   const toggleFilter = () => {
     setIsFilterOpen(!isFilterOpen);
@@ -152,11 +166,22 @@ const ProductGrid: React.FC<ProductGridProps> = ({
             </div>
           </div>
         </div>
-        <div className="productGrid__list-items">
-          {displayedProducts.map((product) => (
-            <Card key={product.id} id={product.id} />
-          ))}
-        </div>
+        {displayedProducts.length > 0 ? (
+          <div className="productGrid__list-items">
+            {displayedProducts.map((product) => (
+              <Card key={product.id} id={product.id} />
+            ))}
+          </div>
+        ) : (
+          <div className="productGrid__list-empty">
+            <div className="productGrid__list-empty-icon">
+              <NoProductSelectIcon className="productGrid__list-empty-icon-svg" />
+            </div>
+            <div className="productGrid__list-empty-text">
+              Không có sản phẩm phù hợp
+            </div>
+          </div>
+        )}
 
         {renderPagination()}
       </div>
@@ -170,213 +195,34 @@ const ProductGrid: React.FC<ProductGridProps> = ({
         </div>
         <div className="productGrid__filter-header">Loại sản phẩm</div>
         <div className="productGrid__filter-list">
-          <label
-            className="productGrid__filter-list-item"
-            data-type="Cổng tự động"
-          >
-            <input
-              className="productGrid__filter-list-item-checkbox"
-              title="Select1"
-              type="checkbox"
-              checked={currentFilter.type === "Cổng tự động"}
-              onChange={() => handleTypeFilter("Cổng tự động")}
-            />
-            <span
-              className="productGrid__filter-list-item-text"
-              onClick={(e) => {
-                e.preventDefault();
-                handleTypeFilter("Cổng tự động");
-              }}
+          {productTypeFilters.map((filterType, index) => (
+            <label
+              key={filterType}
+              className="productGrid__filter-list-item"
+              data-type={filterType}
             >
-              Cổng tự động
-            </span>
-          </label>
-          <label
-            className="productGrid__filter-list-item"
-            data-type="Khóa cửa thông minh"
-          >
-            <input
-              className="productGrid__filter-list-item-checkbox"
-              title="Select2"
-              type="checkbox"
-              checked={currentFilter.type === "Khóa cửa thông minh"}
-              onChange={() => handleTypeFilter("Khóa cửa thông minh")}
-            />
-            <span
-              className="productGrid__filter-list-item-text"
-              onClick={(e) => {
-                e.preventDefault();
-                handleTypeFilter("Khóa cửa thông minh");
-              }}
-            >
-              Khóa cửa thông minh
-            </span>
-          </label>
-          <label
-            className="productGrid__filter-list-item"
-            data-type="Công tắc thông minh"
-          >
-            <input
-              className="productGrid__filter-list-item-checkbox"
-              title="Select3"
-              type="checkbox"
-              checked={currentFilter.type === "Công tắc thông minh"}
-              onChange={() => handleTypeFilter("Công tắc thông minh")}
-            />
-            <span
-              className="productGrid__filter-list-item-text"
-              onClick={(e) => {
-                e.preventDefault();
-                handleTypeFilter("Công tắc thông minh");
-              }}
-            >
-              Công tắc thông minh
-            </span>
-          </label>
-          <label
-            className="productGrid__filter-list-item"
-            data-type="Đèn LED tự động"
-          >
-            <input
-              className="productGrid__filter-list-item-checkbox"
-              title="Select4"
-              type="checkbox"
-              checked={currentFilter.type === "Đèn LED tự động"}
-              onChange={() => handleTypeFilter("Đèn LED tự động")}
-            />
-            <span
-              className="productGrid__filter-list-item-text"
-              onClick={(e) => {
-                e.preventDefault();
-                handleTypeFilter("Đèn LED tự động");
-              }}
-            >
-              Đèn LED tự động
-            </span>
-          </label>
-          <label
-            className="productGrid__filter-list-item"
-            data-type="Bộ điều khiển trung tâm"
-          >
-            <input
-              className="productGrid__filter-list-item-checkbox"
-              title="Select5"
-              type="checkbox"
-              checked={currentFilter.type === "Bộ điều khiển trung tâm"}
-              onChange={() => handleTypeFilter("Bộ điều khiển trung tâm")}
-            />
-            <span
-              className="productGrid__filter-list-item-text"
-              onClick={(e) => {
-                e.preventDefault();
-                handleTypeFilter("Bộ điều khiển trung tâm");
-              }}
-            >
-              Bộ điều khiển trung tâm
-            </span>
-          </label>
-          <label className="productGrid__filter-list-item" data-type="Cảm biến">
-            <input
-              className="productGrid__filter-list-item-checkbox"
-              title="Select6"
-              type="checkbox"
-              checked={currentFilter.type === "Cảm biến"}
-              onChange={() => handleTypeFilter("Cảm biến")}
-            />
-            <span
-              className="productGrid__filter-list-item-text"
-              onClick={(e) => {
-                e.preventDefault();
-                handleTypeFilter("Cảm biến");
-              }}
-            >
-              Cảm biến
-            </span>
-          </label>
-          <label className="productGrid__filter-list-item" data-type="Sensor">
-            <input
-              className="productGrid__filter-list-item-checkbox"
-              title="Select6b"
-              type="checkbox"
-              checked={currentFilter.type === "Sensor"}
-              onChange={() => handleTypeFilter("Sensor")}
-            />
-            <span
-              className="productGrid__filter-list-item-text"
-              onClick={(e) => {
-                e.preventDefault();
-                handleTypeFilter("Sensor");
-              }}
-            >
-              Sensor
-            </span>
-          </label>
-          <label
-            className="productGrid__filter-list-item"
-            data-type="Bộ điều khiển hồng ngoại"
-          >
-            <input
-              className="productGrid__filter-list-item-checkbox"
-              title="Select7"
-              type="checkbox"
-              checked={currentFilter.type === "Bộ điều khiển hồng ngoại"}
-              onChange={() => handleTypeFilter("Bộ điều khiển hồng ngoại")}
-            />
-            <span
-              className="productGrid__filter-list-item-text"
-              onClick={(e) => {
-                e.preventDefault();
-                handleTypeFilter("Bộ điều khiển hồng ngoại");
-              }}
-            >
-              Bộ điều khiển hồng ngoại
-            </span>
-          </label>
-          <label
-            className="productGrid__filter-list-item"
-            data-type="Rèm cửa thông minh"
-          >
-            <input
-              className="productGrid__filter-list-item-checkbox"
-              title="Select8"
-              type="checkbox"
-              checked={currentFilter.type === "Rèm cửa thông minh"}
-              onChange={() => handleTypeFilter("Rèm cửa thông minh")}
-            />
-            <span
-              className="productGrid__filter-list-item-text"
-              onClick={(e) => {
-                e.preventDefault();
-                handleTypeFilter("Rèm cửa thông minh");
-              }}
-            >
-              Rèm cửa thông minh
-            </span>
-          </label>
-          <label
-            className="productGrid__filter-list-item"
-            data-type="Ổ cắm thông minh"
-          >
-            <input
-              className="productGrid__filter-list-item-checkbox"
-              title="Select9"
-              type="checkbox"
-              checked={currentFilter.type === "Ổ cắm thông minh"}
-              onChange={() => handleTypeFilter("Ổ cắm thông minh")}
-            />
-            <span
-              className="productGrid__filter-list-item-text"
-              onClick={(e) => {
-                e.preventDefault();
-                handleTypeFilter("Ổ cắm thông minh");
-              }}
-            >
-              Ổ cắm thông minh
-            </span>
-          </label>
+              <input
+                className="productGrid__filter-list-item-checkbox"
+                title={`Select${index + 1}`}
+                type="checkbox"
+                checked={currentFilter.type === filterType}
+                onChange={() => handleTypeFilter(filterType)}
+              />
+              <span
+                className="productGrid__filter-list-item-text"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleTypeFilter(filterType);
+                }}
+              >
+                {filterType}
+              </span>
+            </label>
+          ))}
         </div>
       </div>
     </div>
   );
 };
+
 export default ProductGrid;
