@@ -1,0 +1,66 @@
+@mixin xs {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+@mixin m {
+  @media (min-width: 768px) and (max-width: 1279px) {
+    @content;
+  }
+}
+@mixin xl {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}
+.aboutSystem {
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 60px 0 120px 0;
+  display: flex;
+  gap: 60px;
+  align-items: center;
+  &__img {
+    width: 55.15%;
+    aspect-ratio: 706/493;
+  }
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    &-header {
+      font-weight: 400;
+      font-size: 42px;
+      line-height: 56px;
+      text-align: center;
+      color: rgba(71, 87, 101, 1);
+    }
+    &-description {
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 24px;
+      color: rgba(30, 43, 54, 1);
+    }
+    &-info {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      &-location,
+      &-phone {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        &-icon {
+          width: 24px;
+          height: 24px;
+        }
+        &-text {
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 24px;
+        }
+      }
+    }
+  }
+}
