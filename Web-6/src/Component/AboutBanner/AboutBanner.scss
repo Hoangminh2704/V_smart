@@ -24,10 +24,12 @@
   margin-bottom: 128px;
   @include m {
     aspect-ratio: 834/522;
+    margin-bottom: 60px;
   }
   @include xs {
     aspect-ratio: 414/550;
     background-position: 60%;
+    margin-bottom: 80px;
   }
   &-content {
     position: absolute;
@@ -36,17 +38,33 @@
     display: flex;
     flex-direction: column;
     gap: 24px;
+    @include m {
+      left: calc((100% - 95.56%) / 2);
+    }
+    @include xs {
+      left: calc((100% - 92.27%) / 2);
+    }
     &-title {
       font-weight: 500;
       font-size: 32px;
       line-height: 44px;
       color: rgba(71, 87, 101, 1);
+      @include xs {
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 28px;
+      }
     }
     &-description {
       font-weight: 500;
       font-size: 64px;
       line-height: 74px;
       color: rgba(71, 87, 101, 1);
+      @include xs {
+        font-weight: 500;
+        font-size: 42px;
+        line-height: 56px;
+      }
     }
   }
   &-features {
@@ -64,19 +82,19 @@
     overflow: hidden;
 
     @include m {
-      max-width: 500px;
-      height: 180px;
-      bottom: -100px;
+      max-width: 366px;
+      height: 122px;
+      bottom: -60px;
       box-shadow: 0 4px 8px rgba(90, 90, 90, 0.25);
+      right: calc((100% - 95.56%) / 2);
     }
 
     @include xs {
-      max-width: 350px;
-      height: 160px;
+      max-width: 366px;
+      height: 122px;
       bottom: -80px;
-      grid-template-columns: 1fr;
-      grid-template-rows: repeat(3, 1fr);
       box-shadow: 0 4px 8px rgba(90, 90, 90, 0.25);
+      right: calc((100% - 92.27%) / 2);
     }
 
     &-setting,
@@ -99,12 +117,40 @@
       &:nth-child(3) {
         background-color: rgba(255, 246, 217, 1);
       }
+      @include m {
+        padding: 0 12px;
+        gap: 12px;
+      }
+      @include xs {
+        padding: 0 12px;
+        gap: 12px;
+      }
       &-text {
         font-weight: 500;
         font-size: 16px;
         line-height: 24px;
         text-align: center;
         color: rgba(97, 115, 130, 1);
+        @include m {
+          font-weight: 500;
+          font-size: 12px;
+          line-height: 18px;
+        }
+        @include xs {
+          font-weight: 500;
+          font-size: 12px;
+          line-height: 18px;
+        }
+      }
+      &-icon {
+        @include m {
+          width: 24px;
+          height: 24px;
+        }
+        @include xs {
+          width: 24px;
+          height: 24px;
+        }
       }
     }
   }

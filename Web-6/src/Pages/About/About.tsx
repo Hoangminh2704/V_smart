@@ -6,6 +6,8 @@ import Role from "../../Component/Role/Role";
 import Footer from "../../Component/Footer/Footer";
 import AboutBanner from "../../Component/AboutBanner/AboutBanner";
 import AboutSystem from "../../Component/AboutSystem/AboutSystem";
+import AboutField from "../../Component/AboutField/AboutField";
+import AboutProcess from "../../Component/AboutProcess/AboutProcess";
 
 function About() {
   return (
@@ -14,6 +16,8 @@ function About() {
       <Direction directions="Giới thiệu" />
       <AboutBanner />
       <AboutSystem />
+      <AboutField />
+      <AboutProcess />
       <Brand />
       <Discount />
       <Role />
