@@ -13,3 +13,99 @@
     @content;
   }
 }
+.aboutProcess__background {
+  width: 100%;
+  background-color: white;
+  background-image: url("../../assets/image/AboutProcess.jpg");
+  padding: 72px 0;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  z-index: 1;
+}
+.aboutProcess {
+  max-width: 1280px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: center;
+  &__intro {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    &-header {
+      font-weight: 500;
+      font-size: 32px;
+      line-height: 44px;
+      text-align: center;
+      color: rgba(71, 87, 101, 1);
+    }
+    &-content {
+      max-width: 800px;
+      font-weight: 300;
+      font-size: 18px;
+      line-height: 28px;
+      text-align: center;
+      color: rgba(71, 87, 101, 1);
+    }
+  }
+  &__steps {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    align-items: end;
+    @include xl {
+      height: 232px;
+    }
+    @include m {
+      grid-template-columns: repeat(2, auto);
+    }
+    @include xs {
+      grid-template-columns: repeat(1, auto);
+    }
+    &-item {
+      position: relative;
+
+      &-name {
+        position: absolute;
+        font-weight: 400;
+        font-size: 32px;
+        line-height: 44px;
+        text-align: center;
+        color: rgba(2, 105, 135, 1);
+        left: 150px;
+        top: -20px;
+      }
+      &-icon {
+        position: absolute;
+        padding: 17px;
+        background-color: rgba(2, 105, 135, 1);
+        border-radius: 50%;
+        width: 74px;
+        height: 74px;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        left: 63px;
+        top: -32px;
+      }
+      &-connector {
+        position: absolute;
+        top: 50%;
+        right: 0;
+      }
+      &-description {
+        position: absolute;
+        left: 32px;
+        bottom: 66px;
+        font-weight: 400;
+        font-size: 22px;
+        line-height: 32px;
+        color: rgba(71, 87, 101, 1);
+      }
+    }
+  }
+}
