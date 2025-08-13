@@ -7,6 +7,7 @@ import Production from "./Pages/Production/Production";
 import ProductDetail from "./Pages/ProductDetail/ProductDetail";
 import Cart from "./Pages/Cart/Cart";
 import OrderPage from "./Pages/Order/Order";
+import Promotion from "./Pages/Promotion/Promotion";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/order" element={<OrderPage />} />
+        <Route path="/promotion" element={<Promotion />} />
       </Routes>
     </BrowserRouter>
   );

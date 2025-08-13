@@ -172,10 +172,20 @@ const Header: React.FC = () => {
                 <span>Tin tức</span>
                 <DownIcon className="header__element-right-option-icon" />
               </div>
-              <div className="header__element-right-option">
+              <Link
+                to="/promotion"
+                className={`header__element-right-option ${
+                  isActiveRoute("/promotion") ? "active" : ""
+                }`}
+              >
                 <span>Khuyến mãi</span>
-              </div>
-              <Link to="/order" className="header__element-right-option">
+              </Link>
+              <Link
+                to="/order"
+                className={`header__element-right-option ${
+                  isActiveRoute("/order") ? "active" : ""
+                }`}
+              >
                 <span>Đơn hàng</span>
               </Link>
               <Link
