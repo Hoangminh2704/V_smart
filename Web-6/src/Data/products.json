@@ -200,6 +200,8 @@
     "price": 890000,
     "state": "new",
     "order": 320,
+    "discount": "30%",
+
     "type": "Ổ cắm thông minh",
     "brand": "Siemens",
     "size": ["S", "XL", "L", "M"],
@@ -563,6 +565,8 @@
     "price": 9800000,
     "state": "new",
     "order": 35,
+    "discount": "30%",
+
     "type": "Bộ điều khiển trung tâm",
     "brand": "Vimar",
     "size": ["S", "M", "XL"],
@@ -678,6 +682,8 @@
     "price": 1650000,
     "state": "sold",
     "order": 245,
+    "discount": "30%",
+
     "type": "Đèn LED tự động",
     "brand": "Vimar",
     "size": ["S", "XL", "M", "L"],
@@ -697,6 +703,8 @@
     "price": 7800000,
     "state": "new",
     "order": 48,
+    "discount": "30%",
+
     "type": "Rèm cửa thông minh",
     "brand": "Panasonic",
     "size": ["L", "S", "XL", "M"],

@@ -22,6 +22,12 @@
   background-size: cover;
   position: relative;
   z-index: 1;
+  @include m {
+    display: none;
+  }
+  @include xs {
+    display: none;
+  }
 }
 .aboutProcess {
   max-width: 1280px;

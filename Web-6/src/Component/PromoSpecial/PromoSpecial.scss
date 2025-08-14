@@ -1,0 +1,53 @@
+@mixin xs {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+@mixin m {
+  @media (min-width: 768px) and (max-width: 1279px) {
+    @content;
+  }
+}
+@mixin xl {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}
+.promoSpecial {
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  padding: 80px 0 60px 0;
+  gap: 28px;
+  @include m {
+    width: 95.56%;
+    padding: 24px 0 60px 0;
+    align-items: center;
+  }
+  @include xs {
+    width: 92.27%;
+    padding: 20px 0 40px 0;
+    align-items: center;
+  }
+  &__header {
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 44px;
+    color: rgba(30, 43, 54, 1);
+  }
+  &__content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    @include m {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+    @include xs {
+      grid-template-columns: repeat(1, 1fr);
+      gap: 40px;
+    }
+  }
+}
