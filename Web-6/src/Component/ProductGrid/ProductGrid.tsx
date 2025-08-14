@@ -39,7 +39,13 @@ const ProductGrid: React.FC<ProductGridProps> = ({
   const [products, setProducts] = useState<ProductData[]>([]);
   const [isFilterOpen, setIsFilterOpen] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-  const productsPerPage = 9;
+  const productsPerPage = () => {
+    if (window.innerWidth >= 1280) {
+      return 9;
+    } else {
+      return 6;
+    }
+  };
 
   const productTypeFilters = [
     "Cổng tự động",
@@ -86,9 +92,9 @@ const ProductGrid: React.FC<ProductGridProps> = ({
     return matchesType && matchesBrand;
   });
 
-  const totalPages = Math.ceil(filteredProducts.length / productsPerPage);
-  const startIndex = (currentPage - 1) * productsPerPage;
-  const endIndex = startIndex + productsPerPage;
+  const totalPages = Math.ceil(filteredProducts.length / productsPerPage());
+  const startIndex = (currentPage - 1) * productsPerPage();
+  const endIndex = startIndex + productsPerPage();
   const displayedProducts = filteredProducts.slice(startIndex, endIndex);
 
   const handlePageChange = (page: number) => {

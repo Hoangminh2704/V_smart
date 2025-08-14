@@ -64,7 +64,6 @@
     "imageUrl": "../../src/assets/image/product3.png",
     "price": 4500000,
     "state": "contact",
-    "discount": "30%",
     "order": 120,
     "type": "Đèn LED tự động",
     "brand": "Philips",
@@ -682,8 +681,6 @@
     "price": 1650000,
     "state": "sold",
     "order": 245,
-    "discount": "30%",
-
     "type": "Đèn LED tự động",
     "brand": "Vimar",
     "size": ["S", "XL", "M", "L"],
