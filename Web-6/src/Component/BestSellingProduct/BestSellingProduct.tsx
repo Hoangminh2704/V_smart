@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from "react";
 import "./BestSellingProduct.scss";
 import Card from "../Card/Card";
+import { useNavigate } from "react-router-dom";
 
 interface ProductData {
   id: number;
   productType: string;
   productName: string;
   imageUrl: string;
-  price: string;
+  oldPrice: number;
+  price: number;
   state: string;
   discount?: string;
   order: number;
@@ -17,7 +19,10 @@ const BestSellingProduct: React.FC = () => {
   const [bestSellingProducts, setBestSellingProducts] = useState<ProductData[]>(
     []
   );
-
+  const navigate = useNavigate();
+  const handleProductClick = (id: number) => {
+    navigate(`/product/${id}`);
+  };
   useEffect(() => {
     fetch("/src/data/products.json")
       .then((response) => response.json())
@@ -35,6 +40,7 @@ const BestSellingProduct: React.FC = () => {
   }
 
   const [bestSeller, ...otherProducts] = bestSellingProducts;
+
   console.log(bestSeller, otherProducts);
 
   return (
@@ -56,12 +62,18 @@ const BestSellingProduct: React.FC = () => {
               <span className="bestSelling__main-header-type">
                 {bestSeller.productType}
               </span>
-              <span className="bestSelling__main-header-name">
+              <span
+                className="bestSelling__main-header-name"
+                onClick={() => handleProductClick(bestSeller.id)}
+              >
                 {bestSeller.productName}
               </span>
             </div>
             <div className="bestSelling__main-image">
-              <div className="bestSelling__main-image-wrapper">
+              <div
+                className="bestSelling__main-image-wrapper"
+                onClick={() => handleProductClick(bestSeller.id)}
+              >
                 <img src={bestSeller.imageUrl} alt={bestSeller.productName} />
               </div>
               <div className="bestSelling__main-image-overlay">
@@ -90,11 +102,13 @@ const BestSellingProduct: React.FC = () => {
             </div>
             <div className="bestSelling__main-price">
               <span className="bestSelling__main-price-old">
-                {bestSeller.price}đ
+                {bestSeller.oldPrice.toLocaleString("vi-VN")}đ
               </span>
 
               <div className="bestSelling__main-price-current">
-                <span className="bestSelling-price">{bestSeller.price}</span>
+                <span className="bestSelling-price">
+                  {bestSeller.price.toLocaleString("vi-VN")}
+                </span>
                 <span className="bestSelling-currency">đ</span>
               </div>
             </div>

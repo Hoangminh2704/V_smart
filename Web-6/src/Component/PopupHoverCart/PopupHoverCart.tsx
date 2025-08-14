@@ -8,10 +8,15 @@ import {
   type CartItem,
 } from "../../Utils/cartUtils";
 import cartEmpty from "../../assets/image/CartEmpty.png";
+import { useNavigate } from "react-router-dom";
 
 const PopupHoverCart: React.FC = () => {
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
+  const navigate = useNavigate();
 
+  const handleProductClick = (id: number) => {
+    navigate(`/product/${id}`);
+  };
   useEffect(() => {
     setCartItems(getCartFromStorage());
   }, []);
@@ -52,10 +57,14 @@ const PopupHoverCart: React.FC = () => {
                   src={item.imageUrl}
                   alt={item.productName}
                   className="header--search-hover-item-image"
+                  onClick={() => handleProductClick(item.id)}
                 />
                 <div className="header--search-hover-item-info">
                   <div className="header--search-hover-item-overall">
-                    <h1 className="header--search-hover-item-title">
+                    <h1
+                      className="header--search-hover-item-title"
+                      onClick={() => handleProductClick(item.id)}
+                    >
                       {item.productName}
                     </h1>
                     <div className="header--search-hover-item-price">

@@ -136,6 +136,7 @@
         line-height: 36px;
         letter-spacing: 0%;
         color: rgba(71, 87, 101, 1);
+        cursor: pointer;
       }
     }
     &-image {
@@ -144,6 +145,7 @@
       align-items: center;
       gap: 16px;
       flex-direction: column;
+      cursor: pointer;
       &-wrapper {
         width: 100%;
         aspect-ratio: 580/326;

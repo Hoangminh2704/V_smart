@@ -83,6 +83,8 @@
     "imageUrl": "../../src/assets/image/product4.png",
     "price": 4500000,
     "state": "new",
+    "discount": "30%",
+
     "order": 95,
     "type": "Đèn LED tự động",
     "brand": "Siemens",
@@ -102,6 +104,8 @@
     "imageUrl": "../../src/assets/image/product5.png",
     "price": 4500000,
     "state": "new",
+    "discount": "30%",
+
     "order": 78,
     "type": "Đèn LED tự động",
     "brand": "Vimar",
@@ -159,6 +163,8 @@
     "imageUrl": "../../src/assets/image/product3.png",
     "price": 1800000,
     "state": "new",
+    "discount": "30%",
+
     "order": 65,
     "type": "Công tắc thông minh",
     "brand": "Acis",
@@ -238,6 +244,8 @@
     "imageUrl": "../../src/assets/image/product1.png",
     "price": 2100000,
     "state": "new",
+    "discount": "30%",
+
     "order": 210,
     "type": "Cảm biến",
     "brand": "Panasonic",
@@ -315,6 +323,8 @@
     "imageUrl": "../../src/assets/image/product4.png",
     "price": 1450000,
     "state": "new",
+    "discount": "30%",
+
     "order": 275,
     "type": "Công tắc thông minh",
     "brand": "Siemens",
@@ -353,6 +363,8 @@
     "imageUrl": "../../src/assets/image/product1.png",
     "price": 8750000,
     "state": "new",
+    "discount": "30%",
+
     "order": 67,
     "type": "Rèm cửa thông minh",
     "brand": "Panasonic",
@@ -391,6 +403,8 @@
     "imageUrl": "../../src/assets/image/product3.png",
     "price": 18900000,
     "state": "new",
+    "discount": "30%",
+
     "order": 15,
     "type": "Bộ điều khiển trung tâm",
     "brand": "Acis",
@@ -410,7 +424,7 @@
     "imageUrl": "../../src/assets/image/Best.png",
     "price": 1850000,
     "state": "new",
-    "order": 225,
+    "order": 999999,
     "type": "Cảm biến",
     "brand": "Philips",
     "size": ["S", "XL", "L"],
@@ -448,6 +462,7 @@
     "imageUrl": "../../src/assets/image/product5.png",
     "price": 5600000,
     "state": "new",
+    "discount": "30%",
     "order": 78,
     "type": "Cổng tự động",
     "brand": "Vimar",

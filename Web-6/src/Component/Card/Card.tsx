@@ -1,7 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Card.scss";
-import { HeartIcon, CartIcon, CloseIcon } from "../../assets/svg/svg";
+import {
+  HeartIcon,
+  CartIcon,
+  CartFillIcon,
+  CloseIcon,
+} from "../../assets/svg/svg";
 import {
   addToCart,
   getCartItemCount,
@@ -43,6 +48,7 @@ const Card: React.FC<CardProps> = ({ id }) => {
   const [showNotification, setShowNotification] = useState(false);
   const [notificationCartItem, setNotificationCartItem] =
     useState<CartItem | null>(null);
+  const [isCartHovered, setIsCartHovered] = useState(false);
   const navigate = useNavigate();
   const handleProductClick = () => {
     navigate(`/product/${id}`);
@@ -123,7 +129,15 @@ const Card: React.FC<CardProps> = ({ id }) => {
     setShowNotification(false);
     setNotificationCartItem(null);
   };
-
+  const renderOldPrice = () => {
+    if (product?.discount) {
+      return (
+        <div className="product__content-list-item-oldPrice">
+          {formatPrice(product.oldPrice || 0)}đ
+        </div>
+      );
+    }
+  };
   const renderPrice = () => {
     if (product?.state === "sold") {
       return (
@@ -180,22 +194,31 @@ const Card: React.FC<CardProps> = ({ id }) => {
         <img src={product.imageUrl} alt={product.productName} />
       </div>
       <div className="product__content-list-item-footer">
+        {renderOldPrice()}
         {renderPrice()}
         <div className="product__content-list-item-active">
           <HeartIcon className="product__content-list-item-heart-icon" />
           <div
             className="product__content-list-item-cart-icon"
             onClick={handleAddToCart}
+            onMouseEnter={() => setIsCartHovered(true)}
+            onMouseLeave={() => setIsCartHovered(false)}
           >
-            <CartIcon className="product__content-list-item-cart-icon" />
+            {isCartHovered ? (
+              <CartFillIcon className="product__content-list-item-cart-icon" />
+            ) : (
+              <CartIcon className="product__content-list-item-cart-icon" />
+            )}
           </div>
 
-          <div className="product__content-list-item-popup">
-            <div className="product__content-list-item-popup-inner">
-              Thêm vào giỏ hàng
+          {isCartHovered ? (
+            <div className="product__content-list-item-popup">
+              <div className="product__content-list-item-popup-inner">
+                Thêm vào giỏ hàng
+              </div>
+              <div className="product__content-list-item-popup-footer"></div>
             </div>
-            <div className="product__content-list-item-popup-footer"></div>
-          </div>
+          ) : null}
         </div>
       </div>
       {product.discount && (

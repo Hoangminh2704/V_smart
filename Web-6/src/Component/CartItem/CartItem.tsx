@@ -6,6 +6,8 @@ import {
   MinusIcon,
   PlusIcon,
 } from "../../assets/svg/svg";
+import { useNavigate } from "react-router-dom";
+
 import {
   removeFromCart,
   updateCartItemQuantity,
@@ -22,6 +24,11 @@ interface CartItemProps {
 
 const CartItem: React.FC<CartItemProps> = ({ cartItem, onUpdateCart }) => {
   console.log("CartItem:", cartItem);
+  const navigate = useNavigate();
+
+  const handleProductClick = (id: number) => {
+    navigate(`/product/${id}`);
+  };
   const [isChecked, setIsChecked] = React.useState<boolean>(
     cartItem.isChecked ?? true
   );
@@ -185,10 +192,16 @@ const CartItem: React.FC<CartItemProps> = ({ cartItem, onUpdateCart }) => {
               className="cart__item-element-body-content-img"
               src={cartItem.imageUrl}
               alt={cartItem.productName}
+              onClick={() => handleProductClick(cartItem.id)}
             />
             <div className="cart__item-element-body-content-text">
               <div className="product-info">
-                <div className="product-info-name">{cartItem.productName}</div>
+                <div
+                  className="product-info-name"
+                  onClick={() => handleProductClick(cartItem.id)}
+                >
+                  {cartItem.productName}
+                </div>
                 <div
                   className={`product-info-color ${
                     popupCart ? "product-info-color--active" : ""

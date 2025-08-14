@@ -104,6 +104,10 @@
           border-radius: 3px;
           background-color: #f8f9fb;
           flex-shrink: 0;
+          cursor: pointer;
+          &:hover {
+            scale: 1.05;
+          }
         }
 
         .header--search-hover-item-info {
@@ -126,6 +130,10 @@
               color: #161c24;
               padding: 0;
               margin: 0;
+              cursor: pointer;
+              &:hover {
+                color: #006eef;
+              }
             }
 
             .header--search-hover-item-price {

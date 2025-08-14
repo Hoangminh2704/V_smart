@@ -113,6 +113,16 @@
     padding: 8px 16px;
     justify-content: space-between;
     gap: 20px;
+    position: relative;
+    .product__content-list-item-oldPrice {
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 24px;
+      color: rgba(142, 155, 166, 1);
+      text-decoration: line-through;
+      position: absolute;
+      top: -15px;
+    }
     .product__content-list-item-price {
       display: flex;
 
@@ -190,9 +200,7 @@
       .product__content-list-item-heart-icon {
         // fill: red;
         &:hover {
-          path {
-            fill: red;
-          }
+          fill: red;
         }
       }
     }
@@ -456,6 +464,8 @@
 }
 
 .product__content-list-item-cart-icon {
+  width: 24px;
+  height: 24px;
   &:hover {
     cursor: pointer;
     svg {
