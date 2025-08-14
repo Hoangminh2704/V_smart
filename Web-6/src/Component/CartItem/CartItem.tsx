@@ -112,6 +112,9 @@ const CartItem: React.FC<CartItemProps> = ({ cartItem, onUpdateCart }) => {
 
     onUpdateCart();
   };
+  const handlePageChange = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   const handleDecreaseQuantity = () => {
     console.log("Decrease quantity");
@@ -192,13 +195,19 @@ const CartItem: React.FC<CartItemProps> = ({ cartItem, onUpdateCart }) => {
               className="cart__item-element-body-content-img"
               src={cartItem.imageUrl}
               alt={cartItem.productName}
-              onClick={() => handleProductClick(cartItem.id)}
+              onClick={() => {
+                handleProductClick(cartItem.id);
+                handlePageChange();
+              }}
             />
             <div className="cart__item-element-body-content-text">
               <div className="product-info">
                 <div
                   className="product-info-name"
-                  onClick={() => handleProductClick(cartItem.id)}
+                  onClick={() => {
+                    handleProductClick(cartItem.id);
+                    handlePageChange();
+                  }}
                 >
                   {cartItem.productName}
                 </div>

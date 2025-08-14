@@ -53,6 +53,9 @@ const Card: React.FC<CardProps> = ({ id }) => {
   const handleProductClick = () => {
     navigate(`/product/${id}`);
   };
+  const handlePageChange = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   useEffect(() => {
     fetch("/src/Data/products.json")
@@ -183,13 +186,22 @@ const Card: React.FC<CardProps> = ({ id }) => {
     <div className="product__content-list-item">
       <div className="product__content-list-item-title">
         <span className="product-type">{product.productType}</span>
-        <span className="product-name clickable" onClick={handleProductClick}>
+        <span
+          className="product-name clickable"
+          onClick={() => {
+            handleProductClick();
+            handlePageChange();
+          }}
+        >
           {product.productName}
         </span>
       </div>
       <div
         className="product__content-list-item-image clickable"
-        onClick={handleProductClick}
+        onClick={() => {
+          handleProductClick();
+          handlePageChange();
+        }}
       >
         <img src={product.imageUrl} alt={product.productName} />
       </div>

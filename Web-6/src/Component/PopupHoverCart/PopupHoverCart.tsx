@@ -20,7 +20,9 @@ const PopupHoverCart: React.FC = () => {
   useEffect(() => {
     setCartItems(getCartFromStorage());
   }, []);
-
+  const handlePageChange = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
   function updateCartDisplay(): void {
     const cartCountElements = document.querySelectorAll(
       ".header__right-cart-count"
@@ -57,13 +59,19 @@ const PopupHoverCart: React.FC = () => {
                   src={item.imageUrl}
                   alt={item.productName}
                   className="header--search-hover-item-image"
-                  onClick={() => handleProductClick(item.id)}
+                  onClick={() => {
+                    handleProductClick(item.id);
+                    handlePageChange();
+                  }}
                 />
                 <div className="header--search-hover-item-info">
                   <div className="header--search-hover-item-overall">
                     <h1
                       className="header--search-hover-item-title"
-                      onClick={() => handleProductClick(item.id)}
+                      onClick={() => {
+                        handleProductClick(item.id);
+                        handlePageChange();
+                      }}
                     >
                       {item.productName}
                     </h1>
