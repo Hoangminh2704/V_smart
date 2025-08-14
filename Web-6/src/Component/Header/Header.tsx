@@ -60,6 +60,9 @@ const Header: React.FC = () => {
   const isActiveRoute = (path: string) => {
     return location.pathname === path;
   };
+  const handlePageChange = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
   return (
     <header>
       <div className="header__background">
@@ -76,7 +79,11 @@ const Header: React.FC = () => {
               >
                 <span className="header-hamberger-mobile-line"></span>
               </button>
-              <Link to="/">
+              <Link
+                to="/"
+                onClick={handlePageChange}
+                className="header__logo-link"
+              >
                 <img src={logo} alt="Logo" />
               </Link>
             </div>
@@ -100,7 +107,11 @@ const Header: React.FC = () => {
                 onMouseEnter={handleCartMouseEnter}
                 onMouseLeave={handleCartMouseLeave}
               >
-                <Link to="/cart" className="header__right-cart">
+                <Link
+                  to="/cart"
+                  className="header__right-cart"
+                  onClick={handlePageChange}
+                >
                   <CartIcon className="header__right-cart-icon" />
                   <div className="header__right-cart-count">{cartCount}</div>
                 </Link>
@@ -145,6 +156,7 @@ const Header: React.FC = () => {
             <div className="header__element-right">
               <Link
                 to="/"
+                onClick={handlePageChange}
                 className={`header__element-right-option ${
                   isActiveRoute("/") ? "active" : ""
                 }`}
@@ -153,6 +165,7 @@ const Header: React.FC = () => {
               </Link>
               <Link
                 to="/about"
+                onClick={handlePageChange}
                 className={`header__element-right-option ${
                   isActiveRoute("/about") ? "active" : ""
                 }`}
@@ -161,6 +174,7 @@ const Header: React.FC = () => {
               </Link>
               <Link
                 to="/production"
+                onClick={handlePageChange}
                 className={`header__element-right-option ${
                   isActiveRoute("/production") ? "active" : ""
                 }`}
@@ -168,12 +182,19 @@ const Header: React.FC = () => {
                 <span>Sản phẩm</span>
                 <DownIcon className="header__element-right-option-icon" />
               </Link>
-              <div className="header__element-right-option">
+              <Link
+                to="/about"
+                onClick={handlePageChange}
+                className={`header__element-right-option ${
+                  isActiveRoute("/about") ? "active" : ""
+                }`}
+              >
                 <span>Tin tức</span>
                 <DownIcon className="header__element-right-option-icon" />
-              </div>
+              </Link>
               <Link
                 to="/promotion"
+                onClick={handlePageChange}
                 className={`header__element-right-option ${
                   isActiveRoute("/promotion") ? "active" : ""
                 }`}
@@ -182,6 +203,7 @@ const Header: React.FC = () => {
               </Link>
               <Link
                 to="/order"
+                onClick={handlePageChange}
                 className={`header__element-right-option ${
                   isActiveRoute("/order") ? "active" : ""
                 }`}
@@ -190,6 +212,7 @@ const Header: React.FC = () => {
               </Link>
               <Link
                 to="/contact"
+                onClick={handlePageChange}
                 className={`header__element-right-option special ${
                   isActiveRoute("/contact") ? "active" : ""
                 }`}
@@ -253,20 +276,44 @@ const Header: React.FC = () => {
             >
               Giới thiệu
             </Link>
-            <Link to="/production" className="mobileMenu-item">
+            <Link
+              to="/production"
+              className={`mobileMenu-item ${
+                isActiveRoute("/production") ? "active" : ""
+              }`}
+              onClick={() => setIsMenuOpen(false)}
+            >
               <span>Sản phẩm</span>
               <RightIcon className="mobileMenu-arrow" />
             </Link>
-            <div className="mobileMenu-item ">
+            <Link
+              to="/about"
+              className={`mobileMenu-item ${
+                isActiveRoute("/about") ? "active" : ""
+              }`}
+              onClick={() => setIsMenuOpen(false)}
+            >
               <span>Tin tức</span>
               <RightIcon className="mobileMenu-arrow" />
-            </div>
-            <div className="mobileMenu-item">
+            </Link>
+            <Link
+              to="/promotion"
+              className={`mobileMenu-item ${
+                isActiveRoute("/promotion") ? "active" : ""
+              }`}
+              onClick={() => setIsMenuOpen(false)}
+            >
               <span>Khuyến mãi</span>
-            </div>
-            <div className="mobileMenu-item">
+            </Link>
+            <Link
+              to="/order"
+              className={`mobileMenu-item ${
+                isActiveRoute("/order") ? "active" : ""
+              }`}
+              onClick={() => setIsMenuOpen(false)}
+            >
               <span>Đơn hàng</span>
-            </div>
+            </Link>
           </div>
 
           <div className="mobileMenu-category">
