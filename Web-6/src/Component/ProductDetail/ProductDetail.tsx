@@ -7,6 +7,7 @@ import {
   type CartItem,
 } from "../../Utils/cartUtils";
 import { trackProductView } from "../../Utils/recommendationUtils";
+import { useChat } from "../../context/useChat";
 import Notification from "../Notification/Notification";
 
 export interface ProductDataType {
@@ -42,6 +43,8 @@ function ProductDetail({ product }: ProductDetailProps) {
   const [showNotification, setShowNotification] = useState<boolean>(false);
   const [notificationCartItem, setNotificationCartItem] =
     useState<CartItem | null>(null);
+  
+  const { createConversation, openChat } = useChat();
 
   // Track product view for recommendation system
   useEffect(() => {
@@ -132,6 +135,17 @@ function ProductDetail({ product }: ProductDetailProps) {
 
   const handleBuyNow = () => {
     handleAddToCart();
+  };
+
+  const handleChatWithSeller = () => {
+    if (!product) return;
+    
+    const conversationId = createConversation(
+      `seller_${product.id}`,
+      product.brand || 'Người bán',
+      product.imageUrl
+    );
+    openChat(conversationId);
   };
 
   const handleCloseNotification = () => {
@@ -329,6 +343,18 @@ function ProductDetail({ product }: ProductDetailProps) {
               onClick={canAddToCart() ? handleBuyNow : undefined}
             >
               Mua ngay
+            </div>
+            <div
+              className="productDetail__button-chat"
+              onClick={handleChatWithSeller}
+            >
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M10 2C5.589 2 2 5.156 2 9.081c0 2.16 1.059 4.092 2.727 5.43v2.669c0 .368.299.667.667.667.101 0 .2-.023.29-.068l3.047-1.523c.418.07.845.105 1.269.105 4.411 0 8-3.156 8-7.08C18 5.156 14.411 2 10 2z"
+                  fill="currentColor"
+                />
+              </svg>
+              Chat với người bán
             </div>
           </div>
         </div>

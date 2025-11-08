@@ -8,21 +8,30 @@ import ProductDetail from "./Pages/ProductDetail/ProductDetail";
 import Cart from "./Pages/Cart/Cart";
 import OrderPage from "./Pages/Order/Order";
 import Promotion from "./Pages/Promotion/Promotion";
+import { ChatProvider } from "./context/ChatContext";
+import ChatButton from "./Component/ChatButton/ChatButton";
+import ChatBox from "./Component/ChatBox/ChatBox";
+import ChatList from "./Component/ChatList/ChatList";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/production" element={<Production />} />
-        <Route path="/product/:id" element={<ProductDetail />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/order" element={<OrderPage />} />
-        <Route path="/promotion" element={<Promotion />} />
-      </Routes>
-    </BrowserRouter>
+    <ChatProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/production" element={<Production />} />
+          <Route path="/product/:id" element={<ProductDetail />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/order" element={<OrderPage />} />
+          <Route path="/promotion" element={<Promotion />} />
+        </Routes>
+        <ChatButton />
+        <ChatBox />
+        <ChatList />
+      </BrowserRouter>
+    </ChatProvider>
   );
 }
 export default App;
