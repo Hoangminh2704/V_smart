@@ -5,6 +5,7 @@ import Banner from "../../Component/Banner/Banner";
 import Product from "../../Component/Product/Product";
 import HorizontalBanner from "../../Component/Horizontal_banner/Horizontal_banner";
 import BestSellingProduct from "../../Component/BestSellingProduct/BestSellingProduct";
+import RecommendedForYou from "../../Component/RecommendedForYou/RecommendedForYou";
 import Brand from "../../Component/Brand/Brand";
 import Discount from "../../Component/Discount/Discount";
 import Role from "../../Component/Role/Role";
@@ -19,6 +20,7 @@ function Home() {
       <Product />
       <HorizontalBanner />
       <BestSellingProduct />
+      <RecommendedForYou limit={10} />
       <Brand />
       <Discount />
       <Role />

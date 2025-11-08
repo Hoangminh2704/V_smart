@@ -1,0 +1,196 @@
+@import '../../Utils/Color.scss';
+
+.frequentlyBought {
+  width: 100%;
+  max-width: 1280px;
+  margin: 40px auto;
+  padding: 30px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+  &__header {
+    margin-bottom: 24px;
+  }
+
+  &__title {
+    font-size: 20px;
+    font-weight: 700;
+    color: $primary-color;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  &__products {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
+  }
+
+  &__plus {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    
+    &-icon {
+      width: 20px;
+      height: 20px;
+      fill: #666;
+    }
+
+    @media (max-width: 768px) {
+      transform: rotate(90deg);
+    }
+  }
+
+  &__product {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 16px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    width: 180px;
+    transition: all 0.3s ease;
+
+    &:hover {
+      border-color: $primary-color;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    &--main {
+      border-color: $primary-color;
+      background: rgba($primary-color, 0.05);
+    }
+
+    @media (max-width: 768px) {
+      width: 100%;
+    }
+
+    &-checkbox {
+      input[type="checkbox"] {
+        width: 18px;
+        height: 18px;
+        cursor: pointer;
+
+        &:disabled {
+          cursor: not-allowed;
+        }
+      }
+    }
+
+    &-image {
+      width: 120px;
+      height: 120px;
+      cursor: pointer;
+      overflow: hidden;
+      border-radius: 6px;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+      }
+
+      &:hover img {
+        transform: scale(1.05);
+      }
+    }
+
+    &-info {
+      text-align: center;
+      width: 100%;
+    }
+
+    &-name {
+      font-size: 14px;
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 8px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      min-height: 40px;
+    }
+
+    &-price {
+      font-size: 16px;
+      font-weight: 700;
+      color: $primary-color;
+    }
+  }
+
+  &__summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 8px;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      gap: 16px;
+    }
+  }
+
+  &__total {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    &-label {
+      font-size: 16px;
+      color: #666;
+    }
+
+    &-price {
+      font-size: 24px;
+      font-weight: 700;
+      color: $primary-color;
+    }
+  }
+
+  &__add-button {
+    padding: 12px 32px;
+    background: $primary-color;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover:not(:disabled) {
+      background: darken($primary-color, 10%);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba($primary-color, 0.3);
+    }
+
+    &:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+
+    @media (max-width: 768px) {
+      width: 100%;
+    }
+  }
+}

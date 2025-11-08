@@ -6,6 +6,8 @@ import Direction from "../../Component/Direction/Direction";
 import Footer from "../../Component/Footer/Footer";
 import DescriptionDetail from "../../Component/Description__Detail/Description__Detail";
 import RelativeProduct from "../../Component/RelativeProduct/RelativeProduct";
+import FrequentlyBoughtTogether from "../../Component/FrequentlyBoughtTogether/FrequentlyBoughtTogether";
+import RecommendedForYou from "../../Component/RecommendedForYou/RecommendedForYou";
 interface ProductDataType {
   id: number;
   productType: string;
@@ -52,11 +54,15 @@ function ProductDetailPage() {
       <Header />
       <Direction directions="Chi tiết sản phẩm" />
       <ProductDetail product={currentProduct} />
+      {currentProduct && (
+        <FrequentlyBoughtTogether currentProduct={currentProduct} />
+      )}
       <DescriptionDetail />
       <RelativeProduct
         currentProductId={currentProduct?.id}
         currentProductType={currentProduct?.type}
       />
+      <RecommendedForYou currentProductId={currentProduct?.id} limit={10} />
       <Footer />
     </>
   );

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./ProductDetail.scss";
 import { Rate, MinusIcon, PlusIcon } from "../../assets/svg/svg";
 import {
@@ -6,6 +6,7 @@ import {
   getCartItemCount,
   type CartItem,
 } from "../../Utils/cartUtils";
+import { trackProductView } from "../../Utils/recommendationUtils";
 import Notification from "../Notification/Notification";
 
 export interface ProductDataType {
@@ -41,6 +42,13 @@ function ProductDetail({ product }: ProductDetailProps) {
   const [showNotification, setShowNotification] = useState<boolean>(false);
   const [notificationCartItem, setNotificationCartItem] =
     useState<CartItem | null>(null);
+
+  // Track product view for recommendation system
+  useEffect(() => {
+    if (product) {
+      trackProductView(product.id);
+    }
+  }, [product]);
 
   const formatPrice = (price: number): string => {
     return price.toLocaleString("vi-VN");
