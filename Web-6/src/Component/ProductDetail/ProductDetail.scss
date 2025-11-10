@@ -324,6 +324,7 @@ body {
       }
       @include xs {
         justify-content: space-between;
+        flex-wrap: wrap;
       }
       &-addToCart {
         border: 1px solid rgba(30, 43, 54, 1);
@@ -339,8 +340,20 @@ body {
         display: flex;
         align-items: center;
         justify-content: center;
+        cursor: pointer;
+        transition: all 0.2s;
+
+        &:hover {
+          background-color: rgba(30, 43, 54, 0.05);
+        }
+
         &.disabled {
           display: none;
+        }
+
+        @include xs {
+          flex: 1;
+          min-width: 140px;
         }
       }
       &-buyNow {
@@ -357,8 +370,57 @@ body {
         display: flex;
         align-items: center;
         justify-content: center;
+        cursor: pointer;
+        transition: all 0.2s;
+
+        &:hover {
+          background-color: rgba(2, 105, 135, 0.9);
+        }
+
         &.disabled {
           display: none;
+        }
+
+        @include xs {
+          flex: 1;
+          min-width: 140px;
+        }
+      }
+      &-chat {
+        border: 1px solid rgba(0, 110, 239, 1);
+        background-color: rgba(0, 110, 239, 0.05);
+        border-radius: 8px;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 24px;
+        text-align: center;
+        color: rgba(0, 110, 239, 1);
+        width: 171px;
+        height: 44px;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        cursor: pointer;
+        transition: all 0.2s;
+
+        svg {
+          flex-shrink: 0;
+        }
+
+        &:hover {
+          background-color: rgba(0, 110, 239, 0.1);
+          border-color: rgba(0, 110, 239, 1);
+        }
+
+        &:active {
+          transform: scale(0.98);
+        }
+
+        @include xs {
+          width: 100%;
+          margin-top: 8px;
         }
       }
     }
